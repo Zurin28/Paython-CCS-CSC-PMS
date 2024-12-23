@@ -18,10 +18,6 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
 require_once '../classes/organization.class.php';
 
 // Instantiate the Organization class
-$organizationObj = new Organization();
-
-// Fetch all organizations
-$organizations = $organizationObj->getAllOrganizations();
 ?>
 
 <!DOCTYPE html>
@@ -116,19 +112,8 @@ $organizations = $organizationObj->getAllOrganizations();
             <span class="dashboard" id="topbar-title"><?php echo $current_title; ?></span>
         </div>
         
-        <?php if (in_array(basename($_SERVER['PHP_SELF']), ['staff_student.php', 'paymentmanagement.php'])): ?>
-    <div class="org-dropdown">
-        <select id="organizationSelect" class="org-select">
-            <option value="">Select Organization</option>
-            <?php foreach ($organizations as $org): ?>
-                <option value="<?php echo htmlspecialchars($org['OrganizationID']); ?>"
-                        <?php echo (isset($_GET['org']) && $_GET['org'] == $org['OrganizationID']) ? 'selected' : ''; ?>>
-                    <?php echo htmlspecialchars($org['OrgName']); ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </div>
-    <?php endif; ?>
+       
+   
     </nav>
 
     <script>

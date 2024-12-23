@@ -61,7 +61,7 @@ class PaymentRequest {
         }
     }
 
-    public function getPaymentRequestsForCurrentPeriod() {
+    public function getPaymentRequestsForCurrentPeriod($orgId = null, $staffStudentId = null) {
         try {
             $sql = "
                 SELECT 
@@ -71,7 +71,9 @@ class PaymentRequest {
                     f.Amount,
                     'Cash' AS PaymentType,
                     pr.DatePaid,
-                    pr.Status
+                    pr.Status,
+                    o.OrganizationID,
+                    o.OrgName
                 FROM 
                     payment_requests pr
                 JOIN 
@@ -79,12 +81,31 @@ class PaymentRequest {
                 JOIN 
                     fees f ON pr.fee_id = f.FeeID
                 JOIN 
-                    academic_periods ap ON pr.school_year = ap.school_year AND pr.semester = ap.semester
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                JOIN 
+                    academic_periods ap ON pr.school_year = ap.school_year 
+                    AND pr.semester = ap.semester
                 WHERE 
                     ap.is_current = 1
-            ";
+                    AND st.StudentID = :staffStudentId";
+
+            if ($orgId && $orgId !== '') {
+                $sql .= " AND o.OrganizationID = :orgId";
+            }
+
+            $sql .= " ORDER BY pr.DatePaid DESC";
 
             $stmt = $this->db->connect()->prepare($sql);
+            
+            // Always bind staffStudentId
+            $stmt->bindParam(':staffStudentId', $staffStudentId, PDO::PARAM_STR);
+            
+            if ($orgId && $orgId !== '') {
+                $stmt->bindParam(':orgId', $orgId, PDO::PARAM_STR);
+            }
+
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
 

@@ -1,48 +1,77 @@
 <?php
+session_start();
 require_once '../classes/paymentrequest.class.php';
+require_once '../classes/staff.class.php';
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/debug.log');
 error_reporting(E_ALL);
 
+// Initialize classes
 $paymentRequest = new PaymentRequest();
-$paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod();
+$staff = new Staff();
+
+// Get staff organizations
+$staffOrganizations = $staff->getStaffOrganizations($_SESSION['StudentID']);
+
+// Get the selected organization from GET parameter
+$selectedOrg = isset($_GET['org']) ? $_GET['org'] : null;
+
+// Get payment requests with organization filter
+$paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selectedOrg, $_SESSION['StudentID']);
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Payment Receipts</title>
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <title>Payment Management - PayThon</title>
     <link rel="stylesheet" href="../css/staffbar.css">
     <link rel="stylesheet" href="../css/receive_receipt.css">
-    
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
-    <div class="container">
-        <?php include 'staffbar.php'; ?>
-        <div class="content-wrapper">
-            <div class="table-container">
-                <!-- Updated filter section -->
-               
+    <?php include 'staffbar.php'; ?>
+    
+    <div class="content-wrapper">
+        <div class="table-container">
+            <div class="table-header">
                 <div class="filter-section">
-                    
+                    <!-- Organization Filter -->
+                    <form method="GET" action="" class="org-filter-form" style="margin-right: 20px;">
+                        <div class="org-dropdown">
+                            <select name="org" class="org-select filter-select" onchange="this.form.submit()">
+                                <option value="">All Organizations</option>
+                                <?php foreach ($staffOrganizations as $org): ?>
+                                    <option value="<?php echo htmlspecialchars($org['OrganizationID']); ?>"
+                                            <?php echo ($selectedOrg == $org['OrganizationID']) ? 'selected' : ''; ?>>
+                                        <?php echo htmlspecialchars($org['OrgName']); ?>
+                                    </option>
+                                <?php endforeach; ?>
+                            </select>
+                        </div>
+                    </form>
+
+                    <!-- Specific Date Filter -->
+                    <div class="date-filter">
+                        <input type="date" id="specificDate" class="date-input">
+                    </div>
+
+                    <!-- Search Filter -->
                     <div class="search-filter">
                         <i class='bx bx-search'></i>
-                        <input type="text" class="search-bar" placeholder="Search receipt or student name...">
+                        <input type="text" id="searchInput" class="search-bar" 
+                               placeholder="Search student name or ID...">
                         <button class="search-btn">
                             <i class='bx bx-search'></i>
                             Search
                         </button>
                     </div>
-                    <button class="filter-date-btn">
-                        <i class='bx bx-calendar'></i>
-                        Filter by Date
-                    </button>
                 </div>
+            </div>
 
-                <table>
+            <!-- Rest of your existing table structure -->
+            <div class="table-wrapper">
+                <table class="custom-table">
                     <thead>
                         <tr>
                             <th>Student ID</th>
@@ -73,108 +102,42 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod();
                                 </td>
                             </tr>
                         <?php endforeach; ?>
-                </tbody>
+                    </tbody>
                 </table>
-
-                <style>
-                    .btn.accepted {
-                        background-color: white;
-                        color: green;
-                        border: 2px solid green;
-                        cursor: default;
-                    }
-                    .btn.rejected {
-                        background-color: white;
-                        color: red;
-                        border: 2px solid red;
-                        cursor: default;
-                    }
-                </style>
             </div>
         </div>
     </div>
 
-
+    <!-- Keep your existing JavaScript -->
     <script>
-      // Sidebar toggle functionality
-let sidebar = document.querySelector(".sidebar");
-let sidebarBtn = document.querySelector(".bx-menu");
+      document.getElementById('searchInput').addEventListener('input', filterTable);
+      document.getElementById('specificDate').addEventListener('change', filterTable);
+      
+    function filterTable() {
+        const searchValue = document.getElementById('searchInput').value.toLowerCase();
+        const specificDate = document.getElementById('specificDate').value;
+        const table = document.querySelector('.custom-table tbody');
+        const rows = table.getElementsByTagName('tr');
 
-sidebarBtn.addEventListener("click", () => {
-    sidebar.classList.toggle("active");
-    if (sidebar.classList.contains("active")) {
-        document.querySelector(".content-wrapper").style.marginLeft = "60px";
-        document.querySelector("nav").style.width = "calc(100% - 60px)";
-    } else {
-        document.querySelector(".content-wrapper").style.marginLeft = "240px";
-        document.querySelector("nav").style.width = "calc(100% - 240px)";
+        for (let i = 0; i < rows.length; i++) {
+            const cells = rows[i].getElementsByTagName('td');
+            if (cells.length === 0) continue; // Skip empty rows
+
+            const studentId = cells[0].textContent.toLowerCase();
+            const name = cells[1].textContent.toLowerCase();
+            const datePaid = cells[4].textContent.trim(); // Ensure this matches the Date Paid column index
+
+            const matchesSearch = studentId.includes(searchValue) || name.includes(searchValue);
+            const matchesDate = !specificDate || datePaid === specificDate;
+
+            if (matchesSearch && matchesDate) {
+                rows[i].style.display = '';
+            } else {
+                rows[i].style.display = 'none';
+            }
+        }
     }
-});
-
-// Modal functionality
-function acceptPayment(studentID, feeName) {
-    console.log('Accepting payment for:', studentID, feeName); // Debugging line
-    updatePaymentStatus(studentID, feeName, 'Paid');
-}
-
-function rejectPayment(studentID, feeName) {
-    console.log('Rejecting payment for:', studentID, feeName); // Debugging line
-    updatePaymentStatus(studentID, feeName, 'Not Paid');
-}
-
-function updatePaymentStatus(studentID, feeName, status) {
-    fetch('update_status.php', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: new URLSearchParams({
-            'studentID': studentID,
-            'feeName': feeName,
-            'status': status
-        })
-    })
-    .then(response => response.text())
-    .then(data => {
-        console.log('Response:', data); // Log the response
-        if (data === "Success") {
-            alert(`Payment status updated to ${status} for Student ID: ${studentID} and Fee: ${feeName}`);
-            location.reload(); // Reload the page to reflect changes
-        } else {
-            alert(data); // Show detailed error message
-        }
-    })
-    .catch(error => console.error('Error:', error));
-}
-
-document.getElementById('organizationSelect').addEventListener('change', filterTable);
-
-function filterTable() {
-    const searchInput = document.querySelector('.search-bar').value.toLowerCase();
-    const filterDate = document.getElementById('filter-date').value;
-    const selectedOrg = document.getElementById('organizationSelect').value;
-    const table = document.querySelector('table tbody');
-    const rows = table.querySelectorAll('tr');
-
-    rows.forEach(row => {
-        const studentID = row.cells[0].textContent.toLowerCase();
-        const name = row.cells[1].textContent.toLowerCase();
-        const feeName = row.cells[2].textContent.toLowerCase();
-        const datePaid = row.cells[4].textContent;
-        const orgID = row.getAttribute('data-org-id');
-
-        const matchesSearch = studentID.includes(searchInput) || name.includes(searchInput) || feeName.includes(searchInput);
-        const matchesDate = !filterDate || datePaid === filterDate;
-        const matchesOrg = !selectedOrg || orgID === selectedOrg;
-
-        if (matchesSearch && matchesDate && matchesOrg) {
-            row.style.display = '';
-        } else {
-            row.style.display = 'none';
-        }
-    });
-}
-    </script>
+</script>
 </body>
 </html>
 

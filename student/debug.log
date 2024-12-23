@@ -1,0 +1,28 @@
+[19-Dec-2024 21:12:13 Europe/Berlin] Payment request exists check: StudentID=1, FeeID=6, Count=0
+[19-Dec-2024 21:12:13 Europe/Berlin] Error in createPaymentRequest: SQLSTATE[23000]: Integrity constraint violation: 1062 Duplicate entry '0' for key 'PRIMARY'
+[19-Dec-2024 21:12:13 Europe/Berlin] Create request: StudentID=1, FeeID=6, Success=
+[19-Dec-2024 21:12:13 Europe/Berlin] Failed to process payment request for StudentID: 1, FeeID: 6
+[19-Dec-2024 21:13:53 Europe/Berlin] Payment request exists check: StudentID=1, FeeID=6, Count=0
+[19-Dec-2024 21:13:53 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=1, FeeID=6
+[19-Dec-2024 21:13:53 Europe/Berlin] Create request: StudentID=1, FeeID=6, Success=1
+[19-Dec-2024 21:36:56 Europe/Berlin] Payment request exists check: StudentID=2, FeeID=6, Count=0
+[19-Dec-2024 21:36:56 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=2, FeeID=6
+[19-Dec-2024 21:36:56 Europe/Berlin] Create request: StudentID=2, FeeID=6, Success=1
+[19-Dec-2024 21:37:23 Europe/Berlin] Payment request exists check: StudentID=2, FeeID=5, Count=0
+[19-Dec-2024 21:37:23 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=2, FeeID=5
+[19-Dec-2024 21:37:23 Europe/Berlin] Create request: StudentID=2, FeeID=5, Success=1
+[19-Dec-2024 23:42:59 Europe/Berlin] Payment request exists check: StudentID=1, FeeID=3, Count=0
+[19-Dec-2024 23:42:59 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=1, FeeID=3
+[19-Dec-2024 23:42:59 Europe/Berlin] Create request: StudentID=1, FeeID=3, Success=1
+[20-Dec-2024 02:59:52 Europe/Berlin] Payment request exists check: StudentID=1, FeeID=6, Count=0
+[20-Dec-2024 02:59:52 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=1, FeeID=6
+[20-Dec-2024 02:59:52 Europe/Berlin] Create request: StudentID=1, FeeID=6, Success=1
+[20-Dec-2024 03:25:25 Europe/Berlin] Payment request exists check: StudentID=1, FeeID=8, Count=0
+[20-Dec-2024 03:25:25 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=1, FeeID=8
+[20-Dec-2024 03:25:25 Europe/Berlin] Create request: StudentID=1, FeeID=8, Success=1
+[20-Dec-2024 04:39:14 Europe/Berlin] Payment request exists check: StudentID=202300269, FeeID=9, Count=0
+[20-Dec-2024 04:39:14 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=202300269, FeeID=9
+[20-Dec-2024 04:39:14 Europe/Berlin] Create request: StudentID=202300269, FeeID=9, Success=1
+[21-Dec-2024 13:25:42 Europe/Berlin] Payment request exists check: StudentID=1, FeeID=9, Count=0
+[21-Dec-2024 13:25:42 Europe/Berlin] CreatePaymentRequest executed successfully for StudentID=1, FeeID=9
+[21-Dec-2024 13:25:42 Europe/Berlin] Create request: StudentID=1, FeeID=9, Success=1

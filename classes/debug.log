@@ -1,0 +1,4260 @@
+[21-Dec-2024 15:57:49 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:49 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:49 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:57:49 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:57:50 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:57:50 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:57:50 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:57:50 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:57:50 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:57 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:57 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:57 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 15:59:57 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 15:59:57 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:00:55 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:55 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:55 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:00:55 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:00:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:00:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:00:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:00:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:00:56 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:56 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:56 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:00:56 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:00:57 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:57 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:00:57 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:00:57 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:57 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:00:57 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:00:57 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:57 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:00:57 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:00:57 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:13 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:13 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:13 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:13 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:14 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:14 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:14 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:14 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:14 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:14 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:14 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:14 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:14 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:14 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:14 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:14 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:19 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:19 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:19 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:19 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:19 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:01:52 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:52 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:01:52 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:01:52 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:04:21 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:04:21 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:04:21 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:04:21 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:04:21 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:04:21 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:04:21 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:04:21 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:05:58 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:05:58 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:05:58 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:05:58 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:05:59 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:05:59 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:05:59 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:05:59 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:05:59 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:05:59 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:05:59 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:13:16 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:13:16 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:13:16 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:13:16 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:13:18 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:13:18 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:13:18 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Unpaid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:13:18 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Unpaid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:14:31 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:14:31 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:14:31 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:31 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:14:31 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:14:32 Europe/Berlin] PHP Warning:  Undefined variable $organizations in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:32 Europe/Berlin] PHP Warning:  foreach() argument must be of type array|object, null given in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 114
+[21-Dec-2024 16:14:32 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:14:32 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:18:21 Europe/Berlin] PHP Warning:  require_once(classes/organization.class.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 18
+[21-Dec-2024 16:18:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'classes/organization.class.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php:18
+Stack trace:
+#0 C:\xampp\htdocs\PAYTHON1\staff\staff_student.php(23): include()
+#1 {main}
+  thrown in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 18
+[21-Dec-2024 16:18:21 Europe/Berlin] PHP Warning:  require_once(classes/organization.class.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 18
+[21-Dec-2024 16:18:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'classes/organization.class.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php:18
+Stack trace:
+#0 C:\xampp\htdocs\PAYTHON1\staff\staff_student.php(23): include()
+#1 {main}
+  thrown in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 18
+[21-Dec-2024 16:18:21 Europe/Berlin] PHP Warning:  require_once(classes/organization.class.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 18
+[21-Dec-2024 16:18:21 Europe/Berlin] PHP Fatal error:  Uncaught Error: Failed opening required 'classes/organization.class.php' (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php:18
+Stack trace:
+#0 C:\xampp\htdocs\PAYTHON1\staff\staff_student.php(23): include()
+#1 {main}
+  thrown in C:\xampp\htdocs\PAYTHON1\staff\staffbar.php on line 18
+[21-Dec-2024 16:18:35 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:18:35 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:18:39 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:18:39 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:18:41 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:18:41 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:18:42 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:18:42 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:19:06 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:19:06 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:31:26 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:31:26 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:32:03 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:32:03 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:32:03 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:32:03 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:32:04 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:32:04 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:32:04 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:32:04 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:32:06 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:32:06 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+
+[21-Dec-2024 16:32:07 Europe/Berlin] Executing SQL: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                ORDER BY 
+                    s.StudentID, f.FeeName
+[21-Dec-2024 16:32:07 Europe/Berlin] Data fetched successfully: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 1
+            [Name] => 1 1
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 2
+            [Name] => 2 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => a
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [Status] => Not Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+)
+

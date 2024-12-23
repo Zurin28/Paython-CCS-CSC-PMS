@@ -1,0 +1,135 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #1a7431;
+    position: relative;
+    padding: 40px 0;
+    overflow-x: hidden;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    max-width: 500px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px 50px;
+    border-radius: 20px;
+    box-shadow: 
+        0 20px 60px rgba(0, 0, 0, 0.2),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+    margin: 0 auto 20px;
+}
+
+.login h2 {
+    color: #1a7431;
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.login p {
+    color: #666;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+label {
+    display: block;
+    color: #333;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    border-color: #1a7431;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(26, 116, 49, 0.1);
+}
+
+button[type="loginbtn"] {
+    width: 100%;
+    padding: 15px;
+    background: #1a7431;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="loginbtn"]:hover {
+    background: #145726;
+}
+
+.errorMsg {
+    background: #ffe5e5;
+    color: #dc3545;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+}
+
+a {
+    color: #1a7431;
+    text-decoration: none;
+    font-size: 14px;
+    text-align: center;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Hover effects */
+input:hover {
+    border-color: #1a7431;
+}
+
+@media (max-width: 768px) {
+    .login-container {
+        margin: 20px;
+        padding: 30px;
+    }
+}

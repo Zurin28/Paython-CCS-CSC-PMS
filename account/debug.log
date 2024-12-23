@@ -1,0 +1,16 @@
+[19-Dec-2024 21:17:51 Europe/Berlin] Starting signup process...
+[19-Dec-2024 21:18:05 Europe/Berlin] Starting signup process...
+[19-Dec-2024 21:18:06 Europe/Berlin] Password: 2
+[19-Dec-2024 21:18:06 Europe/Berlin] Confirm Password: 2
+[19-Dec-2024 21:18:06 Europe/Berlin] Transaction started
+[19-Dec-2024 21:18:06 Europe/Berlin] Account creation result: Success ID: 2
+[19-Dec-2024 21:18:06 Europe/Berlin] Student creation result: Success
+[19-Dec-2024 21:18:06 Europe/Berlin] Transaction committed successfully
+[20-Dec-2024 04:35:46 Europe/Berlin] Starting signup process...
+[20-Dec-2024 04:36:31 Europe/Berlin] Starting signup process...
+[20-Dec-2024 04:36:31 Europe/Berlin] Password: 3
+[20-Dec-2024 04:36:31 Europe/Berlin] Confirm Password: 3
+[20-Dec-2024 04:36:31 Europe/Berlin] Transaction started
+[20-Dec-2024 04:36:31 Europe/Berlin] Account creation result: Success ID: 202300269
+[20-Dec-2024 04:36:31 Europe/Berlin] Student creation result: Success
+[20-Dec-2024 04:36:31 Europe/Berlin] Transaction committed successfully

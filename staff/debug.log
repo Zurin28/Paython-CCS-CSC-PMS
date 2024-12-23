@@ -1,0 +1,99 @@
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined variable $student_id in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 13
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "OrganizationID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "Name" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "PaymentType" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "DatePaid" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 71
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 73
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "OrganizationID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "Name" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "PaymentType" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "DatePaid" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 71
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 73
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:35:47 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined variable $student_id in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 13
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "OrganizationID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Name" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "PaymentType" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "DatePaid" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 71
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 73
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "OrganizationID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Name" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "PaymentType" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "DatePaid" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 71
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 73
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined variable $student_id in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 13
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "OrganizationID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Name" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "PaymentType" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "DatePaid" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 71
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 73
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "OrganizationID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 64
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 65
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Name" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 66
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "PaymentType" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 68
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "DatePaid" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 69
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 71
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "Status" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 73
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 76
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77
+[21-Dec-2024 16:36:49 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAYTHON1\staff\paymentmanagement.php on line 77

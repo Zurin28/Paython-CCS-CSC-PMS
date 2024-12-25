@@ -18,22 +18,22 @@
     padding: 20px;
 }
 
-/* Filter Section */
+/* Filter Section - Updated with green theme */
 .filter-section {
     display: flex;
     align-items: center;
     gap: 15px;
     margin-bottom: 20px;
     padding: 15px;
-    background: #fff;
+    background: #e8f5e9; /* Light green background */
     border-radius: 8px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-/* Filter Select Styles */
-.filter-select {
+/* Filter Select Styles - Updated */
+.filter-select, .org-select {
     padding: 8px 12px;
-    border: 1px solid #ddd;
+    border: 2px solid #1a7431; /* Darker green border */
     border-radius: 5px;
     font-size: 14px;
     min-width: 150px;
@@ -200,7 +200,7 @@ tbody tr:hover {
     background-color: #f8f9fa;
 }
 
-/* Action Buttons */
+/* Action Buttons - Updated */
 .action-buttons {
     display: flex;
     gap: 8px;
@@ -225,22 +225,44 @@ tbody tr:hover {
     background: #145726;
 }
 
-.btn.accept {
-    background: #28a745;
-    color: white;
+.btn.accept, 
+button[onclick*="'Accepted'"] {
+    background: #4CAF50 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
 }
 
-.btn.accept:hover {
-    background: #218838;
+.btn.reject,
+button[onclick*="'Rejected'"] {
+    background: #f44336 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
 }
 
-.btn.reject {
-    background: #dc3545;
-    color: white;
+/* Status-based row styling */
+tbody tr[data-status="Accepted"],
+tr td:last-child:contains('Accepted') {
+    border-left: 4px solid #4CAF50;
 }
 
-.btn.reject:hover {
-    background: #c82333;
+tbody tr[data-status="Rejected"],
+tr td:last-child:contains('Rejected') {
+    border-left: 4px solid #f44336;
+}
+
+/* Button hover states */
+.btn.accept:hover,
+button[onclick*="'Accepted'"]:hover {
+    background: #45a049 !important;
+}
+
+.btn.reject:hover,
+button[onclick*="'Rejected'"]:hover {
+    background: #da190b !important;
 }
 
 /* Modal Styles */
@@ -321,5 +343,171 @@ tbody tr:hover {
 .close:hover {
     color: #333;
     background: rgba(0, 0, 0, 0.1);
+}
+
+/* Date filter specific styling */
+.date-filter {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background-color: white;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+.date-filter input {
+    border: 2px solid #1a7431;
+    border-radius: 4px;
+    padding: 8px;
+}
+
+/* New Organization Filter Styles */
+.org-filter-container {
+    background-color: #e8f5e9;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.org-dropdown select {
+    padding: 8px 12px;
+    border: 2px solid #1a7431;
+    border-radius: 5px;
+    font-size: 14px;
+    min-width: 200px;
+    background: white;
+    cursor: pointer;
+}
+
+/* New Button Styles */
+.payment-btn-accept {
+    background-color: #4CAF50 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.payment-btn-reject {
+    background-color: #f44336 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Button Hover States */
+.payment-btn-accept:hover {
+    background-color: #45a049 !important;
+}
+
+.payment-btn-reject:hover {
+    background-color: #da190b !important;
+}
+
+/* Status Row Styles */
+.payment-row-accepted {
+    border-left: 4px solid #4CAF50 !important;
+}
+
+.payment-row-rejected {
+    border-left: 4px solid #f44336 !important;
+}
+
+/* Filter Group Container */
+.payment-filter-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 20px;
+    background-color: #e8f5e9; /* Light green background */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+/* Organization Dropdown */
+.org-dropdown select {
+    padding: 8px 12px;
+    border: 2px solid #1a7431; /* Dark green border */
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+    color: #1a7431; /* Dark green text */
+    cursor: pointer;
+}
+
+/* Date Filter */
+.date-filter input {
+    border: 2px solid #1a7431;
+    border-radius: 4px;
+    padding: 8px;
+    color: #1a7431;
+}
+
+/* Search Filter */
+.search-filter {
+    position: relative;
+}
+
+.search-filter i {
+    color: #1a7431; /* Dark green icon */
+}
+
+.search-bar {
+    padding-left: 30px;
+    border: 2px solid #1a7431;
+    border-radius: 4px;
+    color: #1a7431;
+}
+
+/* Buttons */
+.payment-btn-accept {
+    background-color: #4CAF50 !important; /* Green */
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+.payment-btn-reject {
+    background-color: #f44336 !important; /* Red */
+    color: white !important;
+    border: none !important;
+    padding: 8px 16px !important;
+    border-radius: 6px !important;
+    cursor: pointer !important;
+    font-weight: 500 !important;
+    transition: background-color 0.3s ease !important;
+}
+
+/* Button Hover States */
+.payment-btn-accept:hover {
+    background-color: #45a049 !important; /* Darker green */
+}
+
+.payment-btn-reject:hover {
+    background-color: #da190b !important; /* Darker red */
+}
+
+/* Status Row Styles */
+.payment-row-accepted {
+    border-left: 4px solid #4CAF50 !important;
+}
+
+.payment-row-rejected {
+    border-left: 4px solid #f44336 !important;
 }
  

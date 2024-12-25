@@ -48,8 +48,10 @@ class Student {
         }
     }
 
-    function getStudentFeeDetails() {
+    function getStudentFeeDetails($orgId = null, $staffStudentId = null) {
         try {
+            error_log("Function called with orgId: " . ($orgId ? $orgId : "null") . " and staffStudentId: " . $staffStudentId);
+
             $sql = "
                 SELECT 
                     s.StudentID,
@@ -59,38 +61,53 @@ class Student {
                     s.Section,
                     f.FeeName,
                     f.Amount,
-                    COALESCE(pr.Status, 'Not Paid') as Status
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
                 FROM 
                     student s
                 CROSS JOIN 
                     fees f
                 LEFT JOIN 
                     payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
                 WHERE 
                     f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
                     AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                ORDER BY 
-                    s.StudentID, f.FeeName";
+                    AND st.StudentID = :staffStudentId";
+
+            // Add specific organization filter if selected
+            if ($orgId && $orgId !== '') {
+                $sql .= " AND o.OrganizationID = :orgId";
+            }
+
+            $sql .= " ORDER BY s.StudentID, f.FeeName";
+
+            error_log("SQL Query: " . $sql);
 
             $qry = $this->db->connect()->prepare($sql);
             
-            // Log the SQL query
-            error_log("Executing SQL: " . $sql);
+            // Always bind staffStudentId
+            $qry->bindParam(':staffStudentId', $staffStudentId, PDO::PARAM_STR);
+            
+            if ($orgId && $orgId !== '') {
+                $qry->bindParam(':orgId', $orgId, PDO::PARAM_STR);
+                error_log("Binding orgId parameter: " . $orgId);
+            }
 
             $qry->execute();
-
             $results = $qry->fetchAll(PDO::FETCH_ASSOC);
             
-            // Debug output
-            if (empty($results)) {
-                error_log("No data returned from getStudentFeeDetails.");
-            } else {
-                error_log("Data fetched successfully: " . print_r($results, true));
-            }
+            error_log("Number of results: " . count($results));
+            error_log("Results: " . print_r($results, true));
 
             return $results;
         } catch (PDOException $e) {
             error_log("Error in getStudentFeeDetails: " . $e->getMessage());
+            error_log("Stack trace: " . $e->getTraceAsString());
             return [];
         }
     }

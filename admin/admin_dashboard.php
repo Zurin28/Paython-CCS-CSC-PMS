@@ -1,20 +1,27 @@
 <?php
 session_start();
+require_once '../classes/academicperiod.class.php';
+require_once '../classes/student.class.php';
+require_once '../classes/organization.class.php';
+require_once '../classes/paymentrequest.class.php';
 
 // Get current academic period
 $academicPeriod = new AcademicPeriod();
-$currentPeriod = $academicPeriod->getCurrentAcademicPeriod();
+$currentPeriod = $academicPeriod->getCurrentPeriod();
 
 // Initialize counters
 $totalStudents = 0;
 $totalOrganizations = 0;
+$pendingRequests = 0;
 
 if ($currentPeriod) {
-    $account = new Account();
+    $student = new Student();
     $organization = new Organization();
+    $paymentRequest = new PaymentRequest();
     
-    $totalStudents = $account->getTotalStudents($currentPeriod['school_year'], $currentPeriod['semester']);
-    $totalOrganizations = $organization->getTotalOrganwizations($currentPeriod['school_year'], $currentPeriod['semester']);
+    $totalStudents = $student->getTotalStudents($currentPeriod['school_year'], $currentPeriod['semester']);
+    $totalOrganizations = $organization->getTotalOrganizations($currentPeriod['school_year'], $currentPeriod['semester']);
+    $pendingRequests = $paymentRequest->getPendingPaymentRequestCount($currentPeriod['school_year'], $currentPeriod['semester']);
 }
 
 // Add other required classes/connections
@@ -25,13 +32,13 @@ if ($currentPeriod) {
 <head>
     <meta charset="UTF-8">
     <title>Admin Dashboard - PayThon</title>
-    <link rel="stylesheet" href="css/navbar.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="../css/navbar.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include '../navbar.php'; ?>
 
     <section class="home-section">
         <div class="home-content">
@@ -71,7 +78,7 @@ if ($currentPeriod) {
                         </div>
                         <div class="card-info">
                             <h3>Pending Requests</h3>
-                            <p class="number">18</p>
+                            <p class="number"><?php echo number_format($pendingRequests); ?></p>
                           
                         </div>
                     </div>
@@ -118,4 +125,4 @@ if ($currentPeriod) {
         </div>
     </section>
 </body>
-</html> 
+</html>

@@ -28,6 +28,16 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
     <link rel="stylesheet" href="../css/staffbar.css">
     <link rel="stylesheet" href="../css/receive_receipt.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <style>
+        .accepted {
+            border: 2px solid green;
+            color: green;
+        }
+        .rejected {
+            border: 2px solid red;
+            color: red;
+        }
+    </style>
 </head>
 <body>
     <?php include 'staffbar.php'; ?>
@@ -84,7 +94,7 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
                     </thead>
                     <tbody>
                         <?php foreach ($paymentRequests as $request): ?>
-                            <tr>
+                            <tr data-student-id="<?php echo $studentID; ?>" data-fee-name="<?php echo $feeName; ?>">
                                 <td><?= htmlspecialchars($request['StudentID']) ?></td>
                                 <td><?= htmlspecialchars($request['Name']) ?></td>
                                 <td><?= htmlspecialchars($request['FeeName']) ?></td>
@@ -129,15 +139,41 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
 
             const matchesSearch = studentId.includes(searchValue) || name.includes(searchValue);
             const matchesDate = !specificDate || datePaid === specificDate;
-
-            if (matchesSearch && matchesDate) {
-                rows[i].style.display = '';
-            } else {
-                rows[i].style.display = 'none';
-            }
+            rows[i].style.display = matchesSearch && matchesDate ? '' : 'none';
         }
     }
-</script>
+
+    function updatePaymentStatus(studentID, feeName, status) {
+        const xhr = new XMLHttpRequest();
+        xhr.open('POST', 'update_status.php', true);
+        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                if (xhr.responseText === 'Success') {
+                    alert('Payment status updated successfully.');
+                    const row = document.querySelector(`tr[data-student-id="${studentID}"][data-fee-name="${feeName}"]`);
+                    if (status === 'Paid') {
+                        row.classList.remove('rejected');
+                        row.classList.add('accepted');
+                    } else if (status === 'Not Paid') {
+                        row.classList.remove('accepted');
+                        row.classList.add('rejected');
+                    }
+                } else {
+                    alert('Error updating payment status: ' + xhr.responseText);
+                }
+            }
+        };
+        xhr.send(`studentID=${studentID}&feeName=${feeName}&status=${status}`);
+    }
+
+    function acceptPayment(studentID, feeName) {
+        updatePaymentStatus(studentID, feeName, 'Paid');
+    }
+
+    function rejectPayment(studentID, feeName) {
+        updatePaymentStatus(studentID, feeName, 'Not Paid');
+    }
+    </script>
 </body>
 </html>
-

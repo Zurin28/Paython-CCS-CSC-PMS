@@ -510,4 +510,13 @@ button[onclick*="'Rejected'"]:hover {
 .payment-row-rejected {
     border-left: 4px solid #f44336 !important;
 }
- 
+
+.accepted {
+    border: 2px solid green;
+    color: green;
+}
+
+.rejected {
+    border: 2px solid red;
+    color: red;
+}

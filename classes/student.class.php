@@ -7,7 +7,7 @@ class Student {
     protected $db;
 
     function __construct() {
-        $this->db = Database::getInstance();
+        $this->db = new Database();
     }
 
     function createStudent($studentId, $first_name, $last_name, $MI, $WmsuEmail, $password, $course, $year, $section, $school_year, $semester) {
@@ -31,7 +31,7 @@ class Student {
             
             return true;
         } catch (PDOException $e) {
-            error_log("Create student error: " . $e->getMessage());
+            error_log("Error creating student: " . $e->getMessage());
             return false;
         }
     }
@@ -109,6 +109,79 @@ class Student {
             error_log("Error in getStudentFeeDetails: " . $e->getMessage());
             error_log("Stack trace: " . $e->getTraceAsString());
             return [];
+        }
+    }
+
+    function getTotalStudents($school_year, $semester) {
+        try {
+            $sql = "SELECT COUNT(*) FROM student WHERE school_year = :school_year AND semester = :semester";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->execute([':school_year' => $school_year, ':semester' => $semester]);
+            return $qry->fetchColumn();
+        } catch (PDOException $e) {
+            error_log("Error getting total students: " . $e->getMessage());
+            return 0;
+        }
+    }
+
+    function getStudentsByPeriod($school_year, $semester) {
+        try {
+            $sql = "SELECT * FROM student WHERE school_year = :school_year AND semester = :semester";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':school_year', $school_year, PDO::PARAM_STR);
+            $qry->bindParam(':semester', $semester, PDO::PARAM_STR);
+            $qry->execute();
+            return $qry->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Error getting students by period: " . $e->getMessage());
+            return [];
+        }
+    }
+
+    function searchStudentsByPeriod($searchQuery, $school_year, $semester) {
+        try {
+            $sql = "SELECT * FROM student WHERE (first_name LIKE :searchQuery OR last_name LIKE :searchQuery OR WmsuEmail LIKE :searchQuery) AND school_year = :school_year AND semester = :semester";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindValue(':searchQuery', "%$searchQuery%", PDO::PARAM_STR);
+            $qry->bindParam(':school_year', $school_year, PDO::PARAM_STR);
+            $qry->bindParam(':semester', $semester, PDO::PARAM_STR);
+            $qry->execute();
+            return $qry->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Error searching students by period: " . $e->getMessage());
+            return [];
+        }
+    }
+
+    // DELETE
+    function deleteByStudentId($studentId) {
+        try {
+            // Delete the student record
+            $sql = "DELETE FROM student WHERE StudentID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+            
+            return true;
+        } catch (PDOException $e) {
+            error_log("Delete student error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    // DELETE
+    function deleteStudentByStudentId($studentId) {
+        try {
+            // Delete the student record
+            $sql = "DELETE FROM student WHERE StudentID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+            
+            return true;
+        } catch (PDOException $e) {
+            error_log("Delete student error: " . $e->getMessage());
+            return false;
         }
     }
 }

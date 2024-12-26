@@ -631,3 +631,13 @@
     padding: 5px 10px !important;
     border-radius: 5px !important;
 }
+
+.accepted {
+    border: 2px solid green;
+    color: green;
+}
+
+.rejected {
+    border: 2px solid red;
+    color: red;
+}

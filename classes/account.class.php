@@ -152,5 +152,63 @@ class Account {
             return false;
         }
     }
+
+    function deleteByStudentId($studentId) {
+        try {
+            // Delete dependent records in the payment_requests table
+            $sql = "DELETE pr FROM payment_requests pr
+                    JOIN staff s ON pr.staffID = s.staffID
+                    WHERE s.StudentID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+
+            // Delete dependent records in the staff table
+            $sql = "DELETE FROM staff WHERE StudentID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+
+            // Delete the account record
+            $sql = "DELETE FROM account WHERE ID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+            
+            return true;
+        } catch (PDOException $e) {
+            error_log("Delete account error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    function deleteAccountByStudentId($studentId) {
+        try {
+            // Delete dependent records in the payment_requests table
+            $sql = "DELETE pr FROM payment_requests pr
+                    JOIN staff s ON pr.staffID = s.staffID
+                    WHERE s.StudentID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+
+            // Delete dependent records in the staff table
+            $sql = "DELETE FROM staff WHERE StudentID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+
+            // Delete the account record
+            $sql = "DELETE FROM account WHERE ID = :studentId";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+            
+            return true;
+        } catch (PDOException $e) {
+            error_log("Delete account error: " . $e->getMessage());
+            return false;
+        }
+    }
 }
 ?>

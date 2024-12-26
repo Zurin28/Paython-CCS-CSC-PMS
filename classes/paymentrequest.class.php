@@ -49,8 +49,8 @@ class PaymentRequest {
             $checkStmt = $this->db->connect()->prepare($checkSql);
             $checkStmt->bindParam(':studentID', $studentID, PDO::PARAM_INT);
             $checkStmt->bindParam(':feeID', $feeID, PDO::PARAM_INT);
-            $checkStmt->bindParam(':schoolYear', $schoolYear, PDO::PARAM_STR);
-            $checkStmt->bindParam(':semester', $semester, PDO::PARAM_STR);
+            $checkStmt->bindParam(':schoolYear', $schoolYear, $schoolYear);
+            $checkStmt->bindParam(':semester', $semester, $semester);
             $checkStmt->execute();
             $count = $checkStmt->fetchColumn();
             error_log("Payment request exists check: StudentID=$studentID, FeeID=$feeID, Count=$count");
@@ -146,15 +146,16 @@ class PaymentRequest {
         }
     }
 
-    public function getPendingPaymentRequestCount() {
+    public function getPendingPaymentRequestCount($schoolYear, $semester) {
         try {
-            $sql = "SELECT COUNT(*) as count FROM payment_requests WHERE Status = 'Pending'";
+            $sql = "SELECT COUNT(*) FROM payment_requests WHERE Status = 'Pending' AND school_year = :schoolYear AND semester = :semester";
             $stmt = $this->db->connect()->prepare($sql);
+            $stmt->bindParam(':schoolYear', $schoolYear, PDO::PARAM_STR);
+            $stmt->bindParam(':semester', $semester, PDO::PARAM_STR);
             $stmt->execute();
-            $result = $stmt->fetch(PDO::FETCH_ASSOC);
-            return $result['count'];
+            return $stmt->fetchColumn();
         } catch (PDOException $e) {
-            error_log("Error fetching pending payment request count: " . $e->getMessage());
+            error_log("Error in getPendingPaymentRequestCount: " . $e->getMessage());
             return 0;
         }
     }
@@ -175,4 +176,44 @@ class PaymentRequest {
             return 0;
         }
     }
+
+    public function getFeesStatusByStudent($studentId, $schoolYear, $semester) {
+        try {
+            $sql = "
+                SELECT 
+                    o.OrgName, 
+                    f.FeeName, 
+                    f.Amount, 
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr 
+                ON 
+                    f.FeeID = pr.fee_id 
+                    AND pr.StudentID = :studentId 
+                    AND pr.school_year = :schoolYear 
+                    AND pr.semester = :semester
+                LEFT JOIN
+                    organizations o
+                ON
+                    f.OrganizationID = o.OrganizationID
+                WHERE 
+                    f.school_year = :schoolYear 
+                    AND f.semester = :semester
+            ";
+
+            $stmt = $this->db->connect()->prepare($sql);
+            $stmt->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $stmt->bindParam(':schoolYear', $schoolYear, PDO::PARAM_STR);
+            $stmt->bindParam(':semester', $semester, PDO::PARAM_STR);
+            $stmt->execute();
+
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Database error: " . $e->getMessage());
+            return [];
+        }
+    }
 }
+?>

@@ -9,8 +9,8 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fee Management</title>
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="css/staffbar.css">
-    <link rel="stylesheet" href="css/staff_fees.css">
+    <link rel="stylesheet" href="../css/staffbar.css">
+    <link rel="stylesheet" href="../css/staff_fees.css">
 </head>
 <body>
     <?php include 'staffbar.php'; ?>

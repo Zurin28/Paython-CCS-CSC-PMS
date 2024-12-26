@@ -54,6 +54,18 @@ class Organization {
         }
     }
 
+    function getTotalOrganizations($school_year, $semester) {
+        try {
+            $sql = "SELECT COUNT(*) FROM organizations WHERE school_year = :school_year AND semester = :semester";
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->execute([':school_year' => $school_year, ':semester' => $semester]);
+            return $qry->fetchColumn();
+        } catch (PDOException $e) {
+            error_log("Error getting total organizations: " . $e->getMessage());
+            return 0;
+        }
+    }
+
     // UPDATE
     function updateOrganization($organizationID, $school_year, $semester, $orgName) {
         try {

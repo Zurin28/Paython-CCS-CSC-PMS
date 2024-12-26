@@ -1,5 +1,25 @@
 <?php
 session_start();
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/debug.log');
+error_reporting(E_ALL);
+
+require_once '../classes/feecreationrequest.class.php';
+$feeRequest = new FeeCreationRequest();
+$studentId = $_SESSION['StudentID']; // Use studentID instead
+
+// Log the student ID for debugging
+error_log("Student ID: " . $studentId);
+
+$organizations = $feeRequest->getOrganizationsForStaff($studentId);
+
+// Log the organizations fetched
+error_log("Organizations: " . print_r($organizations, true));
+
+$currentPeriod = $feeRequest->getCurrentAcademicPeriod();
+
+// Log the current academic period
+error_log("Current Academic Period: " . print_r($currentPeriod, true));
 ?>
 
 <!DOCTYPE html>
@@ -70,21 +90,29 @@ session_start();
         <div class="modal-content">
             <span class="close" onclick="closeAddFeeModal()">&times;</span>
             <h2>Add New Fee</h2>
-            <form id="addFeeForm">
+            <form id="addFeeForm" method="POST" action="process_fee.php">
+                <div class="form-group">
+                    <label for="organization">Organization</label>
+                    <select id="organization" name="organization" required>
+                        <option value="">Select Organization</option>
+                        <?php foreach ($organizations as $org): ?>
+                            <option value="<?php echo htmlspecialchars($org['OrganizationID']); ?>">
+                                <?php echo htmlspecialchars($org['OrgName']); ?>
+                            </option>
+                        <?php endforeach; ?>
+                    </select>
+                </div>
                 <div class="form-group">
                     <label for="feeId">Fee ID</label>
-                    <input type="text" id="feeId" name="feeId" required 
-                        placeholder="Enter Fee ID (e.g., FEE001)">
+                    <input type="text" id="feeId" name="feeId" required placeholder="Enter Fee ID (e.g., FEE001)">
                 </div>
                 <div class="form-group">
                     <label for="feeName">Fee Name</label>
-                    <input type="text" id="feeName" name="feeName" required 
-                        placeholder="Enter fee name">
+                    <input type="text" id="feeName" name="feeName" required placeholder="Enter fee name">
                 </div>
                 <div class="form-group">
                     <label for="amount">Amount</label>
-                    <input type="number" id="amount" name="amount" required 
-                        placeholder="Enter amount">
+                    <input type="number" id="amount" name="amount" required placeholder="Enter amount">
                 </div>
                 <div class="form-group">
                     <label for="dueDate">Due Date</label>
@@ -92,12 +120,10 @@ session_start();
                 </div>
                 <div class="form-group">
                     <label for="description">Description</label>
-                    <textarea id="description" name="description" rows="4" 
-                        placeholder="Enter fee description"></textarea>
+                    <textarea id="description" name="description" rows="4" placeholder="Enter fee description"></textarea>
                 </div>
                 <div class="form-buttons">
                     <button type="submit" class="submit-btn">Add Fee</button>
-
                 </div>
             </form>
         </div>

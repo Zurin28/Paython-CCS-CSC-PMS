@@ -1,5 +1,5 @@
-[24-Dec-2024 01:01:11 Europe/Berlin] Student ID: 202300269
-[24-Dec-2024 01:01:11 Europe/Berlin] Organizations: Array
+[24-Dec-2024 01:25:55 Europe/Berlin] Student ID: 202300269
+[24-Dec-2024 01:25:55 Europe/Berlin] Organizations: Array
 (
     [0] => Array
         (
@@ -15,16 +15,16 @@
 
 )
 
-[24-Dec-2024 01:01:11 Europe/Berlin] Current Academic Period: Array
+[24-Dec-2024 01:25:55 Europe/Berlin] Current Academic Period: Array
 (
     [school_year] => 2024-2025
     [semester] => 1st
 )
 
-[24-Dec-2024 01:01:14 Europe/Berlin] Processing Fee Request: FeeName=OHLALA, Amount=1231, OrganizationID=VENOM, CreatedBy=Trisha Que, AdminID=
-[24-Dec-2024 01:01:14 Europe/Berlin] Error in createFeeRequest: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'created_by' cannot be null
-[24-Dec-2024 01:01:14 Europe/Berlin] Student ID: 202300269
-[24-Dec-2024 01:01:14 Europe/Berlin] Organizations: Array
+[24-Dec-2024 01:25:59 Europe/Berlin] Processing Fee Request: FeeName=OHLALA, Amount=1231, OrganizationID=VENOM, CreatedBy=Trisha Que, AdminID=
+[24-Dec-2024 01:25:59 Europe/Berlin] Error in createFeeRequest: SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'created_by' cannot be null
+[24-Dec-2024 01:25:59 Europe/Berlin] Student ID: 202300269
+[24-Dec-2024 01:25:59 Europe/Berlin] Organizations: Array
 (
     [0] => Array
         (
@@ -40,7 +40,7 @@
 
 )
 
-[24-Dec-2024 01:01:14 Europe/Berlin] Current Academic Period: Array
+[24-Dec-2024 01:25:59 Europe/Berlin] Current Academic Period: Array
 (
     [school_year] => 2024-2025
     [semester] => 1st

@@ -2,10 +2,10 @@
 require_once 'database.class.php';
 
 class AcademicPeriod {
-    protected $db;
+    private $db;
 
-    function __construct() {
-        $this->db = Database::getInstance();
+    public function __construct() {
+        $this->db = new Database();
     }
 
     // CREATE
@@ -109,14 +109,14 @@ class AcademicPeriod {
         }
     }
 
-    function getCurrentPeriod() {
+    public function getCurrentPeriod() {
         try {
-            $sql = "SELECT school_year, semester FROM academic_periods WHERE is_current = 1 LIMIT 1";
-            $qry = $this->db->connect()->prepare($sql);
-            $qry->execute();
-            return $qry->fetch(PDO::FETCH_ASSOC);
+            $sql = "SELECT * FROM academic_periods WHERE is_current = 1 LIMIT 1";
+            $stmt = $this->db->connect()->prepare($sql);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         } catch (PDOException $e) {
-            error_log("Error in getCurrentPeriod: " . $e->getMessage());
+            error_log("Database error: " . $e->getMessage());
             return false;
         }
     }

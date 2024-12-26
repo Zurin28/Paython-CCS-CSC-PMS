@@ -1054,3 +1054,18 @@
 [25-Dec-2024 19:46:44 Europe/Berlin] PHP Warning:  Undefined variable $feeName in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
 [25-Dec-2024 19:46:44 Europe/Berlin] PHP Warning:  Undefined variable $studentID in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
 [25-Dec-2024 19:46:44 Europe/Berlin] PHP Warning:  Undefined variable $feeName in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[26-Dec-2024 17:50:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[26-Dec-2024 17:50:38 Europe/Berlin] Student ID: 5
+[26-Dec-2024 17:50:38 Europe/Berlin] Organizations: Array
+(
+)
+
+[26-Dec-2024 17:50:38 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+

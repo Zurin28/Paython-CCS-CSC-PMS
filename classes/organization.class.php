@@ -2,10 +2,10 @@
 require_once "database.class.php";
 
 class Organization {
-    protected $db;
+    private $db;
 
-    function __construct() {
-        $this->db = new Database;
+    public function __construct() {
+        $this->db = new Database();
     }
 
     // CREATE
@@ -66,6 +66,20 @@ class Organization {
         }
     }
 
+    public function getOrganizationsByPeriod($schoolYear, $semester) {
+        try {
+            $sql = "SELECT * FROM organizations WHERE school_year = :schoolYear AND semester = :semester";
+            $stmt = $this->db->connect()->prepare($sql);
+            $stmt->bindParam(':schoolYear', $schoolYear, PDO::PARAM_STR);
+            $stmt->bindParam(':semester', $semester, PDO::PARAM_STR);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Database error: " . $e->getMessage());
+            return [];
+        }
+    }
+
     // UPDATE
     function updateOrganization($organizationID, $school_year, $semester, $orgName) {
         try {
@@ -100,6 +114,36 @@ class Organization {
             return true;
         } catch (PDOException $e) {
             error_log("Delete organization error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    // Additional functions
+    public function getUserDetails($studentID) {
+        try {
+            $sql = "SELECT first_name, last_name FROM account WHERE ID = :studentID";
+            $stmt = $this->db->connect()->prepare($sql);
+            $stmt->bindParam(':studentID', $studentID, PDO::PARAM_INT);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
+        } catch (PDOException $e) {
+            error_log("Get user details error: " . $e->getMessage());
+            return false;
+        }
+    }
+
+    public function addOrganization($orgID, $organizationName, $schoolYear, $semester) {
+        try {
+            $sql = "INSERT INTO organizations (OrganizationID, OrgName, school_year, semester) 
+                    VALUES (:orgID, :organizationName, :schoolYear, :semester)";
+            $stmt = $this->db->connect()->prepare($sql);
+            $stmt->bindParam(':orgID', $orgID, PDO::PARAM_STR);
+            $stmt->bindParam(':organizationName', $organizationName, PDO::PARAM_STR);
+            $stmt->bindParam(':schoolYear', $schoolYear, PDO::PARAM_STR);
+            $stmt->bindParam(':semester', $semester, PDO::PARAM_STR);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            error_log("Add organization error: " . $e->getMessage());
             return false;
         }
     }

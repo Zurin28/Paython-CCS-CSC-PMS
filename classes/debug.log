@@ -1,0 +1,648 @@
+[27-Dec-2024 11:16:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:16:28 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:16:28 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:16:28 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:16:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:16:28 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:16:28 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:16:28 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:16:28 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:16:28 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:16:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:16:28 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:16:28 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:16:28 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:16:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:16:28 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:16:28 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:16:28 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:16:28 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:16:28 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:16:45 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:16:45 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:16:45 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:16:45 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:16:45 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:16:45 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:16:45 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:16:45 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:16:45 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:16:45 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:17:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:17:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:17:05 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:17:05 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:17:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:17:05 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:17:05 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:17:05 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:17:05 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:17:05 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:17:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:17:15 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:17:15 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:17:15 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:17:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:17:15 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:17:15 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:17:15 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:17:15 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:17:15 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:17:20 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:17:20 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:17:20 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:17:20 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:17:20 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:17:20 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:17:20 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:17:20 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:17:20 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:17:20 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:17:24 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:17:24 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:17:24 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:17:24 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:17:24 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:17:24 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:17:24 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:17:24 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:17:24 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:17:24 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:17:26 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:17:26 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:17:26 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:17:26 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:17:26 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:17:26 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:17:26 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:17:26 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:17:26 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:17:26 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 11:17:39 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 11:17:39 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 11:17:39 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 11:17:39 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 11:17:39 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in D:\Xampp\htdocs\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 11:17:39 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 11:17:39 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 11:17:39 Europe/Berlin] Number of results: 0
+[27-Dec-2024 11:17:39 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 11:17:39 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 18:25:25 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 18:25:25 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 18:25:25 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 18:25:25 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 18:25:25 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 18:25:25 Europe/Berlin] Number of results: 0
+[27-Dec-2024 18:25:25 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 18:25:25 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 18:25:48 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 18:25:48 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 18:25:48 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 18:25:48 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 18:25:48 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 18:25:48 Europe/Berlin] Number of results: 0
+[27-Dec-2024 18:25:48 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 18:25:48 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 18:25:51 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 18:25:51 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 18:25:51 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 18:25:51 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 18:25:51 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 18:25:51 Europe/Berlin] Number of results: 0
+[27-Dec-2024 18:25:51 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 18:25:51 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 18:25:55 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 18:25:55 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 18:25:55 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 18:25:55 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 18:25:55 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 18:25:55 Europe/Berlin] Number of results: 0
+[27-Dec-2024 18:25:55 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 18:25:55 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 18:33:22 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 18:33:22 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 18:33:22 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 18:33:22 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 18:33:22 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 18:33:22 Europe/Berlin] Number of results: 0
+[27-Dec-2024 18:33:22 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 18:33:22 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 18:34:52 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 18:34:52 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 18:34:52 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 18:34:52 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 18:34:52 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 18:34:52 Europe/Berlin] Number of results: 0
+[27-Dec-2024 18:34:52 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 18:34:52 Europe/Berlin] Student Details Count: 0

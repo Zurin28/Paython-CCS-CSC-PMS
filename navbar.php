@@ -8,6 +8,7 @@ $page_titles = [
     'studentlist.php' => 'Student List',
     'admin_organizations.php' => 'Organizations',
     'admin_semesters.php' => 'Semesters',
+    'admin_login_logs.php'=> 'Login Logs'
     // Add more pages as needed
 ];
 

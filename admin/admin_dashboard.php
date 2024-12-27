@@ -124,5 +124,6 @@ if ($currentPeriod) {
             </div>
         </div>
     </section>
+    <script src="/js/interactive.js"></script>
 </body>
 </html>

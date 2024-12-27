@@ -452,13 +452,13 @@
 }
 
 .org-select:hover {
-    border-color: #2697FF;
+    border-color: #77d887;
 }
 
 .org-select:focus {
     outline: none;
-    border-color: #2697FF;
-    box-shadow: 0 0 5px rgba(38, 151, 255, 0.3);
+    border-color: #77d887;
+
 }
 
 /* Style for the options */

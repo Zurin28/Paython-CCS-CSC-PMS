@@ -88,7 +88,7 @@
 
     <main class="main">
         <div class="title-section">
-            <h1 class="title">Student Payments</h1>
+            <h1 class="title"> Payments</h1>
             <div class="filter-container">
                 <select class="filter-dropdown" id="statusFilter">
                     <option value="all">Status</option>

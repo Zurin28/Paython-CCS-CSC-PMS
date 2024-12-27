@@ -54,6 +54,9 @@ error_log("Student Details Count: " . count($studentDetails));
         <div class="table-container">
             <div class="table-header">
                     <!-- Organization dropdown with form submission -->
+                   
+                <div class="filter-section">
+                    <!-- Filter Group -->
                     <form method="GET" action="" class="org-filter-form">
                         <div class="org-dropdown">
                             <select name="org" class="org-select" onchange="this.form.submit()">
@@ -69,9 +72,8 @@ error_log("Student Details Count: " . count($studentDetails));
                             </select>
                         </div>
                     </form>
-                <div class="filter-section">
-                    <!-- Filter Group -->
                     <div class="filter-group">
+                        
                         <select id="statusFilter" class="filter-select">
                             <option value="all">All Status</option>
                             <option value="Paid">Paid</option>

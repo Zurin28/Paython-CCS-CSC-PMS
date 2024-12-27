@@ -3958,3 +3958,47 @@
 )
 
 [27-Dec-2024 20:38:45 Europe/Berlin] Student Details Count: 0
+[27-Dec-2024 21:03:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_student.php on line 18
+[27-Dec-2024 21:03:00 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[27-Dec-2024 21:03:00 Europe/Berlin] Selected Organization: none
+[27-Dec-2024 21:03:00 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[27-Dec-2024 21:03:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_student.php on line 28
+[27-Dec-2024 21:03:00 Europe/Berlin] Function called with orgId: null and staffStudentId: 
+[27-Dec-2024 21:03:00 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') as Status,
+                    o.OrganizationID,
+                    o.OrgName
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND f.FeeID = pr.fee_id
+                JOIN 
+                    organizations o ON f.OrganizationID = o.OrganizationID
+                JOIN 
+                    staff st ON o.OrganizationID = st.OrganizationID
+                WHERE 
+                    f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    AND st.StudentID = :staffStudentId ORDER BY s.StudentID, f.FeeName
+[27-Dec-2024 21:03:00 Europe/Berlin] Number of results: 0
+[27-Dec-2024 21:03:00 Europe/Berlin] Results: Array
+(
+)
+
+[27-Dec-2024 21:03:00 Europe/Berlin] Student Details Count: 0

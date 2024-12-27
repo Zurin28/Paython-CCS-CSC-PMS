@@ -1,0 +1,1 @@
+SQL executed: INSERT INTO fees (OrganizationID, FeeName, Amount, DueDate, Description, school_year, semester) VALUES (:orgId, :feeName, :amount, :dueDate, :description, :schoolYear, :semester)

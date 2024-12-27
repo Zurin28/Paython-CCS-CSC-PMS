@@ -5,7 +5,7 @@ class Staff {
     private $db;
 
     public function __construct() {
-        $this->db = Database::getInstance();
+        $this->db = Database::getInstance()->connect();
     }
 
     // CREATE
@@ -14,7 +14,7 @@ class Staff {
             $sql = "INSERT INTO staff (ID, first_name, last_name, MI, Email, Password, Role) 
                     VALUES (:staffId, :first_name, :last_name, :MI, :email, :password, :role)";
             
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':staffId', $staffId, PDO::PARAM_INT);
             $qry->bindParam(':first_name', $first_name, PDO::PARAM_STR);
             $qry->bindParam(':last_name', $last_name, PDO::PARAM_STR);
@@ -35,7 +35,7 @@ class Staff {
     public function studentExists($studentID) {
         try {
             $sql = "SELECT COUNT(*) FROM students WHERE ID = :studentID";
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':studentID', $studentID, PDO::PARAM_INT);
             $qry->execute();
             return $qry->fetchColumn() > 0;
@@ -49,7 +49,7 @@ class Staff {
     public function addMember($studentID, $position, $orgID, $schoolYear, $semester) {
         try {
             // Fetch student details
-            $stmt = $this->db->connect()->prepare("SELECT * FROM student WHERE StudentID = ?");
+            $stmt = $this->db->prepare("SELECT * FROM student WHERE StudentID = ?");
             $stmt->execute([$studentID]);
             $student = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -61,7 +61,7 @@ class Staff {
             error_log("Student details: " . print_r($student, true), 3, __DIR__ . '/../admin/debug.log');
 
             // Check if organization exists for the current academic period
-            $stmt = $this->db->connect()->prepare("SELECT * FROM organizations WHERE OrganizationID = ? AND school_year = ? AND semester = ?");
+            $stmt = $this->db->prepare("SELECT * FROM organizations WHERE OrganizationID = ? AND school_year = ? AND semester = ?");
             $stmt->execute([$orgID, $schoolYear, $semester]);
             $organization = $stmt->fetch(PDO::FETCH_ASSOC);
 
@@ -81,7 +81,7 @@ class Staff {
             // Insert member into staff table
             $sql = "INSERT INTO staff (StudentID, Position, OrganizationID, school_year, semester, first_name, last_name, MI, WmsuEmail, Password, Section) 
                     VALUES (:studentID, :position, :orgID, :schoolYear, :semester, :first_name, :last_name, :MI, :WmsuEmail, :Password, :Section)";
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':studentID', $studentID, PDO::PARAM_INT);
             $qry->bindParam(':position', $position, PDO::PARAM_STR);
             $qry->bindParam(':orgID', $orgID, PDO::PARAM_STR);
@@ -105,11 +105,23 @@ class Staff {
         }
     }
 
+    public function deleteMember($studentId, $orgId) {
+        try {
+            $stmt = $this->db->prepare("DELETE FROM staff WHERE StudentID = :studentId AND OrganizationID = :orgId");
+            $stmt->bindParam(':studentId', $studentId);
+            $stmt->bindParam(':orgId', $orgId);
+            return $stmt->execute();
+        } catch (PDOException $e) {
+            error_log("Error deleting member: " . $e->getMessage());
+            return false;
+        }
+    }
+
     // READ
     function staffExists($email) {
         try {
             $sql = "SELECT COUNT(*) FROM staff WHERE Email = :email";
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':email', $email, PDO::PARAM_STR);
             $qry->execute();
             return $qry->fetchColumn() > 0;
@@ -122,7 +134,7 @@ class Staff {
     function fetch($email) {
         try {
             $sql = "SELECT * FROM staff WHERE Email = :email LIMIT 1";
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':email', $email, PDO::PARAM_STR);
             $qry->execute();
             return $qry->fetch(PDO::FETCH_ASSOC);
@@ -135,7 +147,7 @@ class Staff {
     function getById($studentId) {
         try {
             $sql = "SELECT * FROM staff WHERE StudentID = :studentId";
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
             $qry->execute();
             return $qry->fetch(PDO::FETCH_ASSOC);
@@ -155,7 +167,7 @@ class Staff {
                         Email = :email 
                     WHERE ID = :id";
             
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':id', $id, PDO::PARAM_INT);
             $qry->bindParam(':first_name', $first_name, PDO::PARAM_STR);
             $qry->bindParam(':last_name', $last_name, PDO::PARAM_STR);
@@ -174,7 +186,7 @@ class Staff {
     function delete($id) {
         try {
             $sql = "DELETE FROM staff WHERE ID = :id";
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':id', $id, PDO::PARAM_INT);
             $qry->execute();
             
@@ -200,7 +212,7 @@ class Staff {
                     AND o.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
                     ORDER BY o.OrgName";
             
-            $qry = $this->db->connect()->prepare($sql);
+            $qry = $this->db->prepare($sql);
             $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
             $qry->execute();
             

@@ -1069,3 +1069,195 @@
     [semester] => 1st
 )
 
+[27-Dec-2024 17:57:00 Europe/Berlin] Staff organizations found: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:57:00 Europe/Berlin] PHP Warning:  Undefined variable $studentID in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 17:57:00 Europe/Berlin] PHP Warning:  Undefined variable $feeName in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 17:57:05 Europe/Berlin] Student ID: 202300269
+[27-Dec-2024 17:57:05 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:57:05 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 17:57:59 Europe/Berlin] Student ID: 202300269
+[27-Dec-2024 17:57:59 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:57:59 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 17:57:59 Europe/Berlin] Student ID: 202300269
+[27-Dec-2024 17:57:59 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:57:59 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 17:57:59 Europe/Berlin] Student ID: 202300269
+[27-Dec-2024 17:57:59 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:57:59 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 17:58:22 Europe/Berlin] Student ID: 202300269
+[27-Dec-2024 17:58:22 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:58:22 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 17:58:24 Europe/Berlin] Staff organizations found: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:58:24 Europe/Berlin] PHP Warning:  Undefined variable $studentID in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 17:58:24 Europe/Berlin] PHP Warning:  Undefined variable $feeName in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 17:58:27 Europe/Berlin] Staff organizations found: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:58:27 Europe/Berlin] PHP Warning:  Undefined variable $studentID in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 17:58:27 Europe/Berlin] PHP Warning:  Undefined variable $feeName in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 17:58:28 Europe/Berlin] Staff organizations found: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 17:58:28 Europe/Berlin] PHP Warning:  Undefined variable $studentID in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 17:58:28 Europe/Berlin] PHP Warning:  Undefined variable $feeName in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 97
+[27-Dec-2024 18:02:37 Europe/Berlin] Student ID: 202300269
+[27-Dec-2024 18:02:37 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 18:02:37 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 18:20:34 Europe/Berlin] Student ID: 202300269
+[27-Dec-2024 18:20:34 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 18:20:34 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 22:08:45 Europe/Berlin] Student ID: 55555
+[27-Dec-2024 22:08:45 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[27-Dec-2024 22:08:45 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+

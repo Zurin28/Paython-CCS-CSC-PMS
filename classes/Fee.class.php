@@ -15,7 +15,7 @@ public $status;
 protected $db;
 
 function __construct() {
-    $this->db = new Database();
+    $this->db = Database::getInstance();
 }
 
 function viewFees() {
@@ -93,98 +93,43 @@ public function getOrganizationPayments($orgId, $schoolYear, $semester) {
 }
 
 
-public function addPayment($org_id, $fee_id, $fee_name, $amount, $due_date, $description, $school_year, $semester) {
+
+
+// Add this new method to insert a payment into the fees table
+function addPayment($orgID, $feeID, $feeName, $amount, $dueDate, $description, $schoolYear, $semester) {
     try {
-        $conn = $this->db->connect();
-        $conn->beginTransaction();
+        // Check if organization exists for the current academic period
+        $stmt = $this->db->connect()->prepare("SELECT * FROM organizations WHERE OrganizationID = ? AND school_year = ? AND semester = ?");
+        $stmt->execute([$orgID, $schoolYear, $semester]);
+        $organization = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        error_log("Organization ID: " . $org_id);
-
-        // First, verify if the organization exists for the current period
-        $checkSql = "SELECT COUNT(*) FROM organizations 
-                    WHERE OrganizationID = :org_id 
-                    AND school_year = :school_year 
-                    AND semester = :semester";
-        
-        $checkStmt = $conn->prepare($checkSql);
-        $checkStmt->execute([
-            ':org_id' => $org_id,
-            ':school_year' => $school_year,
-            ':semester' => $semester
-        ]);
-        
-        $exists = $checkStmt->fetchColumn();
-        error_log("Organization exists check: " . ($exists ? "Yes" : "No"));
-        
-        if (!$exists) {
-            // Get the organization details from any period
-            $getOrgSql = "SELECT OrgName FROM organizations WHERE OrganizationID = :org_id LIMIT 1";
-            $getOrgStmt = $conn->prepare($getOrgSql);
-            $getOrgStmt->execute([':org_id' => $org_id]);
-            $orgDetails = $getOrgStmt->fetch(PDO::FETCH_ASSOC);
-
-            if (!$orgDetails) {
-                throw new Exception("Organization not found");
-            }
-
-            // Create organization entry for current period
-            $createOrgSql = "INSERT INTO organizations (OrganizationID, OrgName, school_year, semester) 
-                            VALUES (:org_id, :org_name, :school_year, :semester)";
-            
-            $createOrgStmt = $conn->prepare($createOrgSql);
-            $createResult = $createOrgStmt->execute([
-                ':org_id' => $org_id,
-                ':org_name' => $orgDetails['OrgName'],
-                ':school_year' => $school_year,
-                ':semester' => $semester
-            ]);
-
-            if (!$createResult) {
-                throw new Exception("Failed to create organization for current period");
-            }
-
-            error_log("Created organization for current period");
+        if (!$organization) {
+            throw new Exception("Organization ID does not exist for the current academic period");
         }
 
-        // Now proceed with adding the fee
-        $sql = "INSERT INTO fees (FeeID, FeeName, Amount, DueDate, Description, OrgID, school_year, semester) 
-                VALUES (:fee_id, :fee_name, :amount, :due_date, :description, :org_id, :school_year, :semester)";
-        
-        $stmt = $conn->prepare($sql);
-        $params = [
-            ':fee_id' => $fee_id,
-            ':fee_name' => $fee_name,
-            ':amount' => $amount,
-            ':due_date' => $due_date,
-            ':description' => $description,
-            ':org_id' => $org_id,
-            ':school_year' => $school_year,
-            ':semester' => $semester
-        ];
-        
-        error_log("Adding fee with params: " . print_r($params, true));
-        
-        if ($stmt->execute($params)) {
-            $conn->commit();
-            error_log("Successfully added fee");
-            return ['status' => 'success', 'message' => 'Payment added successfully'];
-        } else {
-            throw new Exception("Failed to add payment");
-        }
-        
+        // Insert payment into fees table
+        $sql = "INSERT INTO fees (OrganizationID, FeeID, FeeName, Amount, DueDate, Description, school_year, semester) 
+                VALUES (:orgID, :feeID, :feeName, :amount, :dueDate, :description, :schoolYear, :semester)";
+        $qry = $this->db->connect()->prepare($sql);
+        $qry->bindParam(':orgID', $orgID, PDO::PARAM_STR);
+        $qry->bindParam(':feeID', $feeID, PDO::PARAM_STR);
+        $qry->bindParam(':feeName', $feeName, PDO::PARAM_STR);
+        $qry->bindParam(':amount', $amount, PDO::PARAM_STR);
+        $qry->bindParam(':dueDate', $dueDate, PDO::PARAM_STR);
+        $qry->bindParam(':description', $description, PDO::PARAM_STR);
+        $qry->bindParam(':schoolYear', $schoolYear, PDO::PARAM_STR);
+        $qry->bindParam(':semester', $semester, PDO::PARAM_STR);
+        $qry->execute();
+
+        return ['status' => 'success'];
+    } catch (PDOException $e) {
+        error_log("Add payment error: " . $e->getMessage(), 3, __DIR__ . '/../admin/debug.log');
+        return ['status' => 'error', 'message' => $e->getMessage()];
     } catch (Exception $e) {
-        if ($conn && $conn->inTransaction()) {
-            $conn->rollBack();
-        }
-        error_log("Database error in addPayment: " . $e->getMessage());
-        error_log("Stack trace: " . $e->getTraceAsString());
-        return ['status' => 'error', 'message' => 'Database error: ' . $e->getMessage()];
+        error_log("Add payment error: " . $e->getMessage(), 3, __DIR__ . '/../admin/debug.log');
+        return ['status' => 'error', 'message' => $e->getMessage()];
     }
 }
 
-
-
-
-
 }
-
+?>

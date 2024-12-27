@@ -22,9 +22,10 @@
 .filter-section {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     margin-bottom: 20px;
     padding: 15px;
+    flex-wrap: wrap;
     /* Light green background */
     border-radius: 8px;
 
@@ -113,29 +114,6 @@
 }
 
 .search-btn i {
-    font-size: 16px;
-}
-
-/* Filter Date Button */
-.filter-date-btn {
-    padding: 8px 20px;
-    background: #1a7431;
-    color: white;
-    border: none;
-    border-radius: 30px;
-    cursor: pointer;
-    font-size: 14px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-}
-
-.filter-date-btn:hover {
-    background: #145726;
-}
-
-.filter-date-btn i {
     font-size: 16px;
 }
 
@@ -353,6 +331,7 @@ button[onclick*="'Rejected'"]:hover {
     background-color: white;
     padding: 5px;
     border-radius: 4px;
+    margin-inline-start: -20px; /* move the date-filter to the left by 10px */
 }
 
 .date-filter input {
@@ -519,4 +498,32 @@ button[onclick*="'Rejected'"]:hover {
 .rejected {
     border: 2px solid red;
     color: red;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+    .filter-section {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 15px;
+    }
+
+    .search-filter {
+        margin-left: 0;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .search-bar {
+        width: 100%;
+    }
+
+    .search-btn,
+    .filter-date-btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .filter-select {
+        width: 100%;
+    }
 }

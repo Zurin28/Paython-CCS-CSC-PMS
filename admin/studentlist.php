@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['deleteStudentId'])) {
             <!-- Student Table Section -->
             <div class="table-container">
                 <div class="table-header">
-                    <h2>Student Management</h2>
+                
                     <!-- Search Form -->
                     <div class="search-filter">
                         <form method="POST">

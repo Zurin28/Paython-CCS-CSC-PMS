@@ -34,14 +34,14 @@ require_once '../classes/organization.class.php';
         <!-- Fixed Header Section -->
         <div class="sidebar-header">
             <div class="logo">
-                <img src="img/ccs.png" alt="logo">
+                <img src="../img/logoccs.png" alt="logo">
                 <span class="logo_name">PayThon</span>
             </div>
 
             <div class="profile-section">
                 <div class="profile-dropdown">
                     <div class="profile-info-trigger" style="background: none; padding: 0;">
-                        <img src="img/prof.jpg" alt="profile">
+                        <img src="../img/prof.jpg" alt="profile">
                         <div class="profile-info">
                             <span class="admin_name">NAME</span>
                             <span class="admin_role">Staff</span>
@@ -51,7 +51,7 @@ require_once '../classes/organization.class.php';
                     
                     <div class="profile-dropdown-content">
                         <div class="profile-header">
-                            <img src="img/prof.jpg" alt="profile">
+                        <img src="../img/prof.jpg" alt="profile">
                             <div>
                                 <span class="full-name">Jose Miguel</span>
                                 <span class="email">JoseMiguel@example.com</span>

@@ -6,7 +6,7 @@
     <title>Admin Login Logs</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="../css/admin_logs.css">
+    <link rel="stylesheet" href="../css/admin_semesters.css">
 </head>
 <body>
     <?php include '../navbar.php'; ?>
@@ -72,7 +72,6 @@
     <section class="home-section">
         <div class="home-content">
             <div class="content-wrapper">
-                <h3 class="page-title" style="font-weight: 700; font-size: 24px; color: #333; margin-bottom: 20px; padding-bottom: 10px; border-bottom: 2px solid #1a7431;">Semesters</h3>
                 
                 <div class="search-filter">
                     <form method="POST">

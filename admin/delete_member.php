@@ -1,14 +1,26 @@
 <?php
 require_once '../classes/database.class.php';
+require_once '../classes/Staff.class.php';
 
-if (isset($_POST['student_id']) && isset($_POST['org_id'])) {
-    $studentID = $_POST['student_id'];
-    $orgID = $_POST['org_id'];
-    $db = Database::getInstance()->connect();
+header('Content-Type: application/json');
 
-    $stmt = $db->prepare("DELETE FROM staff WHERE StudentID = ? AND OrganizationID = ?");
-    $stmt->execute([$studentID, $orgID]);
+$data = json_decode(file_get_contents('php://input'), true);
 
-    echo json_encode(['status' => 'success']);
+if (isset($data['student_id']) && isset($data['org_id'])) {
+    $studentId = $data['student_id'];
+    $orgId = $data['org_id'];
+
+    $staff = new Staff();
+    $result = $staff->deleteMember($studentId, $orgId);
+
+    if ($result) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        error_log("Failed to delete member: StudentID = $studentId, OrgID = $orgId\n", 3, __DIR__ . '/debug.log');
+        echo json_encode(['status' => 'error', 'message' => 'Failed to delete member']);
+    }
+} else {
+    error_log("Invalid request: " . json_encode($data) . "\n", 3, __DIR__ . '/debug.log');
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
 }
 ?>

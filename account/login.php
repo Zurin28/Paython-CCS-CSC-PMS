@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="login">
             <img src="../img/logoccs.png" alt="Logo">
             <h2>Welcome to PayThon</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>This is a Payment Management System for WMSU's College of Computing Studies, College Student Council</p>
             <form action="" method="post">
                 <label for="email">Enter your WMSU email:</label>
                 <i class="fas fa-envelope"></i>

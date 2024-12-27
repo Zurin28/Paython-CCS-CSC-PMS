@@ -98,6 +98,7 @@
     width: 100%;
     border-collapse: collapse;
     margin-top: 10px;
+    border: none; /* Remove any border styles */
 }
 
 #org-table th {
@@ -106,13 +107,19 @@
     text-align: left;
     font-weight: 500;
     color: #444;
-    border-bottom: 2px solid #eee;
+    border: none; /* Remove any border styles */
 }
 
 #org-table td {
     padding: 15px;
-    border-bottom: 1px solid #eee;
+    border: none; /* Remove any border styles */
     vertical-align: middle;
+}
+
+#org-table th, #org-table td {
+    border: none;
+    padding: 8px;
+    text-align: left;
 }
 
 #org-table tbody tr:hover {

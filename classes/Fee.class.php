@@ -13,9 +13,10 @@ public $Description;
 public $status;
 
 protected $db;
+private $lastError;
 
 function __construct() {
-    $this->db = Database::getInstance();
+    $this->db = Database::getInstance()->connect();
 }
 
 function viewFees() {
@@ -27,7 +28,7 @@ function viewFees() {
     }
 
     $sql = "SELECT * FROM Fees WHERE school_year = :school_year AND semester = :semester";
-    $qry = $this->db->connect()->prepare($sql);
+    $qry = $this->db->prepare($sql);
     $qry->bindParam(':school_year', $currentPeriod['school_year']);
     $qry->bindParam(':semester', $currentPeriod['semester']);
     if ($qry->execute()) {
@@ -60,7 +61,7 @@ function getFeeStatus($student_id) {
             ORDER BY 
                 o.OrgName, f.FeeName";
 
-        $qry = $this->db->connect()->prepare($sql);
+        $qry = $this->db->prepare($sql);
         $qry->bindParam(':student_id', $student_id, PDO::PARAM_INT);
         $qry->execute();
 
@@ -76,7 +77,7 @@ function getFeeStatus($student_id) {
 public function getOrganizationPayments($orgId, $schoolYear, $semester) {
     // Prepare the SQL query
     $sql = "SELECT * FROM payments WHERE org_id = :org_id AND school_year = :school_year AND semester = :semester";
-    $qry = $this->db->connect()->prepare($sql);
+    $qry = $this->db->prepare($sql);
 
     // Bind parameters
     $qry->bindParam(':org_id', $orgId, PDO::PARAM_INT);
@@ -96,39 +97,40 @@ public function getOrganizationPayments($orgId, $schoolYear, $semester) {
 
 
 // Add this new method to insert a payment into the fees table
-function addPayment($orgID, $feeID, $feeName, $amount, $dueDate, $description, $schoolYear, $semester) {
+public function addPayment($orgId, $feeName, $amount, $dueDate, $description, $schoolYear, $semester) {
     try {
-        // Check if organization exists for the current academic period
-        $stmt = $this->db->connect()->prepare("SELECT * FROM organizations WHERE OrganizationID = ? AND school_year = ? AND semester = ?");
-        $stmt->execute([$orgID, $schoolYear, $semester]);
-        $organization = $stmt->fetch(PDO::FETCH_ASSOC);
-
-        if (!$organization) {
-            throw new Exception("Organization ID does not exist for the current academic period");
-        }
-
-        // Insert payment into fees table
-        $sql = "INSERT INTO fees (OrganizationID, FeeID, FeeName, Amount, DueDate, Description, school_year, semester) 
-                VALUES (:orgID, :feeID, :feeName, :amount, :dueDate, :description, :schoolYear, :semester)";
-        $qry = $this->db->connect()->prepare($sql);
-        $qry->bindParam(':orgID', $orgID, PDO::PARAM_STR);
-        $qry->bindParam(':feeID', $feeID, PDO::PARAM_STR);
-        $qry->bindParam(':feeName', $feeName, PDO::PARAM_STR);
-        $qry->bindParam(':amount', $amount, PDO::PARAM_STR);
-        $qry->bindParam(':dueDate', $dueDate, PDO::PARAM_STR);
-        $qry->bindParam(':description', $description, PDO::PARAM_STR);
-        $qry->bindParam(':schoolYear', $schoolYear, PDO::PARAM_STR);
-        $qry->bindParam(':semester', $semester, PDO::PARAM_STR);
-        $qry->execute();
-
-        return ['status' => 'success'];
+        $stmt = $this->db->prepare("INSERT INTO fees (OrganizationID, FeeName, Amount, DueDate, Description, school_year, semester) VALUES (:orgId, :feeName, :amount, :dueDate, :description, :schoolYear, :semester)");
+        $stmt->bindParam(':orgId', $orgId);
+        $stmt->bindParam(':feeName', $feeName);
+        $stmt->bindParam(':amount', $amount);
+        $stmt->bindParam(':dueDate', $dueDate);
+        $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':schoolYear', $schoolYear);
+        $stmt->bindParam(':semester', $semester);
+        $result = $stmt->execute();
+        error_log("SQL executed: " . $stmt->queryString . "\n", 3, __DIR__ . '/debug.log');
+        return $result;
     } catch (PDOException $e) {
-        error_log("Add payment error: " . $e->getMessage(), 3, __DIR__ . '/../admin/debug.log');
-        return ['status' => 'error', 'message' => $e->getMessage()];
-    } catch (Exception $e) {
-        error_log("Add payment error: " . $e->getMessage(), 3, __DIR__ . '/../admin/debug.log');
-        return ['status' => 'error', 'message' => $e->getMessage()];
+        $this->lastError = $e->getMessage();
+        error_log("Error adding payment: " . $this->lastError . "\n", 3, __DIR__ . '/debug.log');
+        return false;
     }
+}
+
+public function deletePayment($feeId, $orgId) {
+    try {
+        $stmt = $this->db->prepare("DELETE FROM fees WHERE FeeID = :feeId AND OrganizationID = :orgId");
+        $stmt->bindParam(':feeId', $feeId);
+        $stmt->bindParam(':orgId', $orgId);
+        return $stmt->execute();
+    } catch (PDOException $e) {
+        error_log("Error deleting payment: " . $e->getMessage());
+        return false;
+    }
+}
+
+public function getLastError() {
+    return $this->lastError;
 }
 
 }

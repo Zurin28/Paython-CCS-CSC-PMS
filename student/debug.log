@@ -32,3 +32,39 @@ Stack trace:
 #1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
 #2 {main}
   thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52
+[29-Dec-2024 18:24:06 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: PDOStatement::bindParam(): Argument #3 ($type) must be of type int, string given in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php:52
+Stack trace:
+#0 C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php(52): PDOStatement->bindParam(':schoolYear', '2024-2025', '2024-2025')
+#1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52
+[29-Dec-2024 18:42:30 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: PDOStatement::bindParam(): Argument #3 ($type) must be of type int, string given in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php:52
+Stack trace:
+#0 C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php(52): PDOStatement->bindParam(':schoolYear', '2024-2025', '2024-2025')
+#1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52
+[29-Dec-2024 18:43:02 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: PDOStatement::bindParam(): Argument #3 ($type) must be of type int, string given in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php:52
+Stack trace:
+#0 C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php(52): PDOStatement->bindParam(':schoolYear', '2024-2025', '2024-2025')
+#1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52
+[29-Dec-2024 18:43:21 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: PDOStatement::bindParam(): Argument #3 ($type) must be of type int, string given in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php:52
+Stack trace:
+#0 C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php(52): PDOStatement->bindParam(':schoolYear', '2024-2025', '2024-2025')
+#1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52
+[29-Dec-2024 18:45:07 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: PDOStatement::bindParam(): Argument #3 ($type) must be of type int, string given in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php:52
+Stack trace:
+#0 C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php(52): PDOStatement->bindParam(':schoolYear', '2024-2025', '2024-2025')
+#1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52
+[29-Dec-2024 18:47:17 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: PDOStatement::bindParam(): Argument #3 ($type) must be of type int, string given in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php:52
+Stack trace:
+#0 C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php(52): PDOStatement->bindParam(':schoolYear', '2024-2025', '2024-2025')
+#1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52

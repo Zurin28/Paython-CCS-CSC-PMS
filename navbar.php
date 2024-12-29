@@ -21,7 +21,7 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/staffbar.css">
+    <link rel="stylesheet" href="../css/adminbar.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>

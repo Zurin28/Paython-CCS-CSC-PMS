@@ -874,3 +874,235 @@
     [semester] => 2nd
 )
 
+[29-Dec-2024 18:12:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:35 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:39 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:57 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:59 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:13:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:13:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:22:19 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:22:21 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:22:30 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:22:31 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:22:31 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:22:31 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:25:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:25:21 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:25:21 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:25:21 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:25:23 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:25:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:25:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:47:27 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:47:27 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:47:27 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:51:35 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:51:35 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:51:35 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:51:58 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:51:58 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:51:58 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:51:59 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:51:59 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:51:59 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:52:03 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:52:03 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:52:03 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:52:25 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:30 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:36 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:37 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:48 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:55:48 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:55:48 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:55:48 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:55:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:55:54 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:55:55 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:55:55 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:55:55 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:55:57 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:56:54 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:17 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[29-Dec-2024 18:59:48 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[29-Dec-2024 18:59:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[29-Dec-2024 18:59:49 Europe/Berlin] Student ID: 
+[29-Dec-2024 18:59:49 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:59:49 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:59:54 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[29-Dec-2024 18:59:54 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:54 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[29-Dec-2024 20:27:48 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:27:48 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:27:48 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 20:27:59 Europe/Berlin] Staff organizations found: Array
+(
+)
+

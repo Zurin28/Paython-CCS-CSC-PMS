@@ -1106,3 +1106,44 @@
 (
 )
 
+[29-Dec-2024 20:31:20 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 20:31:22 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:31:22 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:31:22 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 20:31:23 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:31:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:31:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 20:36:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 20:36:52 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:36:52 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:36:52 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+

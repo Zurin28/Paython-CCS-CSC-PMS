@@ -30,7 +30,7 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
         <!-- Fixed Header Section -->
         <div class="sidebar-header">
             <div class="logo">
-                <img src="../img/ccs.png" alt="logo">
+                <img src="../img/logoccs.png" alt="logo">
                 <span class="logo_name">PayThon</span>
             </div>
 

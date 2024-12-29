@@ -227,3 +227,197 @@ Payments fetched for OrganizationID VENOM: Array
         )
 
 )
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 11
+            [OrganizationID] => VENOM
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [DueDate] => 2024-12-26
+            [Description] => dawdafadwad
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 11
+            [OrganizationID] => VENOM
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [DueDate] => 2024-12-26
+            [Description] => dawdafadwad
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+User not logged in
+User not logged in
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 11
+            [OrganizationID] => VENOM
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [DueDate] => 2024-12-26
+            [Description] => dawdafadwad
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)

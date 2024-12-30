@@ -1,4 +1,4 @@
-/* Content Layout */
+
 .content-wrapper {
     margin-left: 280px;
     padding: 20px;
@@ -349,16 +349,28 @@ button[onclick*="'Rejected'"]:hover {
     box-shadow: 0 2px 5px rgba(0,0,0,0.05);
 }
 
-.org-dropdown select {
-    padding: 8px 12px;
-    border: 2px solid #1a7431;
-    border-radius: 5px;
-    font-size: 14px;
-    min-width: 200px;
-    background: white;
-    cursor: pointer;
+.org-dropdown {
+    position: relative;
+    display: inline-block;
+    margin: 0 20px;
 }
 
+.org-select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    padding: 8px 35px 8px 12px;
+    font-size: 16px;
+    border: 2px solid #1a7431;
+    border-radius: 5px;
+    background-color: #fff;
+    cursor: pointer;
+    min-width: 200px;
+    color: #333;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23333' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+}
 /* New Button Styles */
 .payment-btn-accept {
     background-color: #4CAF50 !important;

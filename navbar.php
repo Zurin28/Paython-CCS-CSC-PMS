@@ -66,7 +66,7 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
             
             <li>
                 <a href="admin_login_logs.php" data-name="LogIn Logs" class="menu-item">
-                    <i class='bx bx-group'></i>
+                <i class='bx bx-history' ></i>
                     <span class="list_name">LogIn Logs</span>
                 </a>
             </li>

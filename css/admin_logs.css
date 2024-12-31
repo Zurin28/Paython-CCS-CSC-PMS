@@ -150,45 +150,43 @@ body {
 .btn-success:hover {
     background-color: #155c25;
 }
+
 .search-filter {
+    margin-bottom: 30px;
     display: flex;
     justify-content: flex-end;
-    align-items: center;
-    margin-bottom: 15px;
 }
 
 .search-filter form {
     display: flex;
-    align-items: center;
+    gap: 10px;
+    width: 300px;
 }
 
 .search-bar {
-    padding: 8px 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px 0 0 4px;
-    width: 200px;
-    font-size: 12px;
+    flex: 1;
+    padding: 8px 10px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+    font-size: 13px;
     transition: border-color 0.3s ease;
 }
 
-.search-bar:focus {
-    outline: none;
-    border-color: #1a7431;
-}
-
 .search-button {
-    padding: 8px 15px;
+    padding: 8px 12px;
     background-color: #1a7431;
     color: white;
-    border: 1px solid #1a7431;
-    border-radius: 0 4px 4px 0;
+    border: none;
+    border-radius: 4px;
     cursor: pointer;
-    font-size: 12px;
-    transition: background-color 0.3s ease;
+    font-weight: 600;
+    font-size: 13px;
+    transition: all 0.3s ease;
 }
 
 .search-button:hover {
-    background-color: #155c25;
+    background-color: #155c25;;
+    transform: translateY(-2px);
 }
 
 .btn-custom-green {

@@ -19,7 +19,7 @@
                 <i class='bx bx-user'></i>
             </div>
             <div class="dropdown-menu" id="dropdownMenu">
-                <a href="login.php" class="dropdown-item">Logout</a>
+                <a href="../account/login.php" class="dropdown-item">Logout</a>
             </div>
         </div>
     </div>

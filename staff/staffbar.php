@@ -84,13 +84,13 @@ require_once '../classes/organization.class.php';
             </li>
             <li>
                 <a href="paymentmanagement.php" class="<?php echo ($current_page == 'staff/paymentmanagement.php') ? 'active' : ''; ?>">
-                    <i class='bx bx-group'></i>
+                <i class='bx bxl-paypal'></i>
                     <span class="list_name">Payment Management</span>
                 </a>
             </li>
             <li>
                 <a href="staff_fees.php" class="<?php echo ($current_page == 'staff/staff_fees.php') ? 'active' : ''; ?>">
-                    <i class='bx bx-group'></i>
+                <i class='bx bx-money-withdraw'></i>
                     <span class="list_name">Fees</span>
                 </a>
             </li>

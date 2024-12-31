@@ -1,5 +1,4 @@
 body {
-    font-family: 'Arial', sans-serif;
     color: #333;
     background: white;
     padding-top: 80px;
@@ -20,7 +19,7 @@ body {
 .content-wrapper {
     background: white;
    
-    padding: 30px;
+    padding: 3px;
    
 }
 
@@ -74,8 +73,8 @@ body {
 }
 
 .admin-logs-table thead {
-    background-color: #1a7431;
-    color: white;
+   
+    color: #333;
 }
 
 .admin-logs-table th {
@@ -161,7 +160,7 @@ body {
 }
 
 .search-filter {
-    margin-bottom: 30px;
+    margin-bottom: 5px;
     display: flex;
     justify-content: flex-end;
 }

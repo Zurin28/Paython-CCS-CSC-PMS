@@ -19,65 +19,7 @@
     <link rel="stylesheet" href="../header.css">
     <link rel="stylesheet" href="../student_payment.css">
     <style>
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.6);
-            backdrop-filter: blur(5px);
-        }
-        .modal-content {
-            background-color: #e8f5e9;
-            margin: 10% auto;
-            padding: 40px;
-            border: 1px solid #388e3c;
-            width: 80%;
-            max-width: 400px;
-            text-align: center;
-            border-radius: 12px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-        .close {
-            color: #388e3c;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            margin-top: -10px;
-        }
-        .close:hover,
-        .close:focus {
-            color: #1b5e20;
-            text-decoration: none;
-            cursor: pointer;
-        }
-        .action-button {
-            background-color: #4caf50;
-            color: white;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s ease;
-        }
-        .action-button:hover {
-            background-color: #45a049;
-        }
-        .action-button.pending {
-            background-color: #ffeb3b;
-            color: black;
-        }
-        .modal p {
-            font-size: 18px;
-            color: #2e7d32;
-            margin-bottom: 20px;
-        }
+     
     </style>
 </head>
 <body>

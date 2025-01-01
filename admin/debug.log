@@ -26,3 +26,120 @@ User not logged in
 User not logged in
 User not logged in
 User not logged in
+User not logged in
+User not logged in
+Attempting to add payment: OrgID = VENOM, FeeName = JM, Amount = 22222, DueDate = 2025-01-29, Description = jm is jm, SchoolYear = 2024-2025, Semester = 1st
+Successfully added payment: OrgID = VENOM, FeeName = JM
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 15
+            [OrganizationID] => VENOM
+            [FeeName] => JM
+            [Amount] => 22222
+            [DueDate] => 2025-01-29
+            [Description] => jm is jm
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Payments fetched for OrganizationID ORAYT123: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 14
+            [OrganizationID] => ORAYT123
+            [FeeName] => 131ad
+            [Amount] => 22
+            [DueDate] => 2024-12-26
+            [Description] => ssasasas
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 15
+            [OrganizationID] => VENOM
+            [FeeName] => JM
+            [Amount] => 22222
+            [DueDate] => 2025-01-29
+            [Description] => jm is jm
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+[31-Dec-2024 23:38:10 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:38:12 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:38:14 Europe/Berlin] Database connection established.
+Attempting to add payment: OrgID = VENOM, FeeName = yeyeye, Amount = 443, DueDate = 2025-01-29, Description = yeyeye, SchoolYear = 2024-2025, Semester = 1st
+Successfully added payment: OrgID = VENOM, FeeName = yeyeye
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 15
+            [OrganizationID] => VENOM
+            [FeeName] => JM
+            [Amount] => 22222
+            [DueDate] => 2025-01-29
+            [Description] => jm is jm
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [2] => Array
+        (
+            [FeeID] => 16
+            [OrganizationID] => VENOM
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [DueDate] => 2025-01-29
+            [Description] => yeyeye
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)

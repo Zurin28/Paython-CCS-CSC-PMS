@@ -9,13 +9,16 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 // Check if staff is logged in
+if (!isset($_SESSION['StaffID'])) {
+    die("Unauthorized access.");
+}
 
 // Instantiate classes
 $student = new Student();
 $staff = new Staff();
 
 // Get organizations for the logged-in staff member
-$staffOrganizations = $staff->getStaffOrganizations($_SESSION['StudentID']);
+$staffOrganizations = $staff->getStaffOrganizations($_SESSION['StaffID']);
 
 // Get the selected organization from GET parameter
 $selectedOrg = isset($_GET['org']) ? $_GET['org'] : null;
@@ -24,9 +27,10 @@ $selectedOrg = isset($_GET['org']) ? $_GET['org'] : null;
 error_log("Selected Organization: " . ($selectedOrg ? $selectedOrg : "none"));
 error_log("Staff Organizations: " . print_r($staffOrganizations, true));
 
-// Get student details with organization filter and staff's StudentID
-$studentDetails = $student->getStudentFeeDetails($selectedOrg, $_SESSION['StudentID']);
+// Get student details with organization filter and staff's StaffID
+$studentDetails = $student->getStudentFeeDetails($selectedOrg, $_SESSION['StaffID']);
 
+var_dump($studentDetails);
 // Debug the results
 error_log("Student Details Count: " . count($studentDetails));
 
@@ -222,4 +226,3 @@ error_log("Student Details Count: " . count($studentDetails));
     </script>
 </body>
 </html>
-

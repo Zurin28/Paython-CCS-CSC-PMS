@@ -1,23 +1,32 @@
 <?php
-require_once '../classes/paymentrequest.class.php';
 session_start();
+require_once '../classes/database.class.php';
+require_once '../classes/paymentrequest.class.php';
+
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/debug.log');
 error_reporting(E_ALL);
 
-if (isset($_POST['studentID']) && isset($_POST['feeName']) && isset($_POST['status'])) {
-    $paymentRequest = new PaymentRequest();
-    $studentID = $_POST['studentID'];
-    $feeName = $_POST['feeName'];
-    $status = $_POST['status'];
-    $staffID = $_SESSION['staffID'];
+if (!isset($_SESSION['staffID'])) {
+    error_log('Error: Staff not logged in');
+    echo 'Error: Staff not logged in';
+    exit;
+}
 
-    if ($paymentRequest->updatePaymentStatus($studentID, $feeName, $status, $staffID)) {
-        echo "Success";
-    } else {
-        echo "Error updating status in database.";
-    }
+$staffID = $_SESSION['staffID'];
+$studentID = $_POST['studentID'];
+$feeID = $_POST['feeID'];
+$status = $_POST['status'];
+
+error_log("Received data: studentID=$studentID, feeID=$feeID, status=$status, staffID=$staffID");
+
+$paymentRequest = new PaymentRequest();
+$result = $paymentRequest->updatePaymentStatus($studentID, $feeID, $status, $staffID);
+
+if ($result) {
+    echo 'Success';
 } else {
-    echo "Invalid input.";
+    error_log('Error updating payment status: ' . $paymentRequest->getLastError());
+    echo 'Error updating payment status: ' . $paymentRequest->getLastError();
 }
 ?>

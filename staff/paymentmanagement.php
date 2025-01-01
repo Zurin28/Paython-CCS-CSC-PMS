@@ -10,14 +10,33 @@ error_reporting(E_ALL);
 $paymentRequest = new PaymentRequest();
 $staff = new Staff();
 
+// Log session data
+error_log("Session data: " . print_r($_SESSION, true));
+
 // Get staff organizations
 $staffOrganizations = $staff->getStaffOrganizations($_SESSION['StudentID']);
+error_log("Staff organizations: " . print_r($staffOrganizations, true));
 
 // Get the selected organization from GET parameter
 $selectedOrg = isset($_GET['org']) ? $_GET['org'] : null;
+error_log("Selected organization: " . $selectedOrg);
 
-// Get payment requests with organization filter
-$paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selectedOrg, $_SESSION['StudentID']);
+// Get all payment requests for the current period
+$paymentRequests = $paymentRequest->getAllPaymentRequestsForCurrentPeriod();
+
+// Capture and log the var_dump output
+ob_start();
+var_dump($paymentRequests);
+$varDumpOutput = ob_get_clean();
+error_log($varDumpOutput);
+
+// Log the feeID values for debugging
+foreach ($paymentRequests as $request) {
+    error_log("feeID: " . ($request['FeeID'] ?? 'NULL'));
+}
+
+// Log the number of payment requests fetched
+error_log("Number of payment requests fetched: " . count($paymentRequests));
 ?>
 
 <!DOCTYPE html>
@@ -52,9 +71,9 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
                             <select name="org" class="org-select filter-select" onchange="this.form.submit()">
                                 <option value="">All Organizations</option>
                                 <?php foreach ($staffOrganizations as $org): ?>
-                                    <option value="<?php echo htmlspecialchars($org['OrganizationID']); ?>"
+                                    <option value="<?php echo htmlspecialchars($org['OrganizationID'] ?? ''); ?>"
                                             <?php echo ($selectedOrg == $org['OrganizationID']) ? 'selected' : ''; ?>>
-                                        <?php echo htmlspecialchars($org['OrgName']); ?>
+                                        <?php echo htmlspecialchars($org['OrgName'] ?? ''); ?>
                                     </option>
                                 <?php endforeach; ?>
                             </select>
@@ -87,31 +106,39 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
                             <th>Student ID</th>
                             <th>Name</th>
                             <th>Fee Name</th>
+                            <th>Amount</th>
                             <th>Payment Type</th>
                             <th>Date Paid</th>
                             <th>Action</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <?php foreach ($paymentRequests as $request): ?>
-                            <tr data-student-id="<?php echo $studentID; ?>" data-fee-name="<?php echo $feeName; ?>">
-                                <td><?= htmlspecialchars($request['StudentID']) ?></td>
-                                <td><?= htmlspecialchars($request['Name']) ?></td>
-                                <td><?= htmlspecialchars($request['FeeName']) ?></td>
-                                <td><?= htmlspecialchars($request['PaymentType']) ?></td>
-                                <td><?= htmlspecialchars($request['DatePaid']) ?></td>
-                                <td class='action-buttons'>
-                                    <?php if ($request['Status'] === 'Paid'): ?>
-                                        <button class="btn accepted" disabled>Accepted</button>
-                                    <?php elseif ($request['Status'] === 'Not Paid'): ?>
-                                        <button class="btn rejected" disabled>Rejected</button>
-                                    <?php else: ?>
-                                        <button onclick="acceptPayment('<?= htmlspecialchars($request['StudentID']) ?>', '<?= addslashes(htmlspecialchars($request['FeeName'])) ?>')" class="btn accept">Accept</button>
-                                        <button onclick="rejectPayment('<?= htmlspecialchars($request['StudentID']) ?>', '<?= addslashes(htmlspecialchars($request['FeeName'])) ?>')" class="btn reject">Reject</button>
-                                    <?php endif; ?>
-                                </td>
+                    <tbody id="paymentRequestsTable">
+                        <?php if (!empty($paymentRequests)): ?>
+                            <?php foreach ($paymentRequests as $request): ?>
+                                <tr data-student-id="<?php echo htmlspecialchars($request['StudentID'] ?? ''); ?>" data-fee-id="<?php echo htmlspecialchars($request['FeeID'] ?? ''); ?>">
+                                    <td><?= htmlspecialchars($request['StudentID'] ?? '') ?></td>
+                                    <td><?= htmlspecialchars($request['Name'] ?? '') ?></td>
+                                    <td><?= htmlspecialchars($request['FeeName'] ?? '') ?></td>
+                                    <td><?= htmlspecialchars($request['Amount'] ?? '') ?></td>
+                                    <td><?= htmlspecialchars($request['PaymentType'] ?? '') ?></td>
+                                    <td><?= htmlspecialchars($request['DatePaid'] ?? '') ?></td>
+                                    <td class='action-buttons'>
+                                        <?php if ($request['Status'] === 'Paid'): ?>
+                                            <button class="btn accepted" disabled>Accepted</button>
+                                        <?php elseif ($request['Status'] === 'Not Paid'): ?>
+                                            <button class="btn rejected" disabled>Rejected</button>
+                                        <?php else: ?>
+                                            <button onclick="acceptPayment('<?= htmlspecialchars($request['StudentID'] ?? '') ?>', '<?= htmlspecialchars($request['FeeID'] ?? '') ?>')" class="btn accept">Accept</button>
+                                            <button onclick="rejectPayment('<?= htmlspecialchars($request['StudentID'] ?? '') ?>', '<?= htmlspecialchars($request['FeeID'] ?? '') ?>')" class="btn reject">Reject</button>
+                                        <?php endif; ?>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
+                        <?php else: ?>
+                            <tr>
+                                <td colspan="7">No payment requests found.</td>
                             </tr>
-                        <?php endforeach; ?>
+                        <?php endif; ?>
                     </tbody>
                 </table>
             </div>
@@ -120,9 +147,9 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
 
     <!-- Keep your existing JavaScript -->
     <script>
-      document.getElementById('searchInput').addEventListener('input', filterTable);
-      document.getElementById('specificDate').addEventListener('change', filterTable);
-      
+    document.getElementById('searchInput').addEventListener('input', filterTable);
+    document.getElementById('specificDate').addEventListener('change', filterTable);
+    
     function filterTable() {
         const searchValue = document.getElementById('searchInput').value.toLowerCase();
         const specificDate = document.getElementById('specificDate').value;
@@ -135,7 +162,7 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
 
             const studentId = cells[0].textContent.toLowerCase();
             const name = cells[1].textContent.toLowerCase();
-            const datePaid = cells[4].textContent.trim(); // Ensure this matches the Date Paid column index
+            const datePaid = cells[5].textContent.trim(); // Ensure this matches the Date Paid column index
 
             const matchesSearch = studentId.includes(searchValue) || name.includes(searchValue);
             const matchesDate = !specificDate || datePaid === specificDate;
@@ -143,36 +170,47 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
         }
     }
 
-    function updatePaymentStatus(studentID, feeName, status) {
+    function updatePaymentStatus(studentID, feeID, status) {
+        console.log(`Updating payment status: studentID=${studentID}, feeID=${feeID}, status=${status}`);
         const xhr = new XMLHttpRequest();
         xhr.open('POST', 'update_status.php', true);
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function() {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                if (xhr.responseText === 'Success') {
-                    alert('Payment status updated successfully.');
-                    const row = document.querySelector(`tr[data-student-id="${studentID}"][data-fee-name="${feeName}"]`);
-                    if (status === 'Paid') {
-                        row.classList.remove('rejected');
-                        row.classList.add('accepted');
-                    } else if (status === 'Not Paid') {
-                        row.classList.remove('accepted');
-                        row.classList.add('rejected');
+            if (xhr.readyState === 4) {
+                console.log(`Response status: ${xhr.status}`);
+                if (xhr.status === 200) {
+                    console.log(`Response: ${xhr.responseText}`);
+                    if (xhr.responseText === 'Success') {
+                        alert('Payment status updated successfully.');
+                        const row = document.querySelector(`tr[data-student-id="${studentID}"][data-fee-id="${feeID}"]`);
+                        if (status === 'Paid') {
+                            row.classList.remove('rejected');
+                            row.classList.add('accepted');
+                            row.querySelector('.accept').disabled = true;
+                            row.querySelector('.reject').disabled = true;
+                        } else if (status === 'Not Paid') {
+                            row.classList.remove('accepted');
+                            row.classList.add('rejected');
+                            row.querySelector('.accept').disabled = true;
+                            row.querySelector('.reject').disabled = true;
+                        }
+                    } else {
+                        alert('Error updating payment status: ' + xhr.responseText);
                     }
                 } else {
-                    alert('Error updating payment status: ' + xhr.responseText);
+                    console.error(`Error: Failed to update payment status. HTTP status: ${xhr.status}`);
                 }
             }
         };
-        xhr.send(`studentID=${studentID}&feeName=${feeName}&status=${status}`);
+        xhr.send(`studentID=${studentID}&feeID=${feeID}&status=${status}`);
     }
 
-    function acceptPayment(studentID, feeName) {
-        updatePaymentStatus(studentID, feeName, 'Paid');
+    function acceptPayment(studentID, feeID) {
+        updatePaymentStatus(studentID, feeID, 'Paid');
     }
 
-    function rejectPayment(studentID, feeName) {
-        updatePaymentStatus(studentID, feeName, 'Not Paid');
+    function rejectPayment(studentID, feeID) {
+        updatePaymentStatus(studentID, feeID, 'Not Paid');
     }
     </script>
 </body>

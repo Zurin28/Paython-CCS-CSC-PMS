@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2024 at 05:11 AM
+-- Generation Time: Dec 31, 2024 at 03:27 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -35,6 +35,14 @@ CREATE TABLE `academic_periods` (
   `end_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `academic_periods`
+--
+
+INSERT INTO `academic_periods` (`school_year`, `semester`, `is_current`, `start_date`, `end_date`) VALUES
+('2023-2024', '2nd', 0, '2024-12-18', '2024-12-31'),
+('2024-2025', '1st', 1, '2024-12-16', '2025-01-03');
+
 -- --------------------------------------------------------
 
 --
@@ -53,6 +61,15 @@ CREATE TABLE `account` (
   `semester` enum('1st','2nd','Summer') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `account`
+--
+
+INSERT INTO `account` (`ID`, `first_name`, `last_name`, `MI`, `WmsuEmail`, `Password`, `Role`, `school_year`, `semester`) VALUES
+(55555, '5', '5', '5', '5@gmail.com', '$2y$10$tzECUmA.N6pT2Nyju6xvWeZAaWc8j5.hHb2HXKpliQlvWOG6Ukw5K', 'admin', '2024-2025', '1st'),
+(20230026, 'Jose Miguel', 'Esperat', 'A', '202300269@wmsu.edu.ph', '$2y$10$U5VFtEsT22PrVYBWEUUwg.QnZiw9DD6wsRmZnWaKOjU2aEjRlwDeG', 'student', '2024-2025', '1st'),
+(202300269, 'Trisha', 'Que', 'M', '3@gmail.com', '$2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi', 'staff', '2024-2025', '1st');
+
 -- --------------------------------------------------------
 
 --
@@ -61,7 +78,6 @@ CREATE TABLE `account` (
 
 CREATE TABLE `admin` (
   `AdminID` int(11) NOT NULL,
-  `OrganizationID` varchar(11) NOT NULL,
   `Position` varchar(255) NOT NULL,
   `school_year` varchar(9) NOT NULL,
   `semester` enum('1st','2nd','Summer') NOT NULL
@@ -99,6 +115,16 @@ CREATE TABLE `fees` (
   `semester` enum('1st','2nd','Summer') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `fees`
+--
+
+INSERT INTO `fees` (`FeeID`, `OrganizationID`, `FeeName`, `Amount`, `DueDate`, `Description`, `school_year`, `semester`) VALUES
+(8, 'CSC', 'PALARO FEE', 150, '2024-12-25', 'This is for the palaro fee', '2023-2024', '2nd'),
+(9, 'VENOM', 'VenomFee', 75, '2024-12-18', 'This is for venom', '2024-2025', '1st'),
+(13, 'OYEYE', 'ooyeye', 2232, '2025-12-31', 'oyyyyy', '2023-2024', '2nd'),
+(14, 'ORAYT123', '131ad', 22, '2024-12-26', 'ssasasas', '2024-2025', '1st');
+
 -- --------------------------------------------------------
 
 --
@@ -108,6 +134,7 @@ CREATE TABLE `fees` (
 CREATE TABLE `fee_creation_requests` (
   `request_id` int(11) NOT NULL,
   `OrganizationID` varchar(11) NOT NULL,
+  `AdminID` int(11) NOT NULL,
   `fee_id` int(11) NOT NULL,
   `fee_name` varchar(255) NOT NULL,
   `amount` decimal(10,2) NOT NULL,
@@ -133,6 +160,16 @@ CREATE TABLE `organizations` (
   `OrgName` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+--
+-- Dumping data for table `organizations`
+--
+
+INSERT INTO `organizations` (`OrganizationID`, `school_year`, `semester`, `OrgName`) VALUES
+('CSC', '2023-2024', '2nd', 'Student Council'),
+('ORAYT123', '2024-2025', '1st', 'OYE'),
+('OYEYE', '2023-2024', '2nd', 'OYE'),
+('VENOM', '2024-2025', '1st', 'Venom Publication');
+
 -- --------------------------------------------------------
 
 --
@@ -142,13 +179,22 @@ CREATE TABLE `organizations` (
 CREATE TABLE `payment_requests` (
   `paymentID` int(11) NOT NULL,
   `StudentID` int(11) NOT NULL,
-  `staffID` int(11) NOT NULL,
+  `staffID` int(11) DEFAULT NULL,
   `fee_id` int(11) NOT NULL,
-  `DatePaid` date NOT NULL,
-  `Status` enum('Pending','Accepted','Rejected') DEFAULT 'Pending',
+  `DatePaid` date NOT NULL DEFAULT current_timestamp(),
+  `Status` enum('Pending','Paid','Not Paid') DEFAULT 'Pending',
   `school_year` varchar(9) NOT NULL,
   `semester` enum('1st','2nd','Summer') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `payment_requests`
+--
+
+INSERT INTO `payment_requests` (`paymentID`, `StudentID`, `staffID`, `fee_id`, `DatePaid`, `Status`, `school_year`, `semester`) VALUES
+(12, 202300269, 333, 9, '2024-12-20', 'Pending', '2024-2025', '1st'),
+(14, 2, 333, 9, '2024-12-21', 'Not Paid', '2024-2025', '1st'),
+(15, 55555, NULL, 14, '2024-12-28', 'Pending', '2024-2025', '1st');
 
 -- --------------------------------------------------------
 
@@ -162,15 +208,24 @@ CREATE TABLE `staff` (
   `OrganizationID` varchar(11) NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
-  `MI` varchar(11) NOT NULL,
+  `MI` char(1) NOT NULL,
   `WmsuEmail` varchar(255) NOT NULL,
   `Password` varchar(255) NOT NULL,
   `Course` enum('Computer Science','Information Technology','Associate in Computer Technology','Application Development') NOT NULL,
   `Year` enum('1st','2nd','3rd','4th','Over 4 years') NOT NULL,
   `Section` varchar(255) NOT NULL,
+  `Position` varchar(100) NOT NULL,
   `school_year` varchar(9) NOT NULL,
   `semester` enum('1st','2nd','Summer') NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `staff`
+--
+
+INSERT INTO `staff` (`StudentID`, `staffID`, `OrganizationID`, `first_name`, `last_name`, `MI`, `WmsuEmail`, `Password`, `Course`, `Year`, `Section`, `Position`, `school_year`, `semester`) VALUES
+(202300269, 333, 'VENOM', 'Trisha', 'Que', 'M', '3@gmail.com', '3', 'Computer Science', '3rd', 'A', '0', '2024-2025', '1st'),
+(55555, 22126, 'VENOM', '5', '5', '5', '5@gmail.com', '5', 'Computer Science', '1st', 'A', 'President', '2024-2025', '1st');
 
 -- --------------------------------------------------------
 
@@ -193,6 +248,15 @@ CREATE TABLE `student` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`StudentID`, `first_name`, `last_name`, `MI`, `WmsuEmail`, `Password`, `Course`, `Year`, `Section`, `school_year`, `semester`) VALUES
+(55555, '5', '5', '5', '5@gmail.com', '5', 'Computer Science', '1st', 'A', '2024-2025', '1st'),
+(20230026, 'Jose Miguel', 'Esperat', 'A', '202300269@wmsu.edu.ph', 'ZURINdrake03', 'Computer Science', '2nd', 'A', '2024-2025', '1st'),
+(202300269, 'Trisha', 'Que', 'M', '3@gmail.com', '3', 'Computer Science', '3rd', 'A', '2024-2025', '1st');
+
+--
 -- Indexes for dumped tables
 --
 
@@ -206,14 +270,14 @@ ALTER TABLE `academic_periods`
 -- Indexes for table `account`
 --
 ALTER TABLE `account`
-  ADD PRIMARY KEY (`ID`);
+  ADD PRIMARY KEY (`ID`),
+  ADD KEY `account_ibfk_2` (`school_year`,`semester`);
 
 --
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`AdminID`),
-  ADD KEY `OrganizationID` (`OrganizationID`),
   ADD KEY `school_year` (`school_year`,`semester`);
 
 --
@@ -238,7 +302,8 @@ ALTER TABLE `fee_creation_requests`
   ADD PRIMARY KEY (`request_id`),
   ADD KEY `OrganizationID` (`OrganizationID`),
   ADD KEY `fee_id` (`fee_id`),
-  ADD KEY `school_year` (`school_year`,`semester`);
+  ADD KEY `school_year` (`school_year`,`semester`),
+  ADD KEY `feecreation_adminid_fk` (`AdminID`);
 
 --
 -- Indexes for table `organizations`
@@ -278,12 +343,6 @@ ALTER TABLE `student`
 --
 
 --
--- AUTO_INCREMENT for table `account`
---
-ALTER TABLE `account`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `admin_logs`
 --
 ALTER TABLE `admin_logs`
@@ -293,7 +352,7 @@ ALTER TABLE `admin_logs`
 -- AUTO_INCREMENT for table `fees`
 --
 ALTER TABLE `fees`
-  MODIFY `FeeID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `FeeID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `fee_creation_requests`
@@ -305,28 +364,36 @@ ALTER TABLE `fee_creation_requests`
 -- AUTO_INCREMENT for table `payment_requests`
 --
 ALTER TABLE `payment_requests`
-  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `paymentID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `staffID` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `staffID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22127;
 
 --
 -- Constraints for dumped tables
 --
 
 --
--- Constraints for table `admin`
+-- Constraints for table `account`
 --
-
 ALTER TABLE `account`
   ADD CONSTRAINT `account_ibfk_2` FOREIGN KEY (`school_year`,`semester`) REFERENCES `academic_periods` (`school_year`, `semester`);
 
+--
+-- Constraints for table `admin`
+--
 ALTER TABLE `admin`
-  ADD CONSTRAINT `admin_ibfk_1` FOREIGN KEY (`OrganizationID`) REFERENCES `organizations` (`OrganizationID`),
+  ADD CONSTRAINT `adminID_fk` FOREIGN KEY (`AdminID`) REFERENCES `account` (`ID`),
   ADD CONSTRAINT `admin_ibfk_2` FOREIGN KEY (`school_year`,`semester`) REFERENCES `academic_periods` (`school_year`, `semester`);
+
+--
+-- Constraints for table `admin_logs`
+--
+ALTER TABLE `admin_logs`
+  ADD CONSTRAINT `EmployeeID` FOREIGN KEY (`EmployeeID`) REFERENCES `admin` (`AdminID`);
 
 --
 -- Constraints for table `fees`
@@ -341,7 +408,8 @@ ALTER TABLE `fees`
 ALTER TABLE `fee_creation_requests`
   ADD CONSTRAINT `fee_creation_requests_ibfk_1` FOREIGN KEY (`OrganizationID`) REFERENCES `organizations` (`OrganizationID`),
   ADD CONSTRAINT `fee_creation_requests_ibfk_2` FOREIGN KEY (`fee_id`) REFERENCES `fees` (`FeeID`),
-  ADD CONSTRAINT `fee_creation_requests_ibfk_3` FOREIGN KEY (`school_year`,`semester`) REFERENCES `academic_periods` (`school_year`, `semester`);
+  ADD CONSTRAINT `fee_creation_requests_ibfk_3` FOREIGN KEY (`school_year`,`semester`) REFERENCES `academic_periods` (`school_year`, `semester`),
+  ADD CONSTRAINT `feecreation_adminid_fk` FOREIGN KEY (`AdminID`) REFERENCES `admin` (`AdminID`);
 
 --
 -- Constraints for table `organizations`
@@ -369,6 +437,7 @@ ALTER TABLE `staff`
 -- Constraints for table `student`
 --
 ALTER TABLE `student`
+  ADD CONSTRAINT `studenId_fk` FOREIGN KEY (`StudentID`) REFERENCES `account` (`ID`),
   ADD CONSTRAINT `student_ibfk_2` FOREIGN KEY (`school_year`,`semester`) REFERENCES `academic_periods` (`school_year`, `semester`);
 COMMIT;
 

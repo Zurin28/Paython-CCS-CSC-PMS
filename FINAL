@@ -1,0 +1,65 @@
+<!-- Add Fee Modal -->
+<div id="addFeeModal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal('addFeeModal')">&times;</span>
+        <h2>Add Fee Request</h2>
+        <form id="addFeeForm">
+            <label for="organizationID">Organization ID:</label>
+            <input type="text" id="organizationID" name="organizationID" required>
+
+            <label for="adminID">Admin ID:</label>
+            <input type="text" id="adminID" name="adminID" required>
+
+            <label for="feeID">Fee ID:</label>
+            <input type="text" id="feeID" name="feeID" required>
+
+            <label for="feeName">Fee Name:</label>
+            <input type="text" id="feeName" name="feeName" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" step="0.01" id="amount" name="amount" required>
+
+            <label for="dueDate">Due Date:</label>
+            <input type="date" id="dueDate" name="dueDate" required>
+
+            <label for="description">Description:</label>
+            <textarea id="description" name="description" required></textarea>
+
+            <label for="createdBy">Created By:</label>
+            <input type="text" id="createdBy" name="createdBy" required>
+
+            <label for="schoolYear">School Year:</label>
+            <input type="text" id="schoolYear" name="schoolYear" required>
+
+            <label for="semester">Semester:</label>
+            <select id="semester" name="semester" required>
+                <option value="1st">1st</option>
+                <option value="2nd">2nd</option>
+                <option value="Summer">Summer</option>
+            </select>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function closeModal(modalId) {
+    document.getElementById(modalId).style.display = 'none';
+}
+
+document.getElementById('addFeeForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const formData = new FormData(this);
+    fetch('add_fee_request.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+        closeModal('addFeeModal');
+    })
+    .catch(error => console.error('Error:', error));
+});
+</script>

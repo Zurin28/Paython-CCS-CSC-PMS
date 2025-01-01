@@ -1,0 +1,2470 @@
+[01-Jan-2025 02:36:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:36:11 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:36:11 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:36:11 Europe/Berlin] Error in getStudentFeeDetails: SQLSTATE[42S22]: Column not found: 1054 Unknown column 's.OrganizationID' in 'on clause'
+[01-Jan-2025 02:36:11 Europe/Berlin] Student Details Count: 0
+[01-Jan-2025 02:38:45 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:38:45 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:38:45 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:38:45 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:38:45 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:38:45 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:38:45 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:04 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:04 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:04 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:04 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:04 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:04 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:04 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:04 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:04 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:04 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:04 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:04 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:04 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:04 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:05 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:05 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:05 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:05 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:05 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:05 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:05 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:05 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:05 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:05 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:05 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:05 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:06 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:06 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:06 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:06 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:06 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:06 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:06 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:06 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:06 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:06 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:06 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:06 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:06 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:06 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:07 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:07 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:07 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:07 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:07 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:07 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:07 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:07 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:07 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:07 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:07 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:07 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:07 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:07 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:08 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:08 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:08 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:08 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:08 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:08 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:08 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:08 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:08 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:08 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:08 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:08 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:08 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:08 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:09 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:09 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:09 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:09 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:09 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:09 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:09 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:09 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:09 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:09 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:09 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:09 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:09 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:09 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:10 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:10 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:10 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:10 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:10 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:10 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:10 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:10 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:10 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:10 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:10 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:10 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:10 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:10 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:11 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:11 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:11 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:11 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:11 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:11 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:11 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:11 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Selected Organization: none
+[01-Jan-2025 02:39:11 Europe/Berlin] Staff Organizations: Array
+(
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID
+                LEFT JOIN 
+                    fees f ON pr.fee_id = f.FeeID
+                LEFT JOIN
+                    staff st ON f.OrganizationID = st.OrganizationID
+                WHERE 
+                    st.StaffID = :staffID
+            
+[01-Jan-2025 02:39:11 Europe/Berlin] Parameters: selectedOrg=, staffID=333
+[01-Jan-2025 02:39:11 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Pending
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+)
+
+[01-Jan-2025 02:39:11 Europe/Berlin] Student Details Count: 2
+[01-Jan-2025 02:39:15 Europe/Berlin] Database connection established.
+Error fetching total payment amount: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'amount' in 'field list'
+[01-Jan-2025 02:39:15 Europe/Berlin] SQL Query: 
+                SELECT DISTINCT
+                    pr.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    f.FeeName,
+                    f.Amount,
+                    'Cash' AS PaymentType,
+                    pr.DatePaid,
+                    COALESCE(pr.Status, 'Not Paid') AS Status,
+                    f.FeeID
+                FROM 
+                    payment_requests pr
+                LEFT JOIN 
+                    fees f ON f.FeeID = pr.fee_id
+                LEFT JOIN
+                    student s ON s.StudentID = pr.StudentID
+                WHERE 
+                    pr.school_year = :schoolYear 
+                    AND pr.semester = :semester
+            
+[01-Jan-2025 02:39:15 Europe/Berlin] Parameters: schoolYear=2024-2025, semester=1st
+[01-Jan-2025 02:39:15 Europe/Berlin] Result: Array
+(
+    [StudentID] => 202300269
+    [Name] => Trisha M Que
+    [FeeName] => VenomFee
+    [Amount] => 75
+    [PaymentType] => Cash
+    [DatePaid] => 2024-12-20
+    [Status] => Pending
+    [FeeID] => 9
+)
+
+[01-Jan-2025 02:39:15 Europe/Berlin] Result: Array
+(
+    [StudentID] => 55555
+    [Name] => 5 5 5
+    [FeeName] => 131ad
+    [Amount] => 22
+    [PaymentType] => Cash
+    [DatePaid] => 2024-12-28
+    [Status] => Not Paid
+    [FeeID] => 14
+)
+
+[01-Jan-2025 02:39:15 Europe/Berlin] Result: Array
+(
+    [StudentID] => 20230026
+    [Name] => Jose Miguel A Esperat
+    [FeeName] => yeyeye
+    [Amount] => 443
+    [PaymentType] => Cash
+    [DatePaid] => 2025-01-01
+    [Status] => Paid
+    [FeeID] => 16
+)
+

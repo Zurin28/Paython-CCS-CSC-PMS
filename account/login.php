@@ -32,8 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $staffObj = new Staff();
             $staff = $staffObj->getById($_SESSION['StudentID']);
             if ($staff) {
-                $_SESSION['staffID'] = $staff['staffID'];
-                echo $_SESSION['staffID'];
+                $_SESSION['StaffID'] = $staff['staffID'];
+                error_log("StaffID set in session: " . $_SESSION['StaffID']);
             }
 
             // Redirect based on role
@@ -54,7 +54,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo '<p class="errorMsg">*Invalid account role</p>';
             }
             exit;
-            
 
         case "email_not_found":
             echo '<p class="errorMsg">*Email address not found</p>';
@@ -96,7 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="password">Password:</label>
                 <i class="fas fa-lock"></i>
                 <input type="password" id="password" name="password" placeholder="Password" required>
-
 
                 <button type="loginbtn">Log In</button>
             </form>

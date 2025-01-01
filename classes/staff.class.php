@@ -144,7 +144,7 @@ class Staff {
         }
     }
 
-    function getById($studentId) {
+    public function getById($studentId) {
         try {
             $sql = "SELECT * FROM staff WHERE StudentID = :studentId";
             $qry = $this->db->prepare($sql);

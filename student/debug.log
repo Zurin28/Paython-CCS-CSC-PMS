@@ -32,3 +32,39 @@ Stack trace:
 #1 C:\xampp\htdocs\pay-thon\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(2023, '11', '2024-2025', '1st')
 #2 {main}
   thrown in C:\xampp\htdocs\pay-thon\PAY-THON\classes\paymentrequest.class.php on line 52
+[31-Dec-2024 23:39:45 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:39:45 Europe/Berlin] PHP Fatal error:  Uncaught TypeError: PDOStatement::bindParam(): Argument #3 ($type) must be of type int, string given in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php:59
+Stack trace:
+#0 C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php(59): PDOStatement->bindParam(':schoolYear', '2024-2025', '2024-2025')
+#1 C:\xampp\htdocs\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(20230026, '16', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 59
+[31-Dec-2024 23:48:05 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:48:05 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'FeeID' in 'where clause' in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php:62
+Stack trace:
+#0 C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php(62): PDOStatement->execute()
+#1 C:\xampp\htdocs\PAY-THON\student\process_payment.php(31): PaymentRequest->paymentRequestExists(20230026, '16', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 62
+[31-Dec-2024 23:50:47 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:50:47 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'FeeID' in 'field list' in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php:28
+Stack trace:
+#0 C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php(28): PDOStatement->execute()
+#1 C:\xampp\htdocs\PAY-THON\student\process_payment.php(35): PaymentRequest->createPaymentRequest(20230026, '16', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 28
+[31-Dec-2024 23:51:20 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:51:20 Europe/Berlin] Create request: StudentID=20230026, FeeID=16, Success=1
+[31-Dec-2024 23:51:32 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:51:32 Europe/Berlin] Create request: StudentID=20230026, FeeID=9, Success=1
+[31-Dec-2024 23:52:39 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:52:39 Europe/Berlin] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'FeeID' in 'where clause' in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php:45
+Stack trace:
+#0 C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php(45): PDOStatement->execute()
+#1 C:\xampp\htdocs\PAY-THON\student\process_payment.php(32): PaymentRequest->updatePaymentRequest(20230026, '16', '2024-2025', '1st')
+#2 {main}
+  thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 45
+[31-Dec-2024 23:53:02 Europe/Berlin] Database connection established.
+[31-Dec-2024 23:53:02 Europe/Berlin] Update request: StudentID=20230026, FeeID=16, Success=1
+[01-Jan-2025 00:35:50 Europe/Berlin] Database connection established.
+[01-Jan-2025 00:35:50 Europe/Berlin] Create request: StudentID=20230026, FeeID=16, Success=1

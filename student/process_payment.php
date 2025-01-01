@@ -53,3 +53,4 @@ echo '<script>
         window.location.href = "student_payment.php";
     }, 1000);
 </script>';
+?>

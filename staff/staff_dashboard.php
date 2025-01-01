@@ -1,3 +1,36 @@
+<?php
+session_start();
+require_once '../classes/academicperiod.class.php';
+require_once '../classes/student.class.php';
+require_once '../classes/organization.class.php';
+require_once '../classes/paymentrequest.class.php';
+
+// Get current academic period
+$academicPeriod = new AcademicPeriod();
+$currentPeriod = $academicPeriod->getCurrentPeriod();
+
+// Initialize counters
+$totalStudents = 0;
+$totalOrganizations = 0;
+$pendingRequests = 0;
+$totalPayments = 0;
+$totalCollection = 0;
+
+if ($currentPeriod) {
+    $student = new Student();
+    $organization = new Organization();
+    $paymentRequest = new PaymentRequest();
+    
+    $totalStudents = $student->getTotalStudents($currentPeriod['school_year'], $currentPeriod['semester']);
+    $totalOrganizations = $organization->getTotalOrganizations($currentPeriod['school_year'], $currentPeriod['semester']);
+    $pendingRequests = $paymentRequest->getPendingPaymentRequestCount($currentPeriod['school_year'], $currentPeriod['semester']);
+    $totalPayments = $paymentRequest->getPaymentRequestCount($currentPeriod['school_year'], $currentPeriod['semester']);
+    $totalCollection = $paymentRequest->getTotalPaymentAmount($currentPeriod['school_year'], $currentPeriod['semester']);
+}
+
+// Add other required classes/connections
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,9 +66,7 @@
                     <p class="number">
                         <?php
                         // Fetch the total number of payment requests
-                        require_once '../classes/paymentrequest.class.php';
-                        $paymentRequest = new PaymentRequest();
-                        echo $paymentRequest->getPaymentRequestCount();
+                        echo $totalPayments;
                         ?>
                     </p>
                 </div>
@@ -48,7 +79,7 @@
                     <p class="number">
                         <?php
                         // Fetch the number of pending payment requests
-                        echo $paymentRequest->getPendingPaymentRequestCount();
+                        echo $pendingRequests;
                         ?>
                     </p>
                 </div>
@@ -61,7 +92,7 @@
                     <p class="number">
                         ₱<?php
                         // Fetch the total amount of all payment requests
-                        echo number_format($paymentRequest->getTotalPaymentAmount(), 2);
+                        echo number_format($totalCollection, 2);
                         ?>
                     </p>
                 </div>
@@ -90,9 +121,7 @@
                         <tbody>
                             <?php
                             // Fetch recent payment requests
-                            require_once '../classes/paymentrequest.class.php';
-                            $paymentRequest = new PaymentRequest();
-                            $recentPayments = $paymentRequest->getPaymentRequestsForCurrentPeriod();
+                            $recentPayments = $paymentRequest->getAllPaymentRequestsForCurrentPeriod();
 
                             ?>
                             <?php foreach (array_slice($recentPayments, 0, 6) as $payment): ?>
@@ -154,4 +183,4 @@
         </div>
     </div>
 </body>
-</html> 
+</html>

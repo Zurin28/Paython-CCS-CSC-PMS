@@ -676,228 +676,127 @@
 
 [01-Jan-2025 02:25:26 Europe/Berlin] Staff organizations found: Array
 (
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
 )
 
-[01-Jan-2025 02:25:26 Europe/Berlin] Staff organizations: Array
+[27-Dec-2024 20:35:27 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[27-Dec-2024 20:35:30 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:35:30 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:35:30 Europe/Berlin] Organizations: Array
 (
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
 )
 
-[01-Jan-2025 02:25:26 Europe/Berlin] Selected organization: 
-[01-Jan-2025 02:25:26 Europe/Berlin] SQL Query: 
-                SELECT DISTINCT
-                    pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    f.FeeName,
-                    f.Amount,
-                    'Cash' AS PaymentType,
-                    pr.DatePaid,
-                    COALESCE(pr.Status, 'Not Paid') AS Status,
-                    f.FeeID
-                FROM 
-                    payment_requests pr
-                LEFT JOIN 
-                    fees f ON f.FeeID = pr.fee_id
-                LEFT JOIN
-                    student s ON s.StudentID = pr.StudentID
-                WHERE 
-                    pr.school_year = :schoolYear 
-                    AND pr.semester = :semester
-            
-[01-Jan-2025 02:25:26 Europe/Berlin] Parameters: schoolYear=2024-2025, semester=1st
-[01-Jan-2025 02:25:27 Europe/Berlin] Result: Array
+[27-Dec-2024 20:35:30 Europe/Berlin] Current Academic Period: Array
 (
-    [StudentID] => 202300269
-    [Name] => Trisha M Que
-    [FeeName] => VenomFee
-    [Amount] => 75
-    [PaymentType] => Cash
-    [DatePaid] => 2024-12-20
-    [Status] => Pending
-    [FeeID] => 9
+    [school_year] => 2024-2025
+    [semester] => 1st
 )
 
-[01-Jan-2025 02:25:27 Europe/Berlin] Result: Array
+[27-Dec-2024 20:36:55 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:36:55 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:36:55 Europe/Berlin] Organizations: Array
 (
-    [StudentID] => 55555
-    [Name] => 5 5 5
-    [FeeName] => 131ad
-    [Amount] => 22
-    [PaymentType] => Cash
-    [DatePaid] => 2024-12-28
-    [Status] => Not Paid
-    [FeeID] => 14
 )
 
-[01-Jan-2025 02:25:27 Europe/Berlin] Result: Array
+[27-Dec-2024 20:36:55 Europe/Berlin] Current Academic Period: Array
 (
-    [StudentID] => 20230026
-    [Name] => Jose Miguel A Esperat
-    [FeeName] => yeyeye
-    [Amount] => 443
-    [PaymentType] => Cash
-    [DatePaid] => 2025-01-01
-    [Status] => Paid
-    [FeeID] => 16
+    [school_year] => 2024-2025
+    [semester] => 1st
 )
 
-[01-Jan-2025 02:25:27 Europe/Berlin] array(3) {
-  [0]=>
-  array(8) {
-    ["StudentID"]=>
-    int(202300269)
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(7) "Pending"
-    ["FeeID"]=>
-    int(9)
-  }
-  [1]=>
-  array(8) {
-    ["StudentID"]=>
-    int(55555)
-    ["Name"]=>
-    string(5) "5 5 5"
-    ["FeeName"]=>
-    string(5) "131ad"
-    ["Amount"]=>
-    int(22)
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["DatePaid"]=>
-    string(10) "2024-12-28"
-    ["Status"]=>
-    string(8) "Not Paid"
-    ["FeeID"]=>
-    int(14)
-  }
-  [2]=>
-  array(8) {
-    ["StudentID"]=>
-    int(20230026)
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["FeeID"]=>
-    int(16)
-  }
-}
-
-[01-Jan-2025 02:25:27 Europe/Berlin] feeID: 9
-[01-Jan-2025 02:25:27 Europe/Berlin] feeID: 14
-[01-Jan-2025 02:25:27 Europe/Berlin] feeID: 16
-[01-Jan-2025 02:25:27 Europe/Berlin] Number of payment requests fetched: 3
-[01-Jan-2025 02:26:17 Europe/Berlin] Database connection established.
-[01-Jan-2025 02:26:17 Europe/Berlin] Session data: Array
+[27-Dec-2024 20:36:56 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:36:56 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:36:56 Europe/Berlin] Organizations: Array
 (
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [staffID] => 333
-    [Name] => Trisha
-    [StaffID] => 
 )
 
-[01-Jan-2025 02:26:17 Europe/Berlin] Staff organizations found: Array
+[27-Dec-2024 20:36:56 Europe/Berlin] Current Academic Period: Array
 (
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
+    [school_year] => 2024-2025
+    [semester] => 1st
 )
 
-[01-Jan-2025 02:26:17 Europe/Berlin] Staff organizations: Array
+[27-Dec-2024 20:36:56 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:36:56 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:36:56 Europe/Berlin] Organizations: Array
 (
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
 )
 
-[01-Jan-2025 02:26:17 Europe/Berlin] Selected organization: 
-[01-Jan-2025 02:26:17 Europe/Berlin] SQL Query: 
-                SELECT DISTINCT
-                    pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    f.FeeName,
-                    f.Amount,
-                    'Cash' AS PaymentType,
-                    pr.DatePaid,
-                    COALESCE(pr.Status, 'Not Paid') AS Status,
-                    f.FeeID
-                FROM 
-                    payment_requests pr
-                LEFT JOIN 
-                    fees f ON f.FeeID = pr.fee_id
-                LEFT JOIN
-                    student s ON s.StudentID = pr.StudentID
-                WHERE 
-                    pr.school_year = :schoolYear 
-                    AND pr.semester = :semester
-            
-[01-Jan-2025 02:26:17 Europe/Berlin] Parameters: schoolYear=2024-2025, semester=1st
-[01-Jan-2025 02:26:17 Europe/Berlin] Result: Array
+[27-Dec-2024 20:36:56 Europe/Berlin] Current Academic Period: Array
 (
-    [StudentID] => 202300269
-    [Name] => Trisha M Que
-    [FeeName] => VenomFee
-    [Amount] => 75
-    [PaymentType] => Cash
-    [DatePaid] => 2024-12-20
-    [Status] => Pending
-    [FeeID] => 9
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 20:36:56 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:36:56 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:36:56 Europe/Berlin] Organizations: Array
+(
+)
+
+[27-Dec-2024 20:36:56 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 20:36:57 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:36:57 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:36:57 Europe/Berlin] Organizations: Array
+(
+)
+
+[27-Dec-2024 20:36:57 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 20:36:57 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:36:57 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:36:57 Europe/Berlin] Organizations: Array
+(
+)
+
+[27-Dec-2024 20:36:57 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 20:36:57 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:36:57 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:36:57 Europe/Berlin] Organizations: Array
+(
+)
+
+[27-Dec-2024 20:36:57 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 20:37:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:37:16 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:37:16 Europe/Berlin] Organizations: Array
+(
+)
+
+[27-Dec-2024 20:37:16 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[27-Dec-2024 20:37:17 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 20:37:17 Europe/Berlin] Student ID: 
+[27-Dec-2024 20:37:17 Europe/Berlin] Organizations: Array
+(
+)
+
+[27-Dec-2024 20:37:17 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
 )
 
 [01-Jan-2025 02:26:17 Europe/Berlin] Result: Array
@@ -912,79 +811,1831 @@
     [FeeID] => 14
 )
 
-[01-Jan-2025 02:26:17 Europe/Berlin] Result: Array
+[27-Dec-2024 20:38:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[27-Dec-2024 21:02:58 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[27-Dec-2024 21:02:58 Europe/Berlin] Staff organizations found: Array
 (
-    [StudentID] => 20230026
-    [Name] => Jose Miguel A Esperat
-    [FeeName] => yeyeye
-    [Amount] => 443
-    [PaymentType] => Cash
-    [DatePaid] => 2025-01-01
-    [Status] => Paid
-    [FeeID] => 16
 )
 
-[01-Jan-2025 02:26:17 Europe/Berlin] array(3) {
-  [0]=>
-  array(8) {
-    ["StudentID"]=>
-    int(202300269)
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(7) "Pending"
-    ["FeeID"]=>
-    int(9)
-  }
-  [1]=>
-  array(8) {
-    ["StudentID"]=>
-    int(55555)
-    ["Name"]=>
-    string(5) "5 5 5"
-    ["FeeName"]=>
-    string(5) "131ad"
-    ["Amount"]=>
-    int(22)
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["DatePaid"]=>
-    string(10) "2024-12-28"
-    ["Status"]=>
-    string(8) "Not Paid"
-    ["FeeID"]=>
-    int(14)
-  }
-  [2]=>
-  array(8) {
-    ["StudentID"]=>
-    int(20230026)
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["FeeID"]=>
-    int(16)
-  }
-}
+[27-Dec-2024 21:02:58 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[27-Dec-2024 21:22:51 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[27-Dec-2024 21:22:51 Europe/Berlin] Student ID: 
+[27-Dec-2024 21:22:51 Europe/Berlin] Organizations: Array
+(
+)
 
-[01-Jan-2025 02:26:17 Europe/Berlin] feeID: 9
-[01-Jan-2025 02:26:17 Europe/Berlin] feeID: 14
-[01-Jan-2025 02:26:17 Europe/Berlin] feeID: 16
-[01-Jan-2025 02:26:17 Europe/Berlin] Number of payment requests fetched: 3
+[27-Dec-2024 21:22:51 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2023-2024
+    [semester] => 2nd
+)
+
+[29-Dec-2024 18:12:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:35 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:39 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:57 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:12:59 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:13:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:13:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:22:19 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:22:21 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:22:30 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:22:31 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:22:31 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:22:31 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:25:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:25:21 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:25:21 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:25:21 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:25:23 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:25:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:25:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:47:27 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:47:27 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:47:27 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:51:35 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:51:35 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:51:35 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:51:58 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:51:58 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:51:58 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:51:59 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:51:59 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:51:59 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:52:03 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:52:03 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:52:03 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:52:25 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:30 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:36 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:37 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:52:48 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:55:48 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:55:48 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:55:48 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:55:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:55:54 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:55:55 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 18:55:55 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:55:55 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:55:57 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:56:54 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:17 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[29-Dec-2024 18:59:48 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[29-Dec-2024 18:59:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[29-Dec-2024 18:59:49 Europe/Berlin] Student ID: 
+[29-Dec-2024 18:59:49 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 18:59:49 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 18:59:54 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[29-Dec-2024 18:59:54 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 18:59:54 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[29-Dec-2024 20:27:48 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:27:48 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:27:48 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 20:27:59 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 20:31:20 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 20:31:22 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:31:22 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:31:22 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 20:31:23 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:31:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:31:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[29-Dec-2024 20:36:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[29-Dec-2024 20:36:52 Europe/Berlin] Student ID: 2023
+[29-Dec-2024 20:36:52 Europe/Berlin] Organizations: Array
+(
+)
+
+[29-Dec-2024 20:36:52 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 19:40:08 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 19:40:08 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 19:40:08 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 19:40:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 19:40:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 19:40:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 19:40:14 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 19:40:14 Europe/Berlin] Student ID: 
+[30-Dec-2024 19:40:14 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 19:40:14 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 19:56:56 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 19:56:56 Europe/Berlin] Student ID: 
+[30-Dec-2024 19:56:56 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 19:56:56 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 19:56:57 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 19:56:57 Europe/Berlin] Student ID: 
+[30-Dec-2024 19:56:57 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 19:56:57 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 19:57:06 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 19:57:06 Europe/Berlin] Student ID: 
+[30-Dec-2024 19:57:07 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 19:57:07 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 19:57:26 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 19:57:26 Europe/Berlin] Student ID: 
+[30-Dec-2024 19:57:26 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 19:57:26 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 19:57:45 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 19:57:45 Europe/Berlin] Student ID: 
+[30-Dec-2024 19:57:45 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 19:57:45 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 19:57:45 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 19:57:45 Europe/Berlin] Student ID: 
+[30-Dec-2024 19:57:45 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 19:57:45 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:01:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:01:11 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:01:11 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:01:11 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:01:24 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:01:24 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:01:24 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:01:24 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:02:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:02:53 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:02:53 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:02:53 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:02:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:02:53 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:02:53 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:02:53 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:05:25 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:05:25 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:05:25 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:05:25 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:05:25 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:05:25 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:05:25 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:05:25 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:05:26 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:05:26 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:05:26 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:05:26 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:05:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:05:49 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:05:49 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:05:49 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:05:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:05:50 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:05:50 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:05:50 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:06:07 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:06:07 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:06:07 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:06:07 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:06:08 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:06:08 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:06:08 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:06:08 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:06:08 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:06:08 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:06:08 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:06:08 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:06:09 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:06:09 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:06:09 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:06:09 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:06:22 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:06:22 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:06:22 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:06:22 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:06:22 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:06:22 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:06:22 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:06:22 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:06:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:06:23 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:06:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:06:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:07:44 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:07:44 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:07:44 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:07:44 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:08:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:08:00 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:08:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:08:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:08:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:08:00 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:08:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:08:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:08:25 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:08:25 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:08:25 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:08:25 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:08:26 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:08:26 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:08:26 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:08:26 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:08:36 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:08:36 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:08:36 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:08:36 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:08:46 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:08:46 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:08:46 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:08:46 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:09:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:09:00 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:09:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:09:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:09:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:09:00 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:09:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:09:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:09:31 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:09:31 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:09:31 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:09:31 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:09:31 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:09:31 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:09:31 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:09:31 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:12:30 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:12:30 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:12:30 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:12:30 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:13:09 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:13:09 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:13:09 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:13:09 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:13:21 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:13:21 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:13:21 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:13:21 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:13:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:13:49 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:13:49 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:13:54 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:13:54 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:13:54 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:13:54 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:17:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:17:53 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:17:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:19:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:19:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:19:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:19:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:19:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:19:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:19:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:19:12 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:19:12 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:19:12 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:19:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:19:12 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:19:12 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:19:12 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:19:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:19:12 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:19:12 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:19:12 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:19:27 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:19:27 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:19:27 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:01 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:01 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:01 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:04 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:13 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:13 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:13 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:20 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:20 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:20 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:24 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:20:24 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:20:24 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:20:27 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:20:27 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:20:27 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:20:27 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:20:33 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:20:33 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:20:33 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:20:33 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:29:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:29:12 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:29:12 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:29:12 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:30:59 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:30:59 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:30:59 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:30:59 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:31:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:31:00 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:31:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:31:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:31:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:31:00 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:31:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:31:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:31:01 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:31:01 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:31:01 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:31:06 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:31:06 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:31:06 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:32:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:32:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:32:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:15 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:53 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:53 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:53 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:33:53 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:33:53 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:34:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:34:48 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:34:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:34:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:34:48 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:34:48 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:34:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:34:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:34:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:34:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:34:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:34:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:34:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:34:50 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:34:50 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:35:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:35:00 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:35:00 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:35:03 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:35:03 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:35:03 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:35:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:35:23 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:35:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:35:25 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:35:25 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:35:25 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:35:29 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:35:29 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:35:29 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:35:32 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:35:32 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:35:32 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:35:36 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:35:36 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:35:36 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:36:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:36:04 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:36:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:36:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:36:04 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:36:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:36:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:36:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:36:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:36:07 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:36:07 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:36:07 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:36:10 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:36:10 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:36:10 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:36:10 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:36:55 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:36:55 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:36:55 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:36:55 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:36:56 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:36:56 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:36:56 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:36:56 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:36:56 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:36:56 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:36:56 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:36:56 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:36:56 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:36:56 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:36:56 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:36:56 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:36:58 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:36:58 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:36:58 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:36:58 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:36:59 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:36:59 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:36:59 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:36:59 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:02 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:37:02 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:37:02 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:37:02 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:03 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:37:03 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:37:03 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:37:03 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:38 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:37:38 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:37:38 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:37:38 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:38 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:37:38 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:37:38 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:37:38 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:39 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:37:39 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:37:39 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:37:39 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:39 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:37:39 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:37:40 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:37:40 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:40 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:37:40 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:37:40 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:37:40 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:37:41 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:37:41 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:37:41 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:38:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:38:23 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:38:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:38:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:38:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:38:23 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:38:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:38:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:38:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:38:23 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:38:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:38:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:38:24 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:38:24 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:38:24 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:38:24 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:38:24 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:38:24 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:38:24 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:38:24 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:38:25 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:38:25 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:38:25 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:38:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:38:28 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:38:28 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:38:28 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:38:35 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:38:35 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:38:35 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:38:35 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:38:36 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:38:36 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:38:36 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:39:02 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:39:02 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:39:02 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:39:02 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:39:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:39:23 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:39:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:39:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:39:45 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:39:45 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:39:45 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:39:46 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:39:46 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:39:46 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:39:46 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:39:52 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:39:52 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:39:52 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:39:52 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:39:54 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:39:54 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:39:54 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:41:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:41:05 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:41:05 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:41:06 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:41:06 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:41:06 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:41:06 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:41:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:41:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:41:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:41:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:41:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:41:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:41:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:41:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:41:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:10 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:10 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:10 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:15 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:15 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:15 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:15 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:15 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:15 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:16 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:16 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:32 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:32 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:32 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:32 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:33 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:33 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:33 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:33 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:33 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:33 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:33 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:33 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:40 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:40 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:40 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:41 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:41 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:41 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:41 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:43 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:43 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:43 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:43 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:43 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:43 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:43 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:43 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:44 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:42:44 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:42:44 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:42:44 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:42:55 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:55 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:55 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:42:58 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:42:58 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:42:58 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:43:01 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:43:01 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:43:01 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:43:01 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:43:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:43:04 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:43:04 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:43:14 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:43:14 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:43:14 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:43:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:43:15 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:43:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:43:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:43:15 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:43:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:43:17 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:43:17 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:43:17 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:43:29 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 20:43:29 Europe/Berlin] Student ID: 
+[30-Dec-2024 20:43:29 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 20:43:29 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 20:44:01 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:44:01 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:44:01 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:44:17 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:44:17 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:44:17 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:44:18 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:44:18 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:44:18 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:44:18 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:44:18 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:44:18 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:44:18 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:44:18 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:44:18 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:44:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:44:28 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:44:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 20:44:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 20:44:28 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 20:44:28 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 21:14:40 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 21:14:40 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 21:14:40 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 21:15:43 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 21:15:43 Europe/Berlin] Student ID: 
+[30-Dec-2024 21:15:43 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 21:15:43 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 21:15:44 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 21:15:44 Europe/Berlin] Student ID: 
+[30-Dec-2024 21:15:44 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 21:15:44 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[30-Dec-2024 21:18:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 14
+[30-Dec-2024 21:18:47 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[30-Dec-2024 21:18:47 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\paymentmanagement.php on line 20
+[30-Dec-2024 21:18:51 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\pay-thon\PAY-THON\staff\staff_fees.php on line 9
+[30-Dec-2024 21:18:51 Europe/Berlin] Student ID: 
+[30-Dec-2024 21:18:51 Europe/Berlin] Organizations: Array
+(
+)
+
+[30-Dec-2024 21:18:51 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+

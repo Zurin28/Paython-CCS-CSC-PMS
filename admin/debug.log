@@ -28,8 +28,43 @@ User not logged in
 User not logged in
 User not logged in
 User not logged in
-Attempting to add payment: OrgID = VENOM, FeeName = JM, Amount = 22222, DueDate = 2025-01-29, Description = jm is jm, SchoolYear = 2024-2025, Semester = 1st
-Successfully added payment: OrgID = VENOM, FeeName = JM
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
 Payments fetched for OrganizationID VENOM: Array
 (
     [0] => Array
@@ -46,27 +81,147 @@ Payments fetched for OrganizationID VENOM: Array
 
     [1] => Array
         (
-            [FeeID] => 15
+            [FeeID] => 11
             [OrganizationID] => VENOM
-            [FeeName] => JM
-            [Amount] => 22222
-            [DueDate] => 2025-01-29
-            [Description] => jm is jm
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-)
-Payments fetched for OrganizationID ORAYT123: Array
-(
-    [0] => Array
-        (
-            [FeeID] => 14
-            [OrganizationID] => ORAYT123
-            [FeeName] => 131ad
-            [Amount] => 22
+            [FeeName] => EYABLE
+            [Amount] => 232
             [DueDate] => 2024-12-26
-            [Description] => ssasasas
+            [Description] => dawdafadwad
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Attempting to add member to OrganizationID: VENOM
+Current academic period: 2024-2025 1st
+Student details: Array
+(
+    [StudentID] => 2023
+    [first_name] => myname
+    [last_name] => name
+    [MI] => m
+    [WmsuEmail] => hz@wmsu.edu.ph
+    [Password] => myname
+    [Course] => Computer Science
+    [Year] => 2nd
+    [Section] => bscs2a
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+Add member error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Position' in 'field list'Error processing request: An error occurred while adding the member
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Attempting to add member to OrganizationID: VENOM
+Current academic period: 2024-2025 1st
+Student details: Array
+(
+    [StudentID] => 2023
+    [first_name] => myname
+    [last_name] => name
+    [MI] => m
+    [WmsuEmail] => hz@wmsu.edu.ph
+    [Password] => myname
+    [Course] => Computer Science
+    [Year] => 2nd
+    [Section] => bscs2a
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+Add member error: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'Position' in 'field list'Error processing request: An error occurred while adding the member
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 11
+            [OrganizationID] => VENOM
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [DueDate] => 2024-12-26
+            [Description] => dawdafadwad
             [school_year] => 2024-2025
             [semester] => 1st
         )
@@ -88,22 +243,17 @@ Payments fetched for OrganizationID VENOM: Array
 
     [1] => Array
         (
-            [FeeID] => 15
+            [FeeID] => 11
             [OrganizationID] => VENOM
-            [FeeName] => JM
-            [Amount] => 22222
-            [DueDate] => 2025-01-29
-            [Description] => jm is jm
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [DueDate] => 2024-12-26
+            [Description] => dawdafadwad
             [school_year] => 2024-2025
             [semester] => 1st
         )
 
 )
-[31-Dec-2024 23:38:10 Europe/Berlin] Database connection established.
-[31-Dec-2024 23:38:12 Europe/Berlin] Database connection established.
-[31-Dec-2024 23:38:14 Europe/Berlin] Database connection established.
-Attempting to add payment: OrgID = VENOM, FeeName = yeyeye, Amount = 443, DueDate = 2025-01-29, Description = yeyeye, SchoolYear = 2024-2025, Semester = 1st
-Successfully added payment: OrgID = VENOM, FeeName = yeyeye
 Payments fetched for OrganizationID VENOM: Array
 (
     [0] => Array
@@ -120,29 +270,160 @@ Payments fetched for OrganizationID VENOM: Array
 
     [1] => Array
         (
-            [FeeID] => 15
+            [FeeID] => 11
             [OrganizationID] => VENOM
-            [FeeName] => JM
-            [Amount] => 22222
-            [DueDate] => 2025-01-29
-            [Description] => jm is jm
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [2] => Array
-        (
-            [FeeID] => 16
-            [OrganizationID] => VENOM
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [DueDate] => 2025-01-29
-            [Description] => yeyeye
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [DueDate] => 2024-12-26
+            [Description] => dawdafadwad
             [school_year] => 2024-2025
             [semester] => 1st
         )
 
 )
-[01-Jan-2025 02:44:07 Europe/Berlin] Database connection established.
-[01-Jan-2025 02:44:11 Europe/Berlin] Database connection established.
-[01-Jan-2025 02:44:15 Europe/Berlin] Database connection established.
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+User not logged in
+User not logged in
+Members fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 2
+            [staffID] => 222
+            [OrganizationID] => VENOM
+            [first_name] => 2
+            [last_name] => 2
+            [MI] => 2
+            [WmsuEmail] => 2@gmail.com
+            [Password] => 2
+            [Course] => Computer Science
+            [Year] => 1st
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 202300269
+            [staffID] => 333
+            [OrganizationID] => VENOM
+            [first_name] => Trisha
+            [last_name] => Que
+            [MI] => M
+            [WmsuEmail] => 3@gmail.com
+            [Password] => 3
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+Payments fetched for OrganizationID VENOM: Array
+(
+    [0] => Array
+        (
+            [FeeID] => 9
+            [OrganizationID] => VENOM
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [DueDate] => 2024-12-18
+            [Description] => This is for venom
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+    [1] => Array
+        (
+            [FeeID] => 11
+            [OrganizationID] => VENOM
+            [FeeName] => EYABLE
+            [Amount] => 232
+            [DueDate] => 2024-12-26
+            [Description] => dawdafadwad
+            [school_year] => 2024-2025
+            [semester] => 1st
+        )
+
+)
+User not logged in
+User not logged in
+User not logged in
+User not logged in
+User not logged in
+User not logged in

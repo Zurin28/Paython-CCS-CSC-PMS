@@ -3,29 +3,41 @@ session_start();
 require_once '../classes/organization.class.php';
 require_once '../classes/student.class.php';
 require_once '../classes/staff.class.php';
+require_once '../classes/academicperiod.class.php';
 
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// Set the error log file
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/debug.log');
+
 // Check if staff is logged in
+if (!isset($_SESSION['StaffID'])) {
+    die("Unauthorized access.");
+}
 
 // Instantiate classes
 $student = new Student();
 $staff = new Staff();
+$academicPeriod = new AcademicPeriod();
+
+// Get the current academic period
+$currentPeriod = $academicPeriod->getCurrentPeriod();
+$currentSchoolYear = $currentPeriod['school_year'];
+$currentSemester = $currentPeriod['semester'];
 
 // Get organizations for the logged-in staff member
 $staffOrganizations = $staff->getStaffOrganizations($_SESSION['StudentID']);
+$organizationIDs = array_column($staffOrganizations, 'OrganizationID');
 
-// Get the selected organization from GET parameter
-$selectedOrg = isset($_GET['org']) ? $_GET['org'] : null;
-
-// Debug information
-error_log("Selected Organization: " . ($selectedOrg ? $selectedOrg : "none"));
+// Log the organizations and organization IDs
 error_log("Staff Organizations: " . print_r($staffOrganizations, true));
+error_log("Organization IDs: " . implode(',', $organizationIDs));
 
-// Get student details with organization filter and staff's StudentID
-$studentDetails = $student->getStudentFeeDetails($selectedOrg, $_SESSION['StudentID']);
+// Get student details for the current academic period and organizations
+$studentDetails = $student->getStudentFeeDetails($currentSchoolYear, $currentSemester, $organizationIDs);
 
 // Debug the results
 error_log("Student Details Count: " . count($studentDetails));
@@ -43,35 +55,13 @@ error_log("Student Details Count: " . count($studentDetails));
     <link rel="stylesheet" href="../css/pagination.css">
 </head>
 <body>
-    <?php include 'staffbar.php'; 
-    $organizationObj = new Organization();
-
-    // Fetch all organizations
-    $organizations = $organizationObj->getAllOrganizations();
-    ?>
+    <?php include 'staffbar.php'; ?>
 
     <!-- Remove any extra home-section wrappers -->
     <div class="content-wrapper">
         <div class="table-container">
             <div class="table-header">
-                    <!-- Organization dropdown with form submission -->
-                    <form method="GET" action="" class="org-filter-form">
-                        <div class="org-dropdown">
-                            <select name="org" class="org-select" onchange="this.form.submit()">
-                                <option value="">All Organizations</option>
-                                <?php foreach ($staffOrganizations as $org): ?>
-                                    <option value="<?php echo htmlspecialchars($org['OrganizationID']); ?>"
-                                            <?php echo ($selectedOrg == $org['OrganizationID']) ? 'selected' : ''; ?>>
-                                        <?php echo htmlspecialchars($org['OrgName']); ?>
-                                        <!-- Debug output -->
-                                        <?php error_log("Option value: " . $org['OrganizationID'] . ", Selected: " . ($selectedOrg == $org['OrganizationID'] ? "yes" : "no")); ?>
-                                    </option>
-                                <?php endforeach; ?>
-                            </select>
-                        </div>
-                    </form>
                 <div class="filter-section">
-                    <!-- Filter Group -->
                     <div class="filter-group">
                         <select id="statusFilter" class="filter-select">
                             <option value="all">All Status</option>
@@ -163,37 +153,6 @@ error_log("Student Details Count: " . count($studentDetails));
         sidebarBtn.onclick = function() {
             sidebar.classList.toggle("active");
         }
-           // Status update functionality
-           function updateStatus(checkbox, studentId) {
-            if(checkbox.checked) {
-                const row = checkbox.closest('tr');
-                row.querySelector('td:nth-child(8)').textContent = 'Paid';
-                checkbox.parentElement.innerHTML = '<span class="paid-status">Paid</span>';
-                alert(`Payment status updated for Student ID: ${studentId}`);
-            }
-        }
-
-        document.getElementById('organizationSelect').addEventListener('change', function() {
-            const selectedOrg = this.value;
-            const tableRows = document.querySelectorAll('.custom-table tbody tr');
-            
-            // If no organization is selected, show all rows
-            if (!selectedOrg) {
-                tableRows.forEach(row => row.style.display = '');
-                return;
-            }
-
-            // Get the fees for the selected organization
-            tableRows.forEach(row => {
-                const feeName = row.querySelector('td:nth-child(6)').textContent; // FeeName column
-                // Check if this fee belongs to the selected organization
-                if (feeName.includes(selectedOrg)) {
-                    row.style.display = '';
-                } else {
-                    row.style.display = 'none';
-                }
-            });
-        });
 
         function filterTable() {
             const statusFilter = document.getElementById('statusFilter').value;
@@ -238,4 +197,3 @@ error_log("Student Details Count: " . count($studentDetails));
     </script>
 </body>
 </html>
-

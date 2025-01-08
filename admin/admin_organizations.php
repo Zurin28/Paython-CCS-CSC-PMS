@@ -132,7 +132,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <title>Organizations - PayThon</title>
-    <link rel="stylesheet" href="../css/navbar.css">
     <link rel="stylesheet" href="../css/organizations.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
@@ -259,108 +258,100 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
 
-            <!-- Add Payment Modal -->
-            <div id="add-payment-modal" class="modal">
-                <div class="modal-content">
-                    <span class="close">&times;</span>
-                    <h3>Add Payment for <span id="payment-org-name"></span></h3>
-                    <form id="add-payment-form" method="post">
-                        <input type="hidden" name="add_payment" value="1">
-                        <input type="hidden" name="org_id" id="payment-org-id">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="fee_id">Fee ID</label>
-                                <input type="text" id="fee_id" name="fee_id" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="fee_name">Fee Name</label>
-                                <input type="text" id="fee_name" name="fee_name" required>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="amount">Amount (₱)</label>
-                                <input type="number" id="amount" name="amount" step="0.01" min="0" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="due_date">Due Date</label>
-                                <input type="date" id="due_date" name="due_date" required>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <label for="description">Description</label>
-                            <textarea id="description" name="description" rows="3"></textarea>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="submit" class="btn">
-                                <i class="fas fa-plus"></i> Add Payment
-                            </button>
-                        </div>
-                    </form>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- View Members Modal -->
-   <!-- View Members Modal -->
-   <div id="view-members-modal" class="modal">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h3>Members of <span id="org-name-header"></span></h3>
-                    <span class="close">&times;</span>
-                </div>
-                <div class="modal-body">
-                    <div class="table-responsive">
-                        <table class="members-table" style="width: 100%; border-collapse: collapse;">
-                            <thead>
-                                <tr>
-                                    <th style="border: 1px solid black; padding: 8px; text-align: left;">#</th>
-                                    <th style="border: 1px solid black; padding: 8px; text-align: left;">Student ID</th>
-                                    <th style="border: 1px solid black; padding: 8px; text-align: left;">Name</th>
-                                    <th style="border: 1px solid black; padding: 8px; text-align: left;">Email</th>
-                                    <th style="border: 1px solid black; padding: 8px; text-align: left;">Position</th>
-                                    <th style="border: 1px solid black; padding: 8px; text-align: left;">Actions</th>
-                                </tr>
-                            </thead>
-                            <tbody id="members-table-body">
-                                <!-- Members will be loaded here dynamically -->
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- View Payments Modal -->
-    <div id="view-payments-modal" class="modal">
+        <!-- Add Payment Modal -->
+<div id="add-payment-modal" class="modal">
+    <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h3>Payments for <span id="org-name-payments"></span></h3>
+                <h3>Add Payment for <span id="org-name-payment-display"></span></h3>
                 <span class="close">&times;</span>
             </div>
             <div class="modal-body">
-                <table class="payments-table" style="width: 100%; border-collapse: collapse;">
-                    <thead>
-                        <tr>
-                            <th style="border: 1px solid black; padding: 8px; text-align: left;">#</th>
-                            <th style="border: 1px solid black; padding: 8px; text-align: left;">Fee Name</th>
-                            <th style="border: 1px solid black; padding: 8px; text-align: left;">Amount</th>
-                            <th style="border: 1px solid black; padding: 8px; text-align: left;">Due Date</th>
-                            <th style="border: 1px solid black; padding: 8px; text-align: left;">Description</th>
-                            <th style="border: 1px solid black; padding: 8px; text-align: left;">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody id="payments-table-body">
-                        <!-- Payments will be loaded here -->
-                    </tbody>
-                </table>
+                <form id="add-payment-form">
+                    <input type="hidden" id="payment-org-id" name="org_id">
+                    <div class="form-group">
+                        <label for="fee-name">Fee Name</label>
+                        <input type="text" id="fee-name" name="fee_name" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="number" id="amount" name="amount" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="due-date">Due Date</label>
+                        <input type="date" id="due-date" name="due_date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea id="description" name="description" class="form-control" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Add Payment</button>
+                </form>
             </div>
         </div>
     </div>
+</div>
+        </div>
+    </section>
+
+   <!-- View Members Modal -->
+<!-- View Members Modal -->
+<div id="view-members-modal" class="modal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Members of <span id="org-name-header"></span></h3>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="table-responsive">
+                    <table class="members-table" style="width: 100%; border-collapse: collapse;">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Student ID</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                <th>Position</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody id="members-table-body">
+                            <!-- Members will be loaded here dynamically -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- View Payments Modal -->
+<div id="view-payments-modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-header">
+            <h3>Payments for <span id="org-name-payments"></span></h3>
+            <span class="close">&times;</span>
+        </div>
+        <div class="modal-body">
+            <table class="payments-table" style="width: 100%; border-collapse: collapse;">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Fee Name</th>
+                        <th>Amount</th>
+                        <th>Due Date</th>
+                        <th>Description</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="payments-table-body">
+                    <!-- Payments will be loaded here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
 
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="../js/organizations.js"></script>

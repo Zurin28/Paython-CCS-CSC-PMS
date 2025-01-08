@@ -1,23 +1,42 @@
 <?php
-require_once '../classes/paymentrequest.class.php';
 session_start();
+require_once '../classes/database.class.php';
+require_once '../classes/paymentrequest.class.php';
+
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/debug.log');
 error_reporting(E_ALL);
 
-if (isset($_POST['studentID']) && isset($_POST['feeName']) && isset($_POST['status'])) {
-    $paymentRequest = new PaymentRequest();
-    $studentID = $_POST['studentID'];
-    $feeName = $_POST['feeName'];
-    $status = $_POST['status'];
-    $staffID = $_SESSION['staffID'];
+// Log session data
+error_log("Session data: " . print_r($_SESSION, true));
 
-    if ($paymentRequest->updatePaymentStatus($studentID, $feeName, $status, $staffID)) {
-        echo "Success";
-    } else {
-        echo "Error updating status in database.";
-    }
+// Check if staff is logged in
+if (!isset($_SESSION['StaffID'])) {
+    error_log('Error: Staff not logged in');
+    echo 'Error: Staff not logged in';
+    exit;
+}
+
+$staffID = $_SESSION['StaffID'];
+$studentID = isset($_POST['studentID']) ? $_POST['studentID'] : null;
+$feeID = isset($_POST['feeID']) ? $_POST['feeID'] : null;
+$status = isset($_POST['status']) ? $_POST['status'] : null;
+
+error_log("Received data: studentID=$studentID, feeID=$feeID, status=$status, staffID=$staffID");
+
+if ($studentID === null || $feeID === null || $status === null) {
+    error_log('Error: Missing required POST parameters');
+    echo 'Error: Missing required POST parameters';
+    exit;
+}
+
+$paymentRequest = new PaymentRequest();
+$result = $paymentRequest->updatePaymentStatus($studentID, $feeID, $status, $staffID);
+
+if ($result) {
+    echo 'Success';
 } else {
-    echo "Invalid input.";
+    error_log('Error updating payment status: ' . $paymentRequest->getLastError());
+    echo 'Error updating payment status: ' . $paymentRequest->getLastError();
 }
 ?>

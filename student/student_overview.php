@@ -25,9 +25,6 @@ $feeInfo = $feeObj->viewFees();
 
 ?>
 
-
-
-
     <main class="main-content">
         <h1 class="welcome-text">Welcome, <span class="welcome-name"><?= $_SESSION['Name']?></span></h1>
         <div class="main-logo">PayThon</div>
@@ -38,7 +35,9 @@ $feeInfo = $feeObj->viewFees();
             ?>
         <div class="payment-container">
             <div class="payment-item">
-                <div class="payment-icon"></div>
+                <div class="payment-icon">
+                    <i class='bx bxs-wallet-alt'></i></div>
+                
                 <div class="payment-details">
                     <!-- <h3>
                     // $fee['FeeName']

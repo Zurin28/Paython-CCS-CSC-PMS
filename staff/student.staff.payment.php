@@ -217,4 +217,3 @@ $fees = $fee->getFeeStatus($loggedInStudentID);
 <script src="studentside.js"></script>
 </body>
 </html>
-

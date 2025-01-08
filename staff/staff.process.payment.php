@@ -47,9 +47,10 @@ if ($currentPeriod) {
     echo "No current academic period found.";
 }
 
-// Redirect to student_payment.php after 1 second
+// Redirect to student.staff.payment.php after 1 second
 echo '<script>
     setTimeout(function() {
         window.location.href = "student.staff.payment.php";
     }, 1000);
 </script>';
+?>

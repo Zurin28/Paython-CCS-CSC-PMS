@@ -1,14 +1,26 @@
 <?php
 require_once '../classes/database.class.php';
+require_once '../classes/Fee.class.php';
 
-if (isset($_POST['fee_id']) && isset($_POST['org_id'])) {
-    $feeID = $_POST['fee_id'];
-    $orgID = $_POST['org_id'];
-    $db = Database::getInstance()->connect();
+header('Content-Type: application/json');
 
-    $stmt = $db->prepare("DELETE FROM fees WHERE FeeID = ? AND OrganizationID = ?");
-    $stmt->execute([$feeID, $orgID]);
+$data = json_decode(file_get_contents('php://input'), true);
 
-    echo json_encode(['status' => 'success']);
+if (isset($data['fee_id']) && isset($data['org_id'])) {
+    $feeId = $data['fee_id'];
+    $orgId = $data['org_id'];
+
+    $fee = new Fee();
+    $result = $fee->deletePayment($feeId, $orgId);
+
+    if ($result) {
+        echo json_encode(['status' => 'success']);
+    } else {
+        error_log("Failed to delete payment: FeeID = $feeId, OrgID = $orgId\n", 3, __DIR__ . '/debug.log');
+        echo json_encode(['status' => 'error', 'message' => 'Failed to delete payment']);
+    }
+} else {
+    error_log("Invalid request: " . json_encode($data) . "\n", 3, __DIR__ . '/debug.log');
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request']);
 }
 ?>

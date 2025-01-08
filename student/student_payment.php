@@ -1,13 +1,24 @@
-<?php require_once '../classes/Fee.class.php';
-      require_once '../classes/organization.class.php';
-      require_once '../classes/academicperiod.class.php';
-      require_once '../classes/student.class.php';
+<?php 
+require_once '../classes/Fee.class.php';
+require_once '../classes/organization.class.php';
+require_once '../classes/academicperiod.class.php';
+require_once '../classes/student.class.php';
 
-      ini_set('log_errors', 1);
-    ini_set('error_log', __DIR__ . '/debug.log');
-    error_reporting(E_ALL);
+ini_set('log_errors', 1);
+ini_set('error_log', __DIR__ . '/debug.log');
+error_reporting(E_ALL);
+
+session_start();
+
+if (!isset($_SESSION['StudentID'])) {
+    die("Unauthorized access. Please log in.");
+}
+
+$loggedInStudentID = $_SESSION['StudentID'];
+
+$fee = new Fee();
+$fees = $fee->getFeeStatus($loggedInStudentID);
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -82,81 +93,62 @@
 </head>
 <body>
 
+<?php include '../header.php'; ?>
 
-    <?php include '../header.php'; ?>
-
-
-    <main class="main">
-        <div class="title-section">
-            <h1 class="title">Student Payments</h1>
-            <div class="filter-container">
-                <select class="filter-dropdown" id="statusFilter">
-                    <option value="all">Status</option>
-                    <option value="Paid">Paid</option>
-                    <option value="Not Paid">Not paid</option>
-                    <option value="Pending">Pending</option>
-                </select>
-            </div>
+<main class="main">
+    <div class="title-section">
+        <h1 class="title">Payments</h1>
+        <div class="filter-container">
+            <select class="filter-dropdown" id="statusFilter">
+                <option value="all">Status</option>
+                <option value="Paid">Paid</option>
+                <option value="Not Paid">Not Paid</option>
+                <option value="Pending">Pending</option>
+            </select>
         </div>
-        
-        <?php
-// Start session to access session variable
-session_start();
-
-if (!isset($_SESSION['StudentID'])) {
-    die("Unauthorized access. Please log in.");
-}
-
-// Use the session key with a capital "S"
-$loggedInStudentID = $_SESSION['StudentID'];
-
-
-$fee = new Fee();
-$fees = $fee->getFeeStatus($loggedInStudentID);
-
-
-?>
-
-<table class="payment-table">
-    <thead>
-        <tr>
-            <th>Organization</th>
-            <th>Fee</th>
-            <th>Status</th>
-            <th>Amount</th>
-            <th>Due</th>
-            <th>Action</th>
-        </tr>
-    </thead>
-    <tbody>
-        <?php 
-        $displayedFees = [];
-        foreach ($fees as $fee): 
-            if (!in_array($fee['FeeID'], $displayedFees)):
-                $displayedFees[] = $fee['FeeID'];
-        ?>
-            <tr class="payment-row" data-fee-id="<?= htmlspecialchars($fee['FeeID']) ?>" data-status="<?= htmlspecialchars($fee['paymentStatus']) ?>">
-                <td><?= htmlspecialchars($fee['organization']) ?></td>
-                <td><?= htmlspecialchars($fee['FeeName']) ?></td>
-                <td><?= htmlspecialchars($fee['paymentStatus']) ?></td>
-                <td><?= htmlspecialchars($fee['Amount']) ?></td>
-                <td><?= htmlspecialchars($fee['DueDate']) ?></td>
-                <td>
-                    <?php if ($fee['paymentStatus'] === 'Not Paid'): ?>
-                        <button class="action-button pay-now">Pay Now</button>
-                    <?php elseif ($fee['paymentStatus'] === 'Pending'): ?>
-                        <button class="action-button pending" disabled>Pending</button>
-                    <?php else: ?>
-                        <button class="action-button paid" disabled>Paid</button>
-                    <?php endif; ?>
-                </td>
+    </div>
+    
+    <table class="payment-table">
+        <thead>
+            <tr>
+                <th>Organization</th>
+                <th>Fee</th>
+                <th>Status</th>
+                <th>Amount</th>
+                <th>Due</th>
+                <th>Action</th>
             </tr>
-        <?php 
-            endif;
-        endforeach; 
-        ?>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            <?php 
+            $displayedFees = [];
+            foreach ($fees as $fee): 
+                if (!in_array($fee['FeeID'], $displayedFees)):
+                    $displayedFees[] = $fee['FeeID'];
+            ?>
+                <tr class="payment-row" data-fee-id="<?= htmlspecialchars($fee['FeeID']) ?>" data-status="<?= htmlspecialchars($fee['paymentStatus']) ?>">
+                    <td><?= htmlspecialchars($fee['organization']) ?></td>
+                    <td><?= htmlspecialchars($fee['FeeName']) ?></td>
+                    <td><?= htmlspecialchars($fee['paymentStatus']) ?></td>
+                    <td><?= htmlspecialchars($fee['Amount']) ?></td>
+                    <td><?= htmlspecialchars($fee['DueDate']) ?></td>
+                    <td>
+                        <?php if ($fee['paymentStatus'] === 'Not Paid'): ?>
+                            <button class="action-button pay-now">Pay Now</button>
+                        <?php elseif ($fee['paymentStatus'] === 'Pending'): ?>
+                            <button class="action-button pending" disabled>Pending</button>
+                        <?php else: ?>
+                            <button class="action-button paid" disabled>Paid</button>
+                        <?php endif; ?>
+                    </td>
+                </tr>
+            <?php 
+                endif;
+            endforeach; 
+            ?>
+        </tbody>
+    </table>
+</main>
 
 <!-- Modal -->
 <div id="paymentModal" class="modal">
@@ -212,19 +204,15 @@ $fees = $fee->getFeeStatus($loggedInStudentID);
     });
 </script>
 
-
-    </main>
-
-    <!-- Success Modal -->
-    <div id="successModal" class="success-modal">
-        <div class="success-modal-content">
-            <div class="success-icon">✓</div>
-            <h1 class="success-title">Done!</h1>
-            <p class="success-message">Your Payment Has Been Processed Successfully</p>
-        </div>
+<!-- Success Modal -->
+<div id="successModal" class="success-modal">
+    <div class="success-modal-content">
+        <div class="success-icon">✓</div>
+        <h1 class="success-title">Done!</h1>
+        <p class="success-message">Your Payment Has Been Processed Successfully</p>
     </div>
+</div>
 
-    <script src="studentside.js"></script>
+<script src="studentside.js"></script>
 </body>
 </html>
-

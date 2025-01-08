@@ -1,13 +1,14 @@
 <?php
 require_once '../classes/paymentrequest.class.php';
 require_once '../classes/academicperiod.class.php';
+require_once '../classes/student.class.php';
 session_start();
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/debug.log');
 error_reporting(E_ALL);
 
 if (!isset($_SESSION['StudentID'])) {
-    die("Unauthorized access.");
+    die("Unauthorized access. Please log in.");
 }
 
 $studentID = $_SESSION['StudentID'];
@@ -37,19 +38,15 @@ if ($currentPeriod) {
     }
 
     if ($success) {
-        echo "Success";
+        header("Location: student_payment.php?status=success");
+        exit();
     } else {
         error_log("Failed to process payment request for StudentID: $studentID, FeeID: $feeID");
-        echo "Error";
+        header("Location: student_payment.php?status=error");
+        exit();
     }
 } else {
     error_log("No current academic period found for StudentID: $studentID");
     echo "No current academic period found.";
 }
-
-// Redirect to student_payment.php after 1 second
-echo '<script>
-    setTimeout(function() {
-        window.location.href = "student_payment.php";
-    }, 1000);
-</script>';
+?>

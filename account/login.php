@@ -31,9 +31,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Check if the student is also a staff member
             $staffObj = new Staff();
             $staff = $staffObj->getById($_SESSION['StudentID']);
+            
             if ($staff) {
-                $_SESSION['staffID'] = $staff['staffID'];
-                echo $_SESSION['staffID'];
+                $_SESSION['StaffID'] = $staff['staffID'];
+                // Log the StaffID
+                error_log("StaffID set in session: " . $_SESSION['StaffID']);
             }
 
             // Redirect based on role
@@ -54,7 +56,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     echo '<p class="errorMsg">*Invalid account role</p>';
             }
             exit;
-            
 
         case "email_not_found":
             echo '<p class="errorMsg">*Email address not found</p>';
@@ -87,7 +88,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="login">
             <img src="../img/logoccs.png" alt="Logo">
             <h2>Welcome to PayThon</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+            <p>This is a Payment Management System for WMSU's College of Computing Studies, College Student Council</p>
             <form action="" method="post">
                 <label for="email">Enter your WMSU email:</label>
                 <i class="fas fa-envelope"></i>
@@ -96,7 +97,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="password">Password:</label>
                 <i class="fas fa-lock"></i>
                 <input type="password" id="password" name="password" placeholder="Password" required>
-
 
                 <button type="loginbtn">Log In</button>
             </form>

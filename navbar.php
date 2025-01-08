@@ -22,7 +22,7 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dashboard</title>
-    <link rel="stylesheet" href="../css/staffbar.css">
+    <link rel="stylesheet" href="../css/adminbar.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
 </head>
 <body>
@@ -31,7 +31,7 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
         <!-- Fixed Header Section -->
         <div class="sidebar-header">
             <div class="logo">
-                <img src="../img/ccs.png" alt="logo">
+                <img src="../img/logoccs.png" alt="logo">
                 <span class="logo_name">PayThon</span>
             </div>
 
@@ -67,7 +67,7 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
             
             <li>
                 <a href="admin_login_logs.php" data-name="LogIn Logs" class="menu-item">
-                    <i class='bx bx-group'></i>
+                <i class='bx bx-history' ></i>
                     <span class="list_name">LogIn Logs</span>
                 </a>
             </li>

@@ -40,6 +40,7 @@ error_log("Student Details Count: " . count($studentDetails));
     <link rel="stylesheet" href="../css/staffbar.css">
     <link rel="stylesheet" href="../css/staff_table.css">
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="../css/pagination.css">
 </head>
 <body>
     <?php include 'staffbar.php'; 
@@ -137,6 +138,23 @@ error_log("Student Details Count: " . count($studentDetails));
                 </table>
             </div>
         </div>
+        <nav aria-label="Page navigation example">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
     </div>
 
     <script>

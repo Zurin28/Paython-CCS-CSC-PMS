@@ -97,6 +97,11 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
 </nav>
 
     <script>
+          let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
         document.querySelectorAll('.menu-item').forEach(item => {
             item.addEventListener('click', function(event) {
                 event.preventDefault(); // Prevent default link behavior

@@ -120,6 +120,11 @@ $paymentRequests = $paymentRequest->getPaymentRequestsForCurrentPeriod($selected
 
     <!-- Keep your existing JavaScript -->
     <script>
+        let sidebar = document.querySelector(".sidebar");
+        let sidebarBtn = document.querySelector(".sidebarBtn");
+        sidebarBtn.onclick = function() {
+            sidebar.classList.toggle("active");
+        }
       document.getElementById('searchInput').addEventListener('input', filterTable);
       document.getElementById('specificDate').addEventListener('change', filterTable);
       

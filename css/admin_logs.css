@@ -1,5 +1,5 @@
 .container {
-    background-color: #dc3545;
+    background-color: #ad1726;
     color: #333;
     padding: 30px;
     border-radius: 8px;
@@ -41,7 +41,7 @@
     color: #666;
 }
 .nav-link.active .tab-count {
-    background: #1a7431;
+    background: #23741a;
     color: white;
 }
 .admin-logs-table {
@@ -207,3 +207,11 @@
     background-color: #c82333;
     color: white;
 } 
+.pagination {
+    justify-content: end; 
+    padding-top: 20px;
+    
+}
+.page-link{
+    color: #155c25;
+}

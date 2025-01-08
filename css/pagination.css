@@ -1,0 +1,8 @@
+.pagination {
+    justify-content: end; 
+    padding-top: 20px;
+    
+}
+.page-link{
+    color: #155c25;
+}

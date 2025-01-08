@@ -8,21 +8,24 @@
 body {
     min-height: 100vh;
     background: #1a7431;
-    position: relative;
-    padding: 40px 0;
-    overflow-x: hidden;
+    display: flex; /* Add flex display */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    padding: 0; /* Remove extra padding */
+    margin: 0; /* Ensure no extra margin */
+    overflow: hidden; /* Prevent scroll if not needed */
 }
 
 .login-container {
     position: relative;
     z-index: 1;
-    max-width: 500px;
+    max-width: 400px;
     margin: 0 auto;
     background: rgba(255, 255, 255, 0.95);
-    padding: 40px 50px;
-    border-radius: 20px;
+    padding: 30px 40px;
+    border-radius: 15px;
     box-shadow: 
-        0 20px 60px rgba(0, 0, 0, 0.2),
+        0 15px 50px rgba(0, 0, 0, 0.2),
         0 0 0 1px rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
 }
@@ -30,50 +33,51 @@ body {
 .login {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px; /* Reduced gap */
 }
 
 .login img {
-    width: 100px;
-    height: 100px;
+    width: 80px; /* Reduced size */
+    height: 80px; /* Reduced size */
     object-fit: contain;
-    margin: 0 auto 20px;
+    margin: 0 auto 15px;
 }
 
 .login h2 {
     color: #1a7431;
     text-align: center;
-    font-size: 24px;
-    margin-bottom: 10px;
+    font-size: 20px; /* Reduced font size */
+    margin-bottom: 8px;
 }
 
 .login p {
     color: #666;
     text-align: center;
-    margin-bottom: 20px;
+    font-size: 14px; /* Reduced font size */
+    margin-bottom: 15px; /* Reduced margin */
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 15px;
+    gap: 10px; /* Reduced gap */
 }
 
 label {
     display: block;
     color: #333;
-    font-size: 14px;
+    font-size: 13px; /* Reduced font size */
     font-weight: 500;
-    margin-bottom: 8px;
+    margin-bottom: 6px; /* Reduced margin */
 }
 
 input[type="email"],
 input[type="password"] {
     width: 100%;
-    padding: 12px 15px;
+    padding: 10px 12px; /* Reduced padding */
     border: 1px solid #e0e0e0;
-    border-radius: 10px;
-    font-size: 14px;
+    border-radius: 8px; /* Reduced radius */
+    font-size: 13px; /* Reduced font size */
     transition: all 0.3s ease;
 }
 
@@ -85,16 +89,16 @@ input:focus {
 
 button[type="loginbtn"] {
     width: 100%;
-    padding: 15px;
+    padding: 12px; /* Reduced padding */
     background: #1a7431;
     color: white;
     border: none;
-    border-radius: 10px;
-    font-size: 16px;
+    border-radius: 8px; /* Reduced radius */
+    font-size: 14px; /* Reduced font size */
     font-weight: 500;
     cursor: pointer;
     transition: background 0.3s ease;
-    margin-top: 10px;
+    margin-top: 8px; /* Reduced margin */
 }
 
 button[type="loginbtn"]:hover {
@@ -104,9 +108,9 @@ button[type="loginbtn"]:hover {
 .errorMsg {
     background: #ffe5e5;
     color: #dc3545;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
+    padding: 12px; /* Reduced padding */
+    border-radius: 8px; /* Reduced radius */
+    margin-bottom: 15px; /* Reduced margin */
     text-align: center;
     font-weight: 500;
 }
@@ -114,7 +118,7 @@ button[type="loginbtn"]:hover {
 a {
     color: #1a7431;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 13px; /* Reduced font size */
     text-align: center;
 }
 
@@ -122,14 +126,13 @@ a:hover {
     text-decoration: underline;
 }
 
-/* Hover effects */
 input:hover {
     border-color: #1a7431;
 }
 
 @media (max-width: 768px) {
     .login-container {
-        margin: 20px;
-        padding: 30px;
+        margin: 15px;
+        padding: 20px; /* Further reduced padding for smaller screens */
     }
 }

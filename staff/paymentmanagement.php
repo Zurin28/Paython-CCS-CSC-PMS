@@ -2,33 +2,45 @@
 session_start();
 require_once '../classes/paymentrequest.class.php';
 require_once '../classes/staff.class.php';
+
 ini_set('log_errors', 1);
 ini_set('error_log', __DIR__ . '/debug.log');
 error_reporting(E_ALL);
+
+// Log session data
+error_log("Session data: " . print_r($_SESSION, true));
+
+// Check if staff is logged in
+if (!isset($_SESSION['StaffID'])) {
+    error_log('Error: Staff not logged in');
+    echo 'Error: Staff not logged in';
+    exit;
+}
 
 // Initialize classes
 $paymentRequest = new PaymentRequest();
 $staff = new Staff();
 
-// Log session data
-error_log("Session data: " . print_r($_SESSION, true));
-
 // Get staff organizations
 $staffOrganizations = $staff->getStaffOrganizations($_SESSION['StudentID']);
 error_log("Staff organizations: " . print_r($staffOrganizations, true));
+
+// Extract organization IDs
+$organizationIDs = array_column($staffOrganizations, 'OrganizationID');
+error_log("Organization IDs: " . implode(',', $organizationIDs));
 
 // Get the selected organization from GET parameter
 $selectedOrg = isset($_GET['org']) ? $_GET['org'] : null;
 error_log("Selected organization: " . $selectedOrg);
 
-// Get all payment requests for the current period
-$paymentRequests = $paymentRequest->getAllPaymentRequestsForCurrentPeriod();
+// Get all payment requests for the current period and organizations
+$paymentRequests = $paymentRequest->getAllPaymentRequestsForCurrentPeriod($organizationIDs);
 
 // Capture and log the var_dump output
 ob_start();
 var_dump($paymentRequests);
 $varDumpOutput = ob_get_clean();
-error_log($varDumpOutput);
+error_log("Payment requests: " . $varDumpOutput);
 
 // Log the feeID values for debugging
 foreach ($paymentRequests as $request) {

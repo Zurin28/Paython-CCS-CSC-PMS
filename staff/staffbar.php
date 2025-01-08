@@ -98,7 +98,7 @@ require_once '../classes/organization.class.php';
 
         <!-- Fixed Logout Button -->
         <li class="log_out">
-            <a href="login.php">
+            <a href="../account/login.php">
                 <i class='bx bx-log-out'></i>
                 <span class="list_name">Log out</span>
             </a>

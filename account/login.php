@@ -31,8 +31,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Check if the student is also a staff member
             $staffObj = new Staff();
             $staff = $staffObj->getById($_SESSION['StudentID']);
+            
             if ($staff) {
                 $_SESSION['StaffID'] = $staff['staffID'];
+                // Log the StaffID
                 error_log("StaffID set in session: " . $_SESSION['StaffID']);
             }
 

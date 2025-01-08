@@ -48,8 +48,13 @@ class Student {
         }
     }
 
-    public function getStudentFeeDetails($selectedOrg, $staffID) {
+    public function getStudentFeeDetails($currentSchoolYear, $currentSemester, $organizationIDs) {
         try {
+            // Ensure organization IDs are properly quoted for SQL
+            $organizationIDs = array_map(function($id) {
+                return "'" . $id . "'";
+            }, $organizationIDs);
+
             $sql = "
                 SELECT 
                     s.StudentID,
@@ -62,33 +67,29 @@ class Student {
                     COALESCE(pr.Status, 'Not Paid') AS Status
                 FROM 
                     student s
+                CROSS JOIN 
+                    fees f
                 LEFT JOIN 
-                    payment_requests pr ON s.StudentID = pr.StudentID
-                LEFT JOIN 
-                    fees f ON pr.fee_id = f.FeeID
-                LEFT JOIN
-                    staff st ON f.OrganizationID = st.OrganizationID
+                    payment_requests pr ON s.StudentID = pr.StudentID AND pr.fee_id = f.FeeID
                 WHERE 
-                    st.StaffID = :staffID
+                    f.school_year = :currentSchoolYear AND f.semester = :currentSemester
+                    AND f.OrganizationID IN (" . implode(',', $organizationIDs) . ")
+                ORDER BY 
+                    s.StudentID, f.FeeName
             ";
-
-            if (!empty($selectedOrg)) {
-                $sql .= " AND s.OrganizationID = :selectedOrg";
-            }
-
+    
             $stmt = $this->db->connect()->prepare($sql);
-            $stmt->bindParam(':staffID', $staffID, PDO::PARAM_INT);
-            if (!empty($selectedOrg)) {
-                $stmt->bindParam(':selectedOrg', $selectedOrg, PDO::PARAM_INT);
-            }
+            $stmt->bindParam(':currentSchoolYear', $currentSchoolYear, PDO::PARAM_STR);
+            $stmt->bindParam(':currentSemester', $currentSemester, PDO::PARAM_STR);
             $stmt->execute();
             $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
+    
             // Log the results to check for NULL values
             error_log("SQL Query: " . $sql);
-            error_log("Parameters: selectedOrg=" . $selectedOrg . ", staffID=" . $staffID);
+            error_log("Parameters: currentSchoolYear=" . $currentSchoolYear . ", currentSemester=" . $currentSemester);
+            error_log("Organization IDs: " . implode(',', $organizationIDs));
             error_log("Results: " . print_r($results, true));
-
+    
             return $results;
         } catch (PDOException $e) {
             error_log("Error in getStudentFeeDetails: " . $e->getMessage());

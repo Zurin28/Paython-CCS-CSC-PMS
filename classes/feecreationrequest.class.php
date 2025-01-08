@@ -100,16 +100,27 @@ class FeeCreationRequest {
     // Get organizations for a staff member
     public function getOrganizationsForStaff($studentId) {
         try {
-            $sql = "SELECT DISTINCT o.OrganizationID, o.OrgName 
+            $sql = "SELECT DISTINCT o.* 
                     FROM organizations o
-                    JOIN staff s ON o.OrganizationID = s.OrganizationID
-                    WHERE s.StudentID = :studentId";
-            $stmt = $this->db->connect()->prepare($sql);
-            $stmt->bindParam(':studentId', $studentId, PDO::PARAM_INT);
-            $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+                    INNER JOIN (
+                        SELECT OrganizationID 
+                        FROM staff 
+                        WHERE StudentID = :studentId
+                        GROUP BY OrganizationID
+                    ) s ON o.OrganizationID = s.OrganizationID
+                    WHERE o.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                    AND o.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                    ORDER BY o.OrgName";
+            
+            $qry = $this->db->connect()->prepare($sql);
+            $qry->bindParam(':studentId', $studentId, PDO::PARAM_INT);
+            $qry->execute();
+            
+            $result = $qry->fetchAll(PDO::FETCH_ASSOC);
+            error_log("Staff organizations found: " . print_r($result, true)); // Debug log
+            return $result;
         } catch (PDOException $e) {
-            error_log("Error in getOrganizationsForStaff: " . $e->getMessage());
+            error_log("Get staff organizations error: " . $e->getMessage());
             return [];
         }
     }

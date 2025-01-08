@@ -14,16 +14,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $organizationId = $_POST['organization'];
     
     $feeRequest = new FeeCreationRequest();
-    $staffId = $_SESSION['staffID']; // Assuming staffID is stored in session
+    $staffId = $_SESSION['StaffID']; // Ensure staffID is stored in session
+
+    // Log the session data for debugging
+    error_log("Session data: " . print_r($_SESSION, true));
 
     $currentPeriod = $feeRequest->getCurrentAcademicPeriod();
     $schoolYear = $currentPeriod['school_year'];
     $semester = $currentPeriod['semester'];
 
     // Log the data being processed
-    error_log("Processing Fee Request: FeeName=$feeName, Amount=$amount, OrganizationID=$organizationId, CreatedBy=$staffId");
+    error_log("Processing Fee Request: FeeID=$feeId, FeeName=$feeName, Amount=$amount, OrganizationID=$organizationId, CreatedBy=$staffId");
 
-    $result = $feeRequest->createFeeRequest($feeName, $amount, $organizationId, $staffId, $dueDate, $description, $schoolYear, $semester);
+    $result = $feeRequest->createFeeRequest($feeId, $feeName, $amount, $organizationId, $staffId, $dueDate, $description, $schoolYear, $semester);
 
     if ($result) {
         header("Location: staff_fees.php?success=1");

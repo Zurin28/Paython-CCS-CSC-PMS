@@ -1,4 +1,35 @@
-[08-Jan-2025 04:53:56 Europe/Berlin] Session data: Array
+[08-Jan-2025 05:44:49 Europe/Berlin] Student ID: 202300269
+[08-Jan-2025 05:44:49 Europe/Berlin] Staff organizations found: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[08-Jan-2025 05:44:49 Europe/Berlin] Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[08-Jan-2025 05:44:49 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 05:44:50 Europe/Berlin] Session data: Array
 (
     [account] => Array
         (
@@ -18,32 +49,10 @@
     [Name] => Trisha
 )
 
-[08-Jan-2025 04:53:56 Europe/Berlin] Received data: studentID=202300269, feeID=, status=Paid, staffID=333
-[08-Jan-2025 04:53:56 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:53:56 Europe/Berlin] SQL Query: UPDATE payment_requests SET Status = :status WHERE StudentID = :studentID AND fee_id = :feeID
-[08-Jan-2025 04:53:56 Europe/Berlin] Parameters: status=Paid, studentID=202300269, feeID=
-[08-Jan-2025 04:53:58 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 04:53:58 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:53:58 Europe/Berlin] Staff organizations found: Array
+[08-Jan-2025 05:44:50 Europe/Berlin] Processing Fee Request: FeeID=EEEHHH, FeeName=222, Amount=22, OrganizationID=VENOM, CreatedBy=333
+[08-Jan-2025 05:44:50 Europe/Berlin] Error in createFeeRequest: SQLSTATE[23000]: Integrity constraint violation: 1452 Cannot add or update a child row: a foreign key constraint fails (`pms`.`fee_creation_requests`, CONSTRAINT `fee_creation_requests_ibfk_1` FOREIGN KEY (`OrganizationID`) REFERENCES `organizations` (`OrganizationID`))
+[08-Jan-2025 05:44:50 Europe/Berlin] Student ID: 202300269
+[08-Jan-2025 05:44:50 Europe/Berlin] Staff organizations found: Array
 (
     [0] => Array
         (
@@ -55,7 +64,7 @@
 
 )
 
-[08-Jan-2025 04:53:58 Europe/Berlin] Staff organizations: Array
+[08-Jan-2025 05:44:50 Europe/Berlin] Organizations: Array
 (
     [0] => Array
         (
@@ -67,196 +76,189 @@
 
 )
 
-[08-Jan-2025 04:53:58 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:53:58 Europe/Berlin] Selected organization: 
-[08-Jan-2025 04:53:58 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 04:53:58 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:53:58 Europe/Berlin] Results: Array
+[08-Jan-2025 05:44:50 Europe/Berlin] Current Academic Period: Array
 (
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Pending
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-        )
-
+    [school_year] => 2024-2025
+    [semester] => 1st
 )
 
-[08-Jan-2025 04:53:58 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(12) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(7) "Pending"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-  }
-  [1]=>
-  array(12) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-  }
-  [2]=>
-  array(12) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-  }
-}
-
-[08-Jan-2025 04:53:58 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:53:58 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:53:58 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:53:58 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 04:57:44 Europe/Berlin] Session data: Array
+[08-Jan-2025 07:58:15 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 07:58:15 Europe/Berlin] Student ID: 
+[08-Jan-2025 07:58:15 Europe/Berlin] Staff organizations found: Array
 (
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
 )
 
-[08-Jan-2025 04:57:44 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:57:44 Europe/Berlin] Staff organizations found: Array
+[08-Jan-2025 07:58:15 Europe/Berlin] Organizations: Array
 (
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
 )
 
-[08-Jan-2025 04:57:44 Europe/Berlin] Staff organizations: Array
+[08-Jan-2025 07:58:15 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:10:59 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:10:59 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:00 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:00 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:00 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:11 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:11 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:11 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:11 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:11 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:12 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:12 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:12 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:12 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:12 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:13 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:13 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:13 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:13 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:13 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:13 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:13 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:14 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:14 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:14 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:14 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:11:14 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:11:14 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:11:14 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:37:23 Europe/Berlin] PHP Warning:  Undefined array key "StudentID" in C:\xampp\htdocs\PAY-THON\staff\staff_fees.php on line 9
+[08-Jan-2025 08:37:23 Europe/Berlin] Student ID: 
+[08-Jan-2025 08:37:23 Europe/Berlin] Staff organizations found: Array
+(
+)
+
+[08-Jan-2025 08:37:23 Europe/Berlin] Organizations: Array
+(
+)
+
+[08-Jan-2025 08:37:23 Europe/Berlin] Current Academic Period: Array
+(
+    [school_year] => 2024-2025
+    [semester] => 1st
+)
+
+[08-Jan-2025 08:49:42 Europe/Berlin] Staff organizations found: Array
 (
     [0] => Array
         (
@@ -268,211 +270,7 @@
 
 )
 
-[08-Jan-2025 04:57:44 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:57:44 Europe/Berlin] Selected organization: 
-[08-Jan-2025 04:57:44 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 04:57:44 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:57:44 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Pending
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-        )
-
-)
-
-[08-Jan-2025 04:57:44 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(12) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(7) "Pending"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-  }
-  [1]=>
-  array(12) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-  }
-  [2]=>
-  array(12) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-  }
-}
-
-[08-Jan-2025 04:57:44 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:57:44 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:57:44 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:57:44 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "first_name" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "MI" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "last_name" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Course" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 121
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 121
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Year" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 122
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 122
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Section" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 123
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 123
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "first_name" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "MI" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "last_name" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Course" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 121
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 121
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Year" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 122
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 122
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Section" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 123
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 123
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "first_name" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "MI" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "last_name" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 120
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Course" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 121
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 121
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Year" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 122
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 122
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Warning:  Undefined array key "Section" in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 123
-[08-Jan-2025 04:57:44 Europe/Berlin] PHP Deprecated:  htmlspecialchars(): Passing null to parameter #1 ($string) of type string is deprecated in C:\xampp\htdocs\PAY-THON\staff\paymentmanagement.php on line 123
-[08-Jan-2025 04:57:58 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 04:57:58 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:57:58 Europe/Berlin] Staff organizations found: Array
+[08-Jan-2025 08:49:42 Europe/Berlin] Staff Organizations: Array
 (
     [0] => Array
         (
@@ -484,854 +282,8 @@
 
 )
 
-[08-Jan-2025 04:57:58 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:57:58 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:57:58 Europe/Berlin] Selected organization: 
-[08-Jan-2025 04:57:58 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 04:57:58 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:57:58 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Pending
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-        )
-
-)
-
-[08-Jan-2025 04:57:58 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(12) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(7) "Pending"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-  }
-  [1]=>
-  array(12) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-  }
-  [2]=>
-  array(12) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-  }
-}
-
-[08-Jan-2025 04:57:58 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:57:58 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:57:58 Europe/Berlin] feeID: NULL
-[08-Jan-2025 04:57:58 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 04:59:20 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 04:59:20 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:59:20 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:20 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:20 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:59:20 Europe/Berlin] Selected organization: 
-[08-Jan-2025 04:59:20 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 04:59:20 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:59:20 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Pending
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 04:59:20 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(7) "Pending"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 04:59:20 Europe/Berlin] feeID: 15
-[08-Jan-2025 04:59:20 Europe/Berlin] feeID: 16
-[08-Jan-2025 04:59:20 Europe/Berlin] feeID: 9
-[08-Jan-2025 04:59:20 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 04:59:21 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 04:59:21 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:59:21 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:21 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:21 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:59:21 Europe/Berlin] Selected organization: 
-[08-Jan-2025 04:59:21 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 04:59:21 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:59:21 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Pending
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 04:59:21 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(7) "Pending"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 04:59:21 Europe/Berlin] feeID: 15
-[08-Jan-2025 04:59:21 Europe/Berlin] feeID: 16
-[08-Jan-2025 04:59:21 Europe/Berlin] feeID: 9
-[08-Jan-2025 04:59:21 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 04:59:22 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 04:59:22 Europe/Berlin] Received data: studentID=202300269, feeID=15, status=Paid, staffID=333
-[08-Jan-2025 04:59:22 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:59:23 Europe/Berlin] SQL Query: UPDATE payment_requests SET Status = :status WHERE StudentID = :studentID AND fee_id = :feeID
-[08-Jan-2025 04:59:23 Europe/Berlin] Parameters: status=Paid, studentID=202300269, feeID=15
-[08-Jan-2025 04:59:24 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 04:59:24 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:59:24 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:24 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:24 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:59:24 Europe/Berlin] Selected organization: 
-[08-Jan-2025 04:59:24 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 04:59:24 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:59:24 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 04:59:24 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 04:59:24 Europe/Berlin] feeID: 15
-[08-Jan-2025 04:59:24 Europe/Berlin] feeID: 16
-[08-Jan-2025 04:59:24 Europe/Berlin] feeID: 9
-[08-Jan-2025 04:59:24 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 04:59:34 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:34 Europe/Berlin] Staff Organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:34 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:59:34 Europe/Berlin] SQL Query: 
+[08-Jan-2025 08:49:42 Europe/Berlin] Organization IDs: VENOM
+[08-Jan-2025 08:49:42 Europe/Berlin] SQL Query: 
                 SELECT 
                     s.StudentID,
                     CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
@@ -1353,9 +305,9 @@
                 ORDER BY 
                     s.StudentID, f.FeeName
             
-[08-Jan-2025 04:59:34 Europe/Berlin] Parameters: currentSchoolYear=2024-2025, currentSemester=1st
-[08-Jan-2025 04:59:34 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:59:34 Europe/Berlin] Results: Array
+[08-Jan-2025 08:49:42 Europe/Berlin] Parameters: currentSchoolYear=2024-2025, currentSemester=1st
+[08-Jan-2025 08:49:42 Europe/Berlin] Organization IDs: 'VENOM'
+[08-Jan-2025 08:49:42 Europe/Berlin] Results: Array
 (
     [0] => Array
         (
@@ -1402,7 +354,7 @@
             [Section] => A
             [FeeName] => JM
             [Amount] => 22222
-            [Status] => Paid
+            [Status] => Not Paid
         )
 
     [4] => Array
@@ -1431,8 +383,8 @@
 
 )
 
-[08-Jan-2025 04:59:34 Europe/Berlin] Student Details Count: 6
-[08-Jan-2025 04:59:38 Europe/Berlin] Session data: Array
+[08-Jan-2025 08:49:42 Europe/Berlin] Student Details Count: 6
+[08-Jan-2025 08:49:44 Europe/Berlin] Session data: Array
 (
     [account] => Array
         (
@@ -1448,12 +400,12 @@
         )
 
     [StudentID] => 202300269
-    [StaffID] => 333
     [Name] => Trisha
+    [StaffID] => 333
 )
 
-[08-Jan-2025 04:59:38 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:59:38 Europe/Berlin] Staff organizations found: Array
+[08-Jan-2025 08:49:44 Europe/Berlin] Database connection established.
+[08-Jan-2025 08:49:44 Europe/Berlin] Staff organizations found: Array
 (
     [0] => Array
         (
@@ -1465,7 +417,7 @@
 
 )
 
-[08-Jan-2025 04:59:38 Europe/Berlin] Staff organizations: Array
+[08-Jan-2025 08:49:44 Europe/Berlin] Staff organizations: Array
 (
     [0] => Array
         (
@@ -1477,9 +429,9 @@
 
 )
 
-[08-Jan-2025 04:59:38 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:59:38 Europe/Berlin] Selected organization: 
-[08-Jan-2025 04:59:38 Europe/Berlin] SQL Query: 
+[08-Jan-2025 08:49:44 Europe/Berlin] Organization IDs: VENOM
+[08-Jan-2025 08:49:44 Europe/Berlin] Selected organization: 
+[08-Jan-2025 08:49:44 Europe/Berlin] SQL Query: 
                 SELECT pr.*, pr.StudentID,
                     CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
                     'Cash' AS PaymentType,
@@ -1492,2552 +444,8 @@
                 AND f.OrganizationID IN ('VENOM')
                 ORDER BY pr.DatePaid DESC
             
-[08-Jan-2025 04:59:38 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:59:38 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 04:59:38 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 04:59:38 Europe/Berlin] feeID: 15
-[08-Jan-2025 04:59:38 Europe/Berlin] feeID: 16
-[08-Jan-2025 04:59:38 Europe/Berlin] feeID: 9
-[08-Jan-2025 04:59:38 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 04:59:40 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 04:59:40 Europe/Berlin] Database connection established.
-[08-Jan-2025 04:59:40 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:40 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 04:59:40 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 04:59:40 Europe/Berlin] Selected organization: VENOM
-[08-Jan-2025 04:59:40 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 04:59:40 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 04:59:40 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 04:59:40 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 04:59:40 Europe/Berlin] feeID: 15
-[08-Jan-2025 04:59:40 Europe/Berlin] feeID: 16
-[08-Jan-2025 04:59:40 Europe/Berlin] feeID: 9
-[08-Jan-2025 04:59:40 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:00:13 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:00:13 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:00:13 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:00:13 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:00:13 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:00:13 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:00:13 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:00:13 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:00:13 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:00:13 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:00:13 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:00:13 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:00:13 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:00:13 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:00:16 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:00:16 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:00:16 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:00:16 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:00:16 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:00:16 Europe/Berlin] Selected organization: VENOM
-[08-Jan-2025 05:00:16 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:00:16 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:00:16 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:00:16 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:00:16 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:00:16 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:00:16 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:00:16 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:00:19 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:00:19 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:00:19 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:00:19 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:00:19 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:00:19 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:00:19 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:00:19 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:00:19 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:00:19 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:00:19 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:00:19 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:00:19 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:00:19 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:06:27 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:06:27 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:06:27 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:27 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:27 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:06:27 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:06:27 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:06:27 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:06:27 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:06:27 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:06:27 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:06:27 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:06:27 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:06:27 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:06:30 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:06:30 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:06:30 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:30 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:30 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:06:30 Europe/Berlin] Selected organization: VENOM
-[08-Jan-2025 05:06:30 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:06:30 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:06:30 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:06:30 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:06:30 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:06:30 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:06:30 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:06:30 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:06:33 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:06:33 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:06:33 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:33 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:33 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:06:33 Europe/Berlin] Selected organization: VENOM
-[08-Jan-2025 05:06:33 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:06:33 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:06:33 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:06:33 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:06:33 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:06:33 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:06:33 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:06:33 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:06:34 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:06:34 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:06:34 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:34 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:34 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:06:34 Europe/Berlin] Selected organization: VENOM
-[08-Jan-2025 05:06:34 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:06:34 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:06:34 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:06:34 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:06:34 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:06:34 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:06:34 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:06:34 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:06:36 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:06:36 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:06:36 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:36 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:36 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:06:36 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:06:36 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:06:36 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:06:36 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:06:36 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:06:36 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:06:36 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:06:36 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:06:36 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:06:49 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:06:49 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:06:49 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:49 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:06:49 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:06:49 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:06:50 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:06:50 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:06:50 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:06:50 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:06:50 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:06:50 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:06:50 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:06:50 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:07:16 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:07:16 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:07:16 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:07:16 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:07:16 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:07:16 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:07:16 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:07:16 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:07:16 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Pending
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:07:16 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(7) "Pending"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:07:16 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:07:16 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:07:16 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:07:16 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:07:18 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:07:18 Europe/Berlin] Received data: studentID=202300269, feeID=15, status=Not Paid, staffID=333
-[08-Jan-2025 05:07:18 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:07:18 Europe/Berlin] SQL Query: UPDATE payment_requests SET Status = :status WHERE StudentID = :studentID AND fee_id = :feeID
-[08-Jan-2025 05:07:18 Europe/Berlin] Parameters: status=Not Paid, studentID=202300269, feeID=15
-[08-Jan-2025 05:07:22 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:07:22 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:07:22 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:07:22 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:07:22 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:07:22 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:07:22 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:07:22 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:07:22 Europe/Berlin] Results: Array
+[08-Jan-2025 08:49:44 Europe/Berlin] Organization IDs: 'VENOM'
+[08-Jan-2025 08:49:44 Europe/Berlin] Results: Array
 (
     [0] => Array
         (
@@ -4092,7 +500,7 @@
 
 )
 
-[08-Jan-2025 05:07:22 Europe/Berlin] Payment requests: array(3) {
+[08-Jan-2025 08:49:44 Europe/Berlin] Payment requests: array(3) {
   [0]=>
   array(13) {
     ["paymentID"]=>
@@ -4182,11 +590,137 @@
   }
 }
 
-[08-Jan-2025 05:07:22 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:07:22 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:07:22 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:07:22 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:07:33 Europe/Berlin] Session data: Array
+[08-Jan-2025 08:49:44 Europe/Berlin] feeID: 15
+[08-Jan-2025 08:49:44 Europe/Berlin] feeID: 16
+[08-Jan-2025 08:49:44 Europe/Berlin] feeID: 9
+[08-Jan-2025 08:49:44 Europe/Berlin] Number of payment requests fetched: 3
+[08-Jan-2025 08:53:29 Europe/Berlin] Staff organizations found: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[08-Jan-2025 08:53:29 Europe/Berlin] Staff Organizations: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+[08-Jan-2025 08:53:29 Europe/Berlin] Organization IDs: VENOM
+[08-Jan-2025 08:53:29 Europe/Berlin] SQL Query: 
+                SELECT 
+                    s.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    s.Course,
+                    s.Year,
+                    s.Section,
+                    f.FeeName,
+                    f.Amount,
+                    COALESCE(pr.Status, 'Not Paid') AS Status
+                FROM 
+                    student s
+                CROSS JOIN 
+                    fees f
+                LEFT JOIN 
+                    payment_requests pr ON s.StudentID = pr.StudentID AND pr.fee_id = f.FeeID
+                WHERE 
+                    f.school_year = :currentSchoolYear AND f.semester = :currentSemester
+                    AND f.OrganizationID IN ('VENOM')
+                ORDER BY 
+                    s.StudentID, f.FeeName
+            
+[08-Jan-2025 08:53:29 Europe/Berlin] Parameters: currentSchoolYear=2024-2025, currentSemester=1st
+[08-Jan-2025 08:53:29 Europe/Berlin] Organization IDs: 'VENOM'
+[08-Jan-2025 08:53:29 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => JM
+            [Amount] => 22222
+            [Status] => Not Paid
+        )
+
+    [1] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Not Paid
+        )
+
+    [2] => Array
+        (
+            [StudentID] => 20230026
+            [Name] => Jose Miguel A Esperat
+            [Course] => Computer Science
+            [Year] => 2nd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Paid
+        )
+
+    [3] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => JM
+            [Amount] => 22222
+            [Status] => Not Paid
+        )
+
+    [4] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [Status] => Paid
+        )
+
+    [5] => Array
+        (
+            [StudentID] => 202300269
+            [Name] => Trisha M Que
+            [Course] => Computer Science
+            [Year] => 3rd
+            [Section] => A
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [Status] => Not Paid
+        )
+
+)
+
+[08-Jan-2025 08:53:29 Europe/Berlin] Student Details Count: 6
+[08-Jan-2025 08:53:30 Europe/Berlin] Session data: Array
 (
     [account] => Array
         (
@@ -4202,12 +736,12 @@
         )
 
     [StudentID] => 202300269
-    [StaffID] => 333
     [Name] => Trisha
+    [StaffID] => 333
 )
 
-[08-Jan-2025 05:07:33 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:07:33 Europe/Berlin] Staff organizations found: Array
+[08-Jan-2025 08:53:30 Europe/Berlin] Database connection established.
+[08-Jan-2025 08:53:30 Europe/Berlin] Staff organizations found: Array
 (
     [0] => Array
         (
@@ -4219,7 +753,7 @@
 
 )
 
-[08-Jan-2025 05:07:33 Europe/Berlin] Staff organizations: Array
+[08-Jan-2025 08:53:30 Europe/Berlin] Staff organizations: Array
 (
     [0] => Array
         (
@@ -4231,9 +765,9 @@
 
 )
 
-[08-Jan-2025 05:07:33 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:07:33 Europe/Berlin] Selected organization: VENOM
-[08-Jan-2025 05:07:33 Europe/Berlin] SQL Query: 
+[08-Jan-2025 08:53:30 Europe/Berlin] Organization IDs: VENOM
+[08-Jan-2025 08:53:30 Europe/Berlin] Selected organization: 
+[08-Jan-2025 08:53:30 Europe/Berlin] SQL Query: 
                 SELECT pr.*, pr.StudentID,
                     CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
                     'Cash' AS PaymentType,
@@ -4246,8 +780,8 @@
                 AND f.OrganizationID IN ('VENOM')
                 ORDER BY pr.DatePaid DESC
             
-[08-Jan-2025 05:07:33 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:07:33 Europe/Berlin] Results: Array
+[08-Jan-2025 08:53:30 Europe/Berlin] Organization IDs: 'VENOM'
+[08-Jan-2025 08:53:30 Europe/Berlin] Results: Array
 (
     [0] => Array
         (
@@ -4302,7 +836,7 @@
 
 )
 
-[08-Jan-2025 05:07:33 Europe/Berlin] Payment requests: array(3) {
+[08-Jan-2025 08:53:30 Europe/Berlin] Payment requests: array(3) {
   [0]=>
   array(13) {
     ["paymentID"]=>
@@ -4392,32 +926,12 @@
   }
 }
 
-[08-Jan-2025 05:07:33 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:07:33 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:07:33 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:07:33 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:07:36 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:07:36 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:07:36 Europe/Berlin] Staff organizations found: Array
+[08-Jan-2025 08:53:30 Europe/Berlin] feeID: 15
+[08-Jan-2025 08:53:30 Europe/Berlin] feeID: 16
+[08-Jan-2025 08:53:30 Europe/Berlin] feeID: 9
+[08-Jan-2025 08:53:30 Europe/Berlin] Number of payment requests fetched: 3
+[08-Jan-2025 08:53:32 Europe/Berlin] Student ID: 202300269
+[08-Jan-2025 08:53:32 Europe/Berlin] Staff organizations found: Array
 (
     [0] => Array
         (
@@ -4429,7 +943,7 @@
 
 )
 
-[08-Jan-2025 05:07:36 Europe/Berlin] Staff organizations: Array
+[08-Jan-2025 08:53:32 Europe/Berlin] Organizations: Array
 (
     [0] => Array
         (
@@ -4441,395 +955,9 @@
 
 )
 
-[08-Jan-2025 05:07:36 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:07:36 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:07:36 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:07:36 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:07:36 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Not Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:07:36 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(8) "Not Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:07:36 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:07:36 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:07:36 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:07:36 Europe/Berlin] Number of payment requests fetched: 3
-[08-Jan-2025 05:07:45 Europe/Berlin] Student ID: 202300269
-[08-Jan-2025 05:07:45 Europe/Berlin] Organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:07:45 Europe/Berlin] Current Academic Period: Array
+[08-Jan-2025 08:53:32 Europe/Berlin] Current Academic Period: Array
 (
     [school_year] => 2024-2025
     [semester] => 1st
 )
 
-[08-Jan-2025 05:07:47 Europe/Berlin] Session data: Array
-(
-    [account] => Array
-        (
-            [ID] => 202300269
-            [first_name] => Trisha
-            [last_name] => Que
-            [MI] => M
-            [WmsuEmail] => 3@gmail.com
-            [Password] => $2y$10$GuSyuN4Keo1QCOg9I.lw7OIKQUoxy2jMBBtm0DLZinsH55fnR1Hxi
-            [Role] => staff
-            [school_year] => 2024-2025
-            [semester] => 1st
-        )
-
-    [StudentID] => 202300269
-    [StaffID] => 333
-    [Name] => Trisha
-)
-
-[08-Jan-2025 05:07:47 Europe/Berlin] Database connection established.
-[08-Jan-2025 05:07:47 Europe/Berlin] Staff organizations found: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:07:47 Europe/Berlin] Staff organizations: Array
-(
-    [0] => Array
-        (
-            [OrganizationID] => VENOM
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [OrgName] => Venom Publication
-        )
-
-)
-
-[08-Jan-2025 05:07:47 Europe/Berlin] Organization IDs: VENOM
-[08-Jan-2025 05:07:47 Europe/Berlin] Selected organization: 
-[08-Jan-2025 05:07:47 Europe/Berlin] SQL Query: 
-                SELECT pr.*, pr.StudentID,
-                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
-                    'Cash' AS PaymentType,
-                     f.FeeName, f.Amount, f.FeeID
-                FROM payment_requests pr
-                JOIN student s ON pr.StudentID = s.StudentID
-                JOIN fees f ON pr.fee_id = f.FeeID
-                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
-                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
-                AND f.OrganizationID IN ('VENOM')
-                ORDER BY pr.DatePaid DESC
-            
-[08-Jan-2025 05:07:47 Europe/Berlin] Organization IDs: 'VENOM'
-[08-Jan-2025 05:07:47 Europe/Berlin] Results: Array
-(
-    [0] => Array
-        (
-            [paymentID] => 20
-            [StudentID] => 202300269
-            [staffID] => 
-            [fee_id] => 15
-            [DatePaid] => 2025-01-08
-            [Status] => Not Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => JM
-            [Amount] => 22222
-            [FeeID] => 15
-        )
-
-    [1] => Array
-        (
-            [paymentID] => 18
-            [StudentID] => 20230026
-            [staffID] => 
-            [fee_id] => 16
-            [DatePaid] => 2025-01-01
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Jose Miguel A Esperat
-            [PaymentType] => Cash
-            [FeeName] => yeyeye
-            [Amount] => 443
-            [FeeID] => 16
-        )
-
-    [2] => Array
-        (
-            [paymentID] => 12
-            [StudentID] => 202300269
-            [staffID] => 333
-            [fee_id] => 9
-            [DatePaid] => 2024-12-20
-            [Status] => Paid
-            [school_year] => 2024-2025
-            [semester] => 1st
-            [Name] => Trisha M Que
-            [PaymentType] => Cash
-            [FeeName] => VenomFee
-            [Amount] => 75
-            [FeeID] => 9
-        )
-
-)
-
-[08-Jan-2025 05:07:47 Europe/Berlin] Payment requests: array(3) {
-  [0]=>
-  array(13) {
-    ["paymentID"]=>
-    int(20)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(15)
-    ["DatePaid"]=>
-    string(10) "2025-01-08"
-    ["Status"]=>
-    string(8) "Not Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(2) "JM"
-    ["Amount"]=>
-    int(22222)
-    ["FeeID"]=>
-    int(15)
-  }
-  [1]=>
-  array(13) {
-    ["paymentID"]=>
-    int(18)
-    ["StudentID"]=>
-    int(20230026)
-    ["staffID"]=>
-    NULL
-    ["fee_id"]=>
-    int(16)
-    ["DatePaid"]=>
-    string(10) "2025-01-01"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(21) "Jose Miguel A Esperat"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(6) "yeyeye"
-    ["Amount"]=>
-    int(443)
-    ["FeeID"]=>
-    int(16)
-  }
-  [2]=>
-  array(13) {
-    ["paymentID"]=>
-    int(12)
-    ["StudentID"]=>
-    int(202300269)
-    ["staffID"]=>
-    int(333)
-    ["fee_id"]=>
-    int(9)
-    ["DatePaid"]=>
-    string(10) "2024-12-20"
-    ["Status"]=>
-    string(4) "Paid"
-    ["school_year"]=>
-    string(9) "2024-2025"
-    ["semester"]=>
-    string(3) "1st"
-    ["Name"]=>
-    string(12) "Trisha M Que"
-    ["PaymentType"]=>
-    string(4) "Cash"
-    ["FeeName"]=>
-    string(8) "VenomFee"
-    ["Amount"]=>
-    int(75)
-    ["FeeID"]=>
-    int(9)
-  }
-}
-
-[08-Jan-2025 05:07:47 Europe/Berlin] feeID: 15
-[08-Jan-2025 05:07:47 Europe/Berlin] feeID: 16
-[08-Jan-2025 05:07:47 Europe/Berlin] feeID: 9
-[08-Jan-2025 05:07:47 Europe/Berlin] Number of payment requests fetched: 3

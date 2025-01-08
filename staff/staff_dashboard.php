@@ -4,6 +4,7 @@ require_once '../classes/academicperiod.class.php';
 require_once '../classes/student.class.php';
 require_once '../classes/organization.class.php';
 require_once '../classes/paymentrequest.class.php';
+require_once '../classes/staff.class.php';
 
 // Get current academic period
 $academicPeriod = new AcademicPeriod();
@@ -20,12 +21,17 @@ if ($currentPeriod) {
     $student = new Student();
     $organization = new Organization();
     $paymentRequest = new PaymentRequest();
+    $staff = new Staff();
     
+    $staffOrganizations = $staff->getStaffOrganizations($_SESSION['StudentID']);
+    $organizationIDs = array_column($staffOrganizations, 'OrganizationID');
+
     $totalStudents = $student->getTotalStudents($currentPeriod['school_year'], $currentPeriod['semester']);
     $totalOrganizations = $organization->getTotalOrganizations($currentPeriod['school_year'], $currentPeriod['semester']);
     $pendingRequests = $paymentRequest->getPendingPaymentRequestCount($currentPeriod['school_year'], $currentPeriod['semester']);
     $totalPayments = $paymentRequest->getPaymentRequestCount($currentPeriod['school_year'], $currentPeriod['semester']);
     $totalCollection = $paymentRequest->getTotalPaymentAmount($currentPeriod['school_year'], $currentPeriod['semester']);
+    $recentPayments = $paymentRequest->getAllPaymentRequestsForCurrentPeriod($organizationIDs);
 }
 
 // Add other required classes/connections
@@ -119,24 +125,25 @@ if ($currentPeriod) {
                             </tr>
                         </thead>
                         <tbody>
-                            <?php
-                            // Fetch recent payment requests
-                            $recentPayments = $paymentRequest->getAllPaymentRequestsForCurrentPeriod();
-
-                            ?>
-                            <?php foreach (array_slice($recentPayments, 0, 6) as $payment): ?>
+                            <?php if (!empty($recentPayments)): ?>
+                                <?php foreach (array_slice($recentPayments, 0, 6) as $payment): ?>
+                                    <tr>
+                                        <td><?= htmlspecialchars($payment['Name']) ?></td>
+                                        <td><?= htmlspecialchars($payment['FeeName']) ?></td>
+                                        <td>₱<?= htmlspecialchars($payment['Amount']) ?></td>
+                                        <td><?= htmlspecialchars($payment['DatePaid']) ?></td>
+                                        <td>
+                                            <span class="status <?= strtolower(str_replace(' ', '-', htmlspecialchars($payment['Status']))) ?>">
+                                                <?= htmlspecialchars($payment['Status']) ?>
+                                            </span>
+                                        </td>
+                                    </tr>
+                                <?php endforeach; ?>
+                            <?php else: ?>
                                 <tr>
-                                    <td><?= htmlspecialchars($payment['Name']) ?></td>
-                                    <td><?= htmlspecialchars($payment['FeeName']) ?></td>
-                                    <td>₱<?= htmlspecialchars($payment['Amount']) ?></td>
-                                    <td><?= htmlspecialchars($payment['DatePaid']) ?></td>
-                                    <td>
-                                        <span class="status <?= strtolower(str_replace(' ', '-', htmlspecialchars($payment['Status']))) ?>">
-                                            <?= htmlspecialchars($payment['Status']) ?>
-                                        </span>
-                                    </td>
+                                    <td colspan="5">No recent payments found.</td>
                                 </tr>
-                            <?php endforeach; ?>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

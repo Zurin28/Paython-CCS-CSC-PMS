@@ -82,3 +82,5 @@ Stack trace:
 #1 C:\xampp\htdocs\PAY-THON\student\process_payment.php(35): PaymentRequest->createPaymentRequest(20230026, '14', '2024-2025', '1st')
 #2 {main}
   thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 48
+[08-Jan-2025 08:47:12 Europe/Berlin] Database connection established.
+[08-Jan-2025 08:47:12 Europe/Berlin] Create request: StudentID=55555, FeeID=17, Success=1

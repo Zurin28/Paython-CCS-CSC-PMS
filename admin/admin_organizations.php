@@ -357,5 +357,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script src="../js/organizations.js"></script>
     <script src="../js/add_organization.js"></script>
     <script src="../js/modals.js"></script>
+    <script>
+    document.getElementById('searchInput').addEventListener('input', function() {
+        const searchValue = this.value.toLowerCase();
+        const table = document.getElementById('org-table');
+        const rows = table.getElementsByTagName('tr');
+
+        for (let i = 1; i < rows.length; i++) { // Start from 1 to skip the header row
+            const cells = rows[i].getElementsByTagName('td');
+            if (cells.length > 0) {
+                const orgId = cells[0].textContent.toLowerCase();
+                const orgName = cells[1].textContent.toLowerCase();
+                if (orgId.includes(searchValue) || orgName.includes(searchValue)) {
+                    rows[i].style.display = '';
+                } else {
+                    rows[i].style.display = 'none';
+                }
+            }
+        }
+    });
+</script>
 </body>
 </html>

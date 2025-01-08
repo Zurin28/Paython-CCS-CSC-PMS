@@ -1,0 +1,108 @@
+[08-Jan-2025 08:40:08 Europe/Berlin] Database connection established.
+[08-Jan-2025 08:40:16 Europe/Berlin] Database connection established.
+SQL executed: INSERT INTO fees (OrganizationID, FeeName, Amount, DueDate, Description, school_year, semester) VALUES (:orgId, :feeName, :amount, :dueDate, :description, :schoolYear, :semester)
+[08-Jan-2025 08:49:11 Europe/Berlin] Database connection established.
+Error fetching total payment amount: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'amount' in 'field list'
+[08-Jan-2025 08:49:11 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function PaymentRequest::getAllPaymentRequestsForCurrentPeriod(), 0 passed in C:\xampp\htdocs\PAY-THON\staff\staff_dashboard.php on line 124 and exactly 1 expected in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php:250
+Stack trace:
+#0 C:\xampp\htdocs\PAY-THON\staff\staff_dashboard.php(124): PaymentRequest->getAllPaymentRequestsForCurrentPeriod()
+#1 {main}
+  thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 250
+[08-Jan-2025 08:49:36 Europe/Berlin] Database connection established.
+Error fetching total payment amount: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'amount' in 'field list'
+[08-Jan-2025 08:49:36 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function PaymentRequest::getAllPaymentRequestsForCurrentPeriod(), 0 passed in C:\xampp\htdocs\PAY-THON\staff\staff_dashboard.php on line 124 and exactly 1 expected in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php:250
+Stack trace:
+#0 C:\xampp\htdocs\PAY-THON\staff\staff_dashboard.php(124): PaymentRequest->getAllPaymentRequestsForCurrentPeriod()
+#1 {main}
+  thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 250
+[08-Jan-2025 08:49:46 Europe/Berlin] Database connection established.
+Error fetching total payment amount: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'amount' in 'field list'
+[08-Jan-2025 08:49:46 Europe/Berlin] PHP Fatal error:  Uncaught ArgumentCountError: Too few arguments to function PaymentRequest::getAllPaymentRequestsForCurrentPeriod(), 0 passed in C:\xampp\htdocs\PAY-THON\staff\staff_dashboard.php on line 124 and exactly 1 expected in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php:250
+Stack trace:
+#0 C:\xampp\htdocs\PAY-THON\staff\staff_dashboard.php(124): PaymentRequest->getAllPaymentRequestsForCurrentPeriod()
+#1 {main}
+  thrown in C:\xampp\htdocs\PAY-THON\classes\paymentrequest.class.php on line 250
+[08-Jan-2025 08:53:27 Europe/Berlin] Database connection established.
+[08-Jan-2025 08:53:27 Europe/Berlin] Staff organizations found: Array
+(
+    [0] => Array
+        (
+            [OrganizationID] => VENOM
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [OrgName] => Venom Publication
+        )
+
+)
+
+Error fetching total payment amount: SQLSTATE[42S22]: Column not found: 1054 Unknown column 'amount' in 'field list'
+[08-Jan-2025 08:53:27 Europe/Berlin] SQL Query: 
+                SELECT pr.*, pr.StudentID,
+                    CONCAT(s.first_name, ' ', s.MI, ' ', s.last_name) AS Name,
+                    'Cash' AS PaymentType,
+                     f.FeeName, f.Amount, f.FeeID
+                FROM payment_requests pr
+                JOIN student s ON pr.StudentID = s.StudentID
+                JOIN fees f ON pr.fee_id = f.FeeID
+                WHERE f.school_year = (SELECT school_year FROM academic_periods WHERE is_current = 1)
+                AND f.semester = (SELECT semester FROM academic_periods WHERE is_current = 1)
+                AND f.OrganizationID IN ('VENOM')
+                ORDER BY pr.DatePaid DESC
+            
+[08-Jan-2025 08:53:27 Europe/Berlin] Organization IDs: 'VENOM'
+[08-Jan-2025 08:53:27 Europe/Berlin] Results: Array
+(
+    [0] => Array
+        (
+            [paymentID] => 20
+            [StudentID] => 202300269
+            [staffID] => 
+            [fee_id] => 15
+            [DatePaid] => 2025-01-08
+            [Status] => Not Paid
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [Name] => Trisha M Que
+            [PaymentType] => Cash
+            [FeeName] => JM
+            [Amount] => 22222
+            [FeeID] => 15
+        )
+
+    [1] => Array
+        (
+            [paymentID] => 18
+            [StudentID] => 20230026
+            [staffID] => 
+            [fee_id] => 16
+            [DatePaid] => 2025-01-01
+            [Status] => Paid
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [Name] => Jose Miguel A Esperat
+            [PaymentType] => Cash
+            [FeeName] => yeyeye
+            [Amount] => 443
+            [FeeID] => 16
+        )
+
+    [2] => Array
+        (
+            [paymentID] => 12
+            [StudentID] => 202300269
+            [staffID] => 333
+            [fee_id] => 9
+            [DatePaid] => 2024-12-20
+            [Status] => Paid
+            [school_year] => 2024-2025
+            [semester] => 1st
+            [Name] => Trisha M Que
+            [PaymentType] => Cash
+            [FeeName] => VenomFee
+            [Amount] => 75
+            [FeeID] => 9
+        )
+
+)
+
+[08-Jan-2025 08:53:50 Europe/Berlin] Database connection established.

@@ -33,6 +33,11 @@ error_log("Organization IDs: " . implode(',', $organizationIDs));
 $selectedOrg = isset($_GET['org']) ? $_GET['org'] : null;
 error_log("Selected organization: " . $selectedOrg);
 
+// Filter payment requests based on the selected organization
+if ($selectedOrg) {
+    $organizationIDs = [$selectedOrg];
+}
+
 // Get all payment requests for the current period and organizations
 $paymentRequests = $paymentRequest->getAllPaymentRequestsForCurrentPeriod($organizationIDs);
 
@@ -44,7 +49,7 @@ error_log("Payment requests: " . $varDumpOutput);
 
 // Log the feeID values for debugging
 foreach ($paymentRequests as $request) {
-    error_log("feeID: " . ($request['FeeID'] ?? 'NULL'));
+    error_log("feeID: " . ($request['fee_id'] ?? 'NULL'));
 }
 
 // Log the number of payment requests fetched
@@ -127,7 +132,7 @@ error_log("Number of payment requests fetched: " . count($paymentRequests));
                     <tbody id="paymentRequestsTable">
                         <?php if (!empty($paymentRequests)): ?>
                             <?php foreach ($paymentRequests as $request): ?>
-                                <tr data-student-id="<?php echo htmlspecialchars($request['StudentID'] ?? ''); ?>" data-fee-id="<?php echo htmlspecialchars($request['FeeID'] ?? ''); ?>">
+                                <tr data-student-id="<?php echo htmlspecialchars($request['StudentID'] ?? ''); ?>" data-fee-id="<?php echo htmlspecialchars($request['fee_id'] ?? ''); ?>">
                                     <td><?= htmlspecialchars($request['StudentID'] ?? '') ?></td>
                                     <td><?= htmlspecialchars($request['Name'] ?? '') ?></td>
                                     <td><?= htmlspecialchars($request['FeeName'] ?? '') ?></td>
@@ -140,8 +145,8 @@ error_log("Number of payment requests fetched: " . count($paymentRequests));
                                         <?php elseif ($request['Status'] === 'Not Paid'): ?>
                                             <button class="btn rejected" disabled>Rejected</button>
                                         <?php else: ?>
-                                            <button onclick="acceptPayment('<?= htmlspecialchars($request['StudentID'] ?? '') ?>', '<?= htmlspecialchars($request['FeeID'] ?? '') ?>')" class="btn accept">Accept</button>
-                                            <button onclick="rejectPayment('<?= htmlspecialchars($request['StudentID'] ?? '') ?>', '<?= htmlspecialchars($request['FeeID'] ?? '') ?>')" class="btn reject">Reject</button>
+                                            <button onclick="acceptPayment('<?= htmlspecialchars($request['StudentID'] ?? '') ?>', '<?= htmlspecialchars($request['fee_id'] ?? '') ?>')" class="btn accept">Accept</button>
+                                            <button onclick="rejectPayment('<?= htmlspecialchars($request['StudentID'] ?? '') ?>', '<?= htmlspecialchars($request['fee_id'] ?? '') ?>')" class="btn reject">Reject</button>
                                         <?php endif; ?>
                                     </td>
                                 </tr>
@@ -192,20 +197,9 @@ error_log("Number of payment requests fetched: " . count($paymentRequests));
                 console.log(`Response status: ${xhr.status}`);
                 if (xhr.status === 200) {
                     console.log(`Response: ${xhr.responseText}`);
-                    if (xhr.responseText === 'Success') {
+                    if (xhr.responseText.trim() === 'Success') {
                         alert('Payment status updated successfully.');
-                        const row = document.querySelector(`tr[data-student-id="${studentID}"][data-fee-id="${feeID}"]`);
-                        if (status === 'Paid') {
-                            row.classList.remove('rejected');
-                            row.classList.add('accepted');
-                            row.querySelector('.accept').disabled = true;
-                            row.querySelector('.reject').disabled = true;
-                        } else if (status === 'Not Paid') {
-                            row.classList.remove('accepted');
-                            row.classList.add('rejected');
-                            row.querySelector('.accept').disabled = true;
-                            row.querySelector('.reject').disabled = true;
-                        }
+                        location.reload(); // Reload the page
                     } else {
                         alert('Error updating payment status: ' + xhr.responseText);
                     }

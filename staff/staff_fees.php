@@ -224,4 +224,4 @@ error_log("Current Academic Period: " . print_r($currentPeriod, true));
         });
     </script>
 </body>
-</html> 
+</html>

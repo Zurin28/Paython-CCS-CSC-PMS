@@ -58,7 +58,7 @@ require_once '../classes/organization.class.php';
                             </div>
                         </div>
                         <div class="dropdown-divider"></div>
-                        <a href="staff_student.php">
+                        <a href="../staff/staff_student.php">
                             <i class='bx bx-user-circle'></i>
                             Student Account
                         </a>

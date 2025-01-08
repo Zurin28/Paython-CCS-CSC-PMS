@@ -4,10 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Login Logs</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/admin_logs.css" rel="stylesheet">
-    <link rel="stylesheet" href="pagination.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="../css/admin_logs.css">
 </head>
 <body>
     <?php include '../navbar.php'; ?>
@@ -67,7 +66,7 @@
                                 <tr>
                                     <td>2202301283</td>
                                     <td>Joel Josh Que</td>
-                                    <td>venom</td>
+                                    <td>CSC</td>
                                     <td>2024-01-11 08:30:00</td>
                                     <td>2024-01-11 17:15:00</td>
                                     <td class="actions">
@@ -78,7 +77,7 @@
                                 </tr>
                                 <tr>
                                 <td>2202301283</td>
-                                    <td>Joel Que</td>
+                                    <td>Joel Josh Que</td>
                                     <td>CSC</td>
                                     <td>2024-01-11 08:30:00</td>
                                     <td>2024-01-11 17:15:00</td>
@@ -207,8 +206,8 @@
                         </table>
                     </div>
                 </div>
-                <div>
-                <nav aria-label="Page navigation example">
+            </div>
+            <nav aria-label="Page navigation example">
   <ul class="pagination">
     <li class="page-item">
       <a class="page-link" href="#" aria-label="Previous">
@@ -225,8 +224,6 @@
     </li>
   </ul>
 </nav>
-  </div>
-            </div>
         </div>
     </section>
 

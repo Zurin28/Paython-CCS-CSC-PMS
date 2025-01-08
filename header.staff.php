@@ -20,7 +20,7 @@
             </div>
             <div class="dropdown-menu" id="dropdownMenu">
                 <a href="staff_dashboard.php" class="dropdown-item">Switch to Staff</a>
-                <a href="login.php" class="dropdown-item">Logout</a>
+                <a href="../account/login.php" class="dropdown-item">Logout</a>
             </div>
         </div>
     </div>

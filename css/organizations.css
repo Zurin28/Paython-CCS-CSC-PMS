@@ -330,8 +330,11 @@
 }
 
 #org-table th {
-    background: #f8f9fa;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    background: #f4f4f4;
+    border-bottom: 2px solid #e0e0e0;
+    color: #333;
+    font-size: 20px;
+    font-weight: 600;
 }
 
 /* Adjust table body */

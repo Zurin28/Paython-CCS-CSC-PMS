@@ -75,24 +75,34 @@ body {
     font-size: 0.9rem;
 }
 
-.view-all {
-    display: block;
-    background: #1a7431;
-    color: white;
-    text-align: center;
-    padding: 0.75rem;
-    border-radius: 8px;
-    text-decoration: none;
-    margin-top: 2rem;
-    width: 100%;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.view-all:hover {
-    background: #145a26;
-}
+/* Container styles for centering */
+.container_view-all  {
+    display: flex;               /* Enables flexbox */
+    justify-content: center;     /* Centers horizontally */
+    align-items: center;         /* Centers vertically */
+    height: 10%               /* Makes the container full height of the viewport */
+  }
+  
+  /* Button-like link styles */
+  .view-all {
+    display: inline-block;      /* Makes it behave like a button */
+    padding: 5px 550px;         /* Adds spacing inside the button */
+    background: #1a7431; /* Sets the button color (example: blue) */
+    color: #fff;                /* Sets the text color (example: white) */
+    text-decoration: none;      /* Removes underline */
+    border: none;               /* Removes any border */
+    border-radius: 5px;         /* Adds rounded corners */
+    font-size: 16px;            /* Adjusts text size */
+    cursor: pointer;            /* Changes cursor to a pointer */
+    text-align: center;         /* Centers text */
+    user-select: none;          /* Prevents text selection */
+    transition: background-color 0.3s ease; /* Adds smooth hover effect */
+  }
+  
+  .view-all:hover {
+    background: #145a26;  /* Darker shade on hover */
+  }
+  
 
 .user-icon-container {
     position: relative;

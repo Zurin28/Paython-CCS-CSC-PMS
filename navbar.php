@@ -81,7 +81,7 @@ $current_title = isset($page_titles[$current_page]) ? $page_titles[$current_page
 
         <!-- Fixed Logout Button -->
         <li class="log_out">
-            <a href="login.php">
+            <a href="../account/login.php">
                 <i class='bx bx-log-out'></i>
                 <span class="list_name">Log out</span>
             </a>
